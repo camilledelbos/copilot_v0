@@ -1,0 +1,28 @@
+<h1>Copilot</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+
+
+<div class="row panel">
+	<div class="small-6 large-5 columns"></div>
+	
+	<div class="small-6 large-7 columns">
+		
+			
+			<%= form_for :prospect do |f| %>
+
+			<div class="row collapse" id="form_prospect">
+
+			<div class="small-9 columns">
+				<%= f.text_field :email, placeholder: "signup@example.com"%>
+			</div>
+
+			<div class="small-3 columns">
+				<%= f.submit "Inscription", class:"button postfix radius" %>
+			</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+@import "foundation_and_overrides";
+/* Add imports of custom sass/scss files here */
+
+body {
+	margin: 10px ;
+}
+
+.formulaire_bas div *:last-child {  
+    margin-bottom:0;
+  }
+
+  /*formulaire collecte prospect landing */
+
+#form_prospect div *:last-child {  
+    margin-bottom:0;
+  }

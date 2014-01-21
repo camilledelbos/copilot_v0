@@ -1,0 +1,3 @@
+$(function(){
+    $('figure.responsive').picture();
+});

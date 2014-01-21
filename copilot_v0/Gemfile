@@ -12,6 +12,9 @@ gem 'sass-rails', '~> 4.0.0'
 #Use Foundation for stylesheets
 gem 'foundation-rails'
 
+gem 'modernizr-rails'
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -54,3 +57,4 @@ end
 # group :development do
 #   gem 'guard'
 # end
+

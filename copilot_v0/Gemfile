@@ -58,3 +58,6 @@ end
 #   gem 'guard'
 # end
 
+# Devise
+gem 'devise'
+

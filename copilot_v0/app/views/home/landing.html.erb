@@ -41,15 +41,17 @@
 		</ul>
 	</div>
 
-	<div class="row" id="logo">
-		Copilot
+	<div id="panel_top"> 
+		<div class="row" id="logo">
+		</br>Copilot
 	</div>
+</div>
 
 
-	<div id="panel_baseline"> 
-		<div class="row" >
+<div id="panel_baseline"> 
+	<div class="row" >
 		<div class="small-12 large-12 columns">
-			<h1 id="baseline_1">Vous passez entre 6 à 18 mois aux préparatifs d'un tour du monde.
+			<h1 id="baseline_1">Préparer un tour du monde ? </br>6 à 18 mois en moyenne.
 			</h1>
 		</div>
 		<div class="small-12 large-12 columns">
@@ -60,33 +62,41 @@
 	</div>
 </div>
 
-	<div class="row" id="landing_form_position">
+<div class="row" id="landing_form_position">
 
 
-		<div class="small-6 large-5 columns">
-		</div>
-
-		<div class="small-6 large-7 columns">
-
-			<%= form_for :prospect do |f| %>
-
-			<div class="row panel radius collapse panel-bg" id="form_prospect">
-
-				<div class="small-9 columns">
-					<%= f.text_field :email, placeholder: "mon.email@example.com"%>
-				</div>
-
-				<div class="small-3 columns">
-					<%= f.submit "Inscription", class:"button postfix radius" %>
-				</div>
-
-				<% end %>
-
-			</div>
-		</div>
+	<div class="small-6 large-5 columns">
 	</div>
 
-	<p>picto</p>
-	<p>picto</p>
+	<div class="small-6 large-7 columns">
+
+		<%= form_for :prospect do |f| %>
+
+		<div class="row panel radius collapse panel-bg" id="form_prospect">
+
+			<div class="small-9 columns">
+				<%= f.text_field :email, placeholder: "mon.email@example.com"%>
+			</div>
+
+			<div class="small-3 columns">
+				<%= f.submit "Inscription", class:"button postfix radius" %>
+			</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="row">
+		<div class="medium-3 columns"><%= image_tag('icon_23095.png') %></div>
+		<div class="medium-9 columns"></div>
+	</div>
+
+	<div class="row">
+		<div class="small-2 large-4 columns"><%= image_tag('icon_26945.png') %></div>
+		<div class="small-4 large-4 columns"><%= image_tag('icon_14181.png') %></div>
+		<div class="small-6 large-4 columns"><%= image_tag('icon_2107.png') %></div>
+	</div>
 </body>
 <!-- </div> -->

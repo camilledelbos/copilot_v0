@@ -1,22 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Copilot" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Copilot" %></title>
 
 
-    <%= stylesheet_link_tag    "application"%>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    "application"%>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
 
-<link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
 </head>
 
-  <body>
+<body>
 
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
-  </body>
+  <div>
+<!-- Message pour Devise
+-->    
+
+<% if flash[:notice] %>
+
+<div data-alert class="alert-box success">
+  <%= flash[:notice] %>
+</div>
+
+<% end %>
+
+<% if flash[:alert] %>
+
+<div data-alert class="alert-box alert">
+  <%= flash[:alert] %>
+</div>
+
+<% end %>
+
+<!--       Fin message pour Devise
+-->    
+
+<%= yield %>
+<%= javascript_include_tag "application" %>
+</div>
+
+
+</body>
 </html>

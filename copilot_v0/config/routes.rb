@@ -1,4 +1,5 @@
 CopilotV0::Application.routes.draw do
+  devise_for :users
   get "home/index"
   get "home/help"
   get "home/landing"

@@ -70,12 +70,12 @@
 
 	<div class="small-6 large-7 columns">
 
-		<%= form_for :prospect do |f| %>
+		<%= simple_form_for :prospect do |f| %>
 
 		<div class="row panel radius collapse panel-bg" id="form_prospect">
 
 			<div class="small-9 columns">
-				<%= f.text_field :email, placeholder: "mon.email@example.com"%>
+				<%= f.input :email, placeholder: "mon.email@example.com"%>
 			</div>
 
 			<div class="small-3 columns">

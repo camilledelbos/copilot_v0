@@ -4,21 +4,26 @@ class MapsController < ApplicationController
   # GET /maps
   # GET /maps.json
   def index
+    @titre = "Maps"
     @maps = Map.all
   end
 
   # GET /maps/1
   # GET /maps/1.json
   def show
+    @titre = "My maps"
+    @map = Map.find(params[:id])
   end
 
   # GET /maps/new
   def new
+    @titre = "New map"
     @map = Map.new
   end
 
   # GET /maps/1/edit
   def edit
+    @titre = "Edit a map"
   end
 
   # POST /maps

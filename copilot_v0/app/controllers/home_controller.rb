@@ -1,11 +1,10 @@
 class HomeController < ApplicationController
   def index
+     @titre = "Accueil"
   end
 
   def help
-  end
-
-  def help
+     @titre = "Help"
   end
 
   def landing
@@ -13,5 +12,6 @@ class HomeController < ApplicationController
   end
 
   def contact
+     @titre = "Contact"
   end
 end

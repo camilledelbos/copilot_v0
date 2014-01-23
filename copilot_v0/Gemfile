@@ -54,6 +54,8 @@ group :test do
   gem 'guard-webrick'
 end
 
+gem 'pry-rails', :group => :development
+
 # group :development do
 #   gem 'guard'
 # end

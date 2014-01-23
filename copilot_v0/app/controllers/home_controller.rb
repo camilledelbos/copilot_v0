@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   end
 
   def landing
+    @prospect = Prospect.new
   end
 
   def contact

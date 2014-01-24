@@ -40,6 +40,15 @@
 <!--       Fin message pour Devise
 -->    
 
+<!--  Add sign_in, sign_out, and sign_up 
+ -->
+<div>
+  <ul class="hmenu">
+    <li> <%= render "registration_items" %> |</li>
+    <li><%= render "login_items" %></li>
+  </ul>
+</div>
+
 <%= yield %>
 <%= javascript_include_tag "application" %>
 </div>

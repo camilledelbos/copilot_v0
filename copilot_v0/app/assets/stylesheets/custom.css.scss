@@ -15,12 +15,28 @@ marron:#C19D56;
 
 /* Mise en forme message alert */
 
+ul.hmenu {
+list-style: none;   
+padding: 0;
+text-align: right;
+}
+
+ul.hmenu li {
+display: inline; 
+}
+
+
+
+
+
+
+
 html{
 	height: 100%;
 }
 
 body {
-	// margin: 10px ;
+	margin: 10px ;
 	height: 100%;
 }
 

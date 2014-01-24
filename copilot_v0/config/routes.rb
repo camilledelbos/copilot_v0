@@ -1,5 +1,5 @@
 CopilotV0::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations'}
   get "home/index"
   get "home/help"
   get "home/landing"

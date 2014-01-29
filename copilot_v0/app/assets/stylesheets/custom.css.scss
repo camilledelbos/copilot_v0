@@ -12,6 +12,9 @@ marron:#C19D56;
 
 /* Add imports of custom sass/scss files here */
 
+.global-nav {
+position: absolute;
+}
 
 /* Mise en forme message alert */
 
@@ -25,10 +28,85 @@ ul.hmenu li {
 display: inline; 
 }
 
+/*Side Menu*/
+
+#lateral-bar {
+    background-color: #474747;
+    width: 70px;
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 500;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.side-nav li a {
+    color: #FFF6D2;
+}
+
+.side-nav li, {
+    font-size: 0.875em;
+    background: #2d3339;
+    display: block;
+    height: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    width: 50px;
+    padding: 10px;
+    /*top: 0;
+    left: 0;
+    bottom: 0;*/
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    }
 
 
+.side-nav li  {
+    background: #D95C00;
+
+    display: block;
+    height: 50px;
+    width: 50px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+/*.side-nav dl.active a:hover, 
+.side-nav dd.active a:hover, 
+.side-nav li.active a:hover, 
+.side-nav dd.active a, 
+.side-nav li.active a*/
+
+.side-nav li.active {
+background: #BEB837;
+}
 
 
+.side-nav li:hover {
+    background: #BEB837;
+ 
+}
 
 
 html{
@@ -36,8 +114,8 @@ html{
 }
 
 body {
-	margin: 10px ;
-	height: 100%;
+/*	margin: 10px ;
+*/	height: 100%;
 }
 
 

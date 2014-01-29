@@ -6,7 +6,7 @@
 
   <title><%= content_for?(:title) ? yield(:title) : "Copilot" %> | <%= @titre %></title>
 
-    <%= csrf_meta_tag %>
+  <%= csrf_meta_tag %>
 
   <%= stylesheet_link_tag    "application"%>
   <%= javascript_include_tag "vendor/modernizr" %>
@@ -16,7 +16,8 @@
 </head>
 
 <body>
-
+<%= render "side_bar" %>
+<%= render "top_bar" %>
   <div>
 <!-- Message pour Devise
 -->    
@@ -41,13 +42,8 @@
 -->    
 
 <!--  Add sign_in, sign_out, and sign_up 
- -->
-<div>
-  <ul class="hmenu">
-    <li> <%= render "registration_items" %> |</li>
-    <li><%= render "login_items" %></li>
-  </ul>
-</div>
+-->
+
 
 <%= yield %>
 <%= javascript_include_tag "application" %>

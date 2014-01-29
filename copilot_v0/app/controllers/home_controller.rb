@@ -7,10 +7,6 @@ class HomeController < ApplicationController
      @titre = "Help"
   end
 
-  def landing
-    @prospect = Prospect.new
-  end
-
   def contact
      @titre = "Contact"
   end

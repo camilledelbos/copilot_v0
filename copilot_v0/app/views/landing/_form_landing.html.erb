@@ -1,0 +1,25 @@
+<div class="row" id="landing_form_position">
+
+
+	<div class="small-6 large-5 columns">
+	</div>
+
+	<div class="small-6 large-7 columns">
+
+		<%= form_for @prospect do |f| %>
+
+		<div class="row panel radius collapse panel-bg" id="form_prospect">
+
+			<div class="small-9 columns">
+				<%= f.email_field :email, placeholder: "mon.email@example.com"%>
+			</div>
+
+			<div class="small-3 columns">
+				<%= f.submit "Inscription", class:"button postfix radius" %>
+			</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>

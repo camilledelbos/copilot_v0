@@ -2,19 +2,29 @@
 
 
 /*Colorscheme
-bleu :#40668D;
-orange :#D95C00;
-vert:#BEB837;
-creme:#FFF6D2;
-marron:#C19D56;
+bleu :#40668D; sombre : #1F3245
+orange :#D95C00; sombre : #8C3B00
+vert:#BEB837; sombre : #8F8A29
+creme:#FFF6D2;sombre : #D6CFB0
+marron:#C19D56; sombre : #876E3C;
 */
 
 
 /* Add imports of custom sass/scss files here */
 
-.global-nav {
-position: absolute;
+/*Fonticons*/
+
+/*.style1 {
+font-size: 40px;
+color: #FFF6D2;
+text-shadow: 0 3px 3px rgba(0,0,0,1);
 }
+
+.style1 li:hover {
+font-size: 40px;
+color: #C19D56;
+text-shadow: 0 3px 3px rgba(0,0,0,1);
+}*/
 
 /* Mise en forme message alert */
 
@@ -31,7 +41,7 @@ display: inline;
 /*Side Menu*/
 
 #lateral-bar {
-    background-color: #474747;
+    background-color: #8F8A29;
     width: 70px;
     position: fixed;
     padding: 10px;
@@ -45,40 +55,8 @@ display: inline;
     transition-duration: 0.2s;
 }
 
-.side-nav li a {
-    color: #FFF6D2;
-}
-
-.side-nav li, {
-    font-size: 0.875em;
-    background: #2d3339;
-    display: block;
-    height: 50px;
-    margin-bottom: 10px;
-    text-align: center;
-    position: relative;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-    width: 50px;
-    padding: 10px;
-    /*top: 0;
-    left: 0;
-    bottom: 0;*/
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    }
-
-
 .side-nav li  {
-    background: #D95C00;
-
+    font-size: 40px;
     display: block;
     height: 50px;
     width: 50px;
@@ -90,23 +68,32 @@ display: inline;
     top: 0;
     left: 0;
     bottom: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+     -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 
-/*.side-nav dl.active a:hover, 
-.side-nav dd.active a:hover, 
-.side-nav li.active a:hover, 
-.side-nav dd.active a, 
-.side-nav li.active a*/
+.side-nav li a {
+    color: #BEB837;
+}
 
-.side-nav li.active {
+.side-nav li a:hover {
+    color: #FFF6D2;
+}
+
+/*.side-nav li.active {
+    background: #2d3339;
 background: #BEB837;
-}
+}*/
 
 
-.side-nav li:hover {
-    background: #BEB837;
- 
-}
+
 
 
 html{

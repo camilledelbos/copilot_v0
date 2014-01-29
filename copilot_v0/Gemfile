@@ -11,8 +11,9 @@ gem 'sass-rails', '~> 4.0.0'
 
 #Use Foundation for stylesheets
 gem 'foundation-rails'
-
+gem 'foundation-icons-sass-rails'
 gem 'modernizr-rails'
+
 
 
 # Use Uglifier as compressor for JavaScript assets

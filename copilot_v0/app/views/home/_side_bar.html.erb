@@ -1,20 +1,18 @@
-<div class="global-nav" >
-
-	<ul class="side-nav " id="lateral-bar">
-			<dl>
-			<li class="active">
-				<dd ><%= link_to('A',home_index_path) %></dd>
-			</li>
-			<li>
-				<dd><%= link_to('icon1',home_help_path) %></dd>
-			</li>
-			<li>
-				<dd><a href="#">icon2</a></dd>
-			</li>
-			<li>
-				<dd><a href="#">icon3</a></dd>
-			</li>
-		</dl>
-	</ul>
-</div>
+<ul class="side-nav " id="lateral-bar">
+	<dl>
+		<li class="active">
+			<dd><%= link_to(edit_user_registration_path) do %><i class="fi-widget"></i><% end %></dd>
+		</li>
+		<li>
+			<dd><%= link_to(home_help_path) do %><i class="fi-foundation"></i><% end %></dd>
+		</li>
+		<li>
+			<dd><%= link_to(home_help_path) do %><i class="fi-compass"></i><% end %></i></dd>
+		</li>
+		<li>
+			<dd><%= link_to '<i class="fi-euro"></i>'.html_safe, (home_help_path) %>
+			</dd>
+		</li>
+	</dl>
+</ul>
 

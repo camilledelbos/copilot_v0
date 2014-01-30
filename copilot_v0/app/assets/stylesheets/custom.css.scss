@@ -12,19 +12,16 @@ marron:#C19D56; sombre : #876E3C;
 
 /* Add imports of custom sass/scss files here */
 
-/*Fonticons*/
-
-/*.style1 {
-font-size: 40px;
-color: #FFF6D2;
-text-shadow: 0 3px 3px rgba(0,0,0,1);
+html{
+    height: 100%;
 }
 
-.style1 li:hover {
-font-size: 40px;
-color: #C19D56;
-text-shadow: 0 3px 3px rgba(0,0,0,1);
-}*/
+body {
+/*  margin: 10px ;
+*/  height: 100%;
+margin-left: 70px;
+}
+
 
 /* Mise en forme message alert */
 
@@ -86,26 +83,71 @@ display: inline;
 .side-nav li a:hover {
     color: #FFF6D2;
 }
+        /*emplacement logo*/
+.side-nav li.active {
+    background: #C19D56;
+    border-radius: 50px;
 
-/*.side-nav li.active {
-    background: #2d3339;
-background: #BEB837;
-}*/
-
-
-
-
-
-html{
-	height: 100%;
 }
 
-body {
-/*	margin: 10px ;
-*/	height: 100%;
+/* Top bar */
+
+.top-bar {
+    background: none;
+    margin-left: 70px;
+}
+
+.top-bar li a {
+    color: #BEB837;
+    background: none;
+}
+.top-bar li a:hover{
+    color: #FFF6D2;
 }
 
 
+        /*top bar*/
+.top-bar-section li a:not(.button) {
+font-size: 16px;
+color: #2d3339; 
+background: white;
+}
+
+        /*classe active*/
+.top-bar-section ul li.active > a {
+background: #edeff0;
+color: #b2bac2;
+}
+
+.top-bar-section ul li.active > a:hover {
+background: #b2bac2;
+color: #edeff0;
+}
+
+        /*dropdown*/
+.top-bar-section li a:not(.button):hover {
+background: #edeff0;
+color: #5a6772;
+}
+
+.f-dropdown, .f-dropdown li {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    text-align: left;
+    width: 200px;
+    background: white;
+}
+
+.hover1 {
+    background: #edeff0;
+}
+
+.picto {
+    font-size: 30px;
+}
 
 /*Headers*/
 
@@ -196,11 +238,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 #landing_form_position {
     margin-top: 40px;
-    margin-right: 20px
+    margin-right: 20px;
+
 }
 
 #form_prospect div *:last-child {  
     margin-bottom: 0;
+
 }
 
 .panel-bg {

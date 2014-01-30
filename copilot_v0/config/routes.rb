@@ -4,6 +4,7 @@ CopilotV0::Application.routes.draw do
   get "home/help"
   get "home/landing"
   get "home/contact"
+  get "landing/landing"
   resources :prospects
 
   resources :maps
@@ -12,7 +13,7 @@ CopilotV0::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landing#landing'
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

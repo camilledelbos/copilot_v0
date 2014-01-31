@@ -15,39 +15,7 @@
   <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
 </head>
 
-<body>
-<div>
-<%= render "common/side_bar" %>
-</div>
-
-<div>
-<%= render "common/top_bar" %>
-  <div>
-<!-- Message pour Devise
--->    
-
-<% if flash[:notice] %>
-
-<div data-alert class="alert-box success">
-  <%= flash[:notice] %>
-</div>
-
-<% end %>
-
-<% if flash[:alert] %>
-
-<div data-alert class="alert-box alert">
-  <%= flash[:alert] %>
-</div>
-
-<% end %>
-
-<!--       Fin message pour Devise
--->    
-
-<!--  Add sign_in, sign_out, and sign_up 
--->
-
+<body style="margin-left: 0px;">
 
 <%= yield %>
 <%= javascript_include_tag "application" %>

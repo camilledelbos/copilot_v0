@@ -28,11 +28,11 @@
       <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso picto"></i></a>
         <ul id="hover1" class="f-dropdown" data-dropdown-content>
                 <li><a href="#">View profile</a></li>
-                <li><%= render "registration_items" %></li>
+                <li><%= render "devise/shared/registration_items" %></li>
                 <li><a href="#">Free Account</a></li>
                 <li><a href="#">Contact Support</a></li>
                 <li><a href="#">Shop</a></li>
-                <li class="active"><%= render "login_items" %></li>
+                <li class="active"><%= render "devise/shared/login_items" %></li>
         </ul>
     </li>
     <li >
@@ -48,13 +48,3 @@
 </section>
 </nav>
 </div>
-
-.fi-megaphone
-
-erwan truchon
-View profile
-Account Settings
-Free Account!
-Contact Support
-Treehouse Shop
-Sign out

@@ -1,64 +1,39 @@
+	<div class="small-11 small-centered  large-11 large-centered columns">
+<h2>Listing maps</h2>
+</div>
+<div class="row">
 
-	<h1>Background</h1>
-	<p>$include-html-top-bar-classes: $include-html-classes;
+  <div class="small-6 large-5 columns">
+  
+<table>
+  <thead>
+    <tr>
+      <th>Map name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-/* Background color for the top bar */
-$topbar-bg: #111;
+  <tbody>
+    <% @maps.each do |map| %>
+      <tr>
+        <td><%= map.map_name %></td>
+        <td><%= link_to 'Show', map %></td>
+        <td><%= link_to 'Edit', edit_map_path(map) %></td>
+        <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<div class="small-6 large-7 columns">EMBEDED MAP</div>
+</div>
 
-/* Height and margin */
-$topbar-height: 45px;
-$topbar-margin-bottom: rem-calc(30);
+<div class="row">
+	<div class="small-6 large-5 columns">
+<%= link_to 'New Map', new_map_path %>
+</div>
+</div>
 
-/* Control Input height for top bar */
-$topbar-input-height: 2.45em;
 
-/* Controlling the styles for the title in the top bar */
-$topbar-title-weight: bold;
-$topbar-title-font-size: rem-calc(17);
-
-/* Style the top bar dropdown elements */
-$topbar-dropdown-bg: #222;
-$topbar-dropdown-link-color: #fff;
-$topbar-dropdown-link-bg: #333;
-$topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: #fff;
-$topbar-dropdown-toggle-alpha: 0.5;
-
-/* Set the link colors and styles for top-level nav */
-$topbar-link-color: #fff;
-$topbar-link-color-hover: #fff;
-$topbar-link-color-active: #fff;
-$topbar-link-weight: normal;
-$topbar-link-font-size: rem-calc(13);
-$topbar-link-hover-lightness: -10%; // Darken by 10%
-$topbar-link-bg-hover: #272727  ;
-$topbar-link-bg-active: $primary-color;
-$topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-$topbar-link-font-family: $body-font-family;
-
-$topbar-dropdown-label-color: #555;
-$topbar-dropdown-label-text-transform: uppercase;
-$topbar-dropdown-label-font-weight: bold;
-$topbar-dropdown-label-font-size: rem-calc(10);
-
-/* Top menu icon styles */
-$topbar-menu-link-transform: uppercase;
-$topbar-menu-link-font-size: rem-calc(13);
-$topbar-menu-link-weight: bold;
-$topbar-menu-link-color: #fff;
-$topbar-menu-icon-color: #fff;
-$topbar-menu-link-color-toggled: #888;
-$topbar-menu-icon-color-toggled: #888;
-
-/* Transitions and breakpoint styles */
-$topbar-transition-speed: 300ms;
-$topbar-breakpoint: #{lower-bound($medium-range)} !default; // Change to 9999px for always mobile layout
-$topbar-media-query: $medium-up !default;
-
-/* Divider Styles */
-$topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
-$topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
-
-/* Sticky Class */
-$topbar-sticky-class: ".sticky";
-$topbar-arrows: true; //Set false to remove the triangle icon from the menu item</p>

@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
      @titre = "Accueil"
+     @maps = Map.all
   end
 
   def help

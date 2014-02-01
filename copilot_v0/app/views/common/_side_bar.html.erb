@@ -1,30 +1,60 @@
-<ul class="side-nav " id="lateral-bar">
+<ul class="side-nav" id="lateral-bar">
 	<dl>
 		<li class="active">
 			<dd><%= link_to(edit_user_registration_path) do %><% end %></dd>
 		</li>
 		<li>
-			<dd><%= link_to(home_help_path) do %><i class="fi-foundation"></i><% end %></dd>
+			
+				<dd>
+					<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Map">
+						<%= link_to(home_help_path) do %>
+						<i class="fi-foundation"></i>
+						<% end %>
+					</span>
+				</dd>
+			
 		</li>
 		<li>
-			<dd><%= link_to(home_help_path) do %><i class="fi-compass"></i><% end %></i></dd>
-		</li>
-		<li>
-			<dd><%= link_to '<i class="fi-euro"></i>'.html_safe, (home_help_path) %>
+			<dd>
+				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Map">
+					<%= link_to(home_help_path) do %>
+					<i class="fi-compass"></i>
+					<% end %>
+				</span>
 			</dd>
-		</li>
-		<li>
-			<dd><%= link_to '<i class="fi-clipboard-pencil"></i>'.html_safe, (home_help_path) %>
-			</dd>
-		</li>
-		<li>
-			<dd><%= link_to '<i class="fi-key"></i>'.html_safe, (home_help_path) %>
-			</dd>
-		</li>
-		<li>
-			<dd><%= link_to '<i class="fi-foot"></i>'.html_safe, (home_help_path) %>
-			</dd>
-		</li>
-	</dl>
+		
+
+	</li>
+	<li>
+		<dd>
+			<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Budget">
+				<%= link_to '<i class="fi-euro"></i>'.html_safe, (home_help_path) %>
+
+		</dd>
+	</li>
+	<li>
+		<dd>
+			<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Check list">
+				<%= link_to '<i class="fi-clipboard-pencil"></i>'.html_safe, (home_help_path) %>
+			</span>
+
+		</dd>
+	</li>
+	<li>
+		<dd>
+			<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Safe">
+				<%= link_to '<i class="fi-key"></i>'.html_safe, (home_help_path) %>
+			</span>
+
+		</dd>
+	</li>
+	<li>
+		<dd><span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Ecological footprint">
+				<%= link_to '<i class="fi-foot"></i>'.html_safe, (home_help_path) %>
+			</span>
+
+		</dd>
+	</li>
+</dl>
 </ul>
 

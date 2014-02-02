@@ -1,21 +1,45 @@
-<%= form_for(@map) do |f| %>
-  <% if @map.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@map.errors.count, "error") %> prohibited this map from being saved:</h2>
 
-      <ul>
-      <% @map.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :map_name %><br>
-    <%= f.text_field :map_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for(@map) do |f| %>
+<% if @map.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@map.errors.count, "error") %> prohibited this map from being saved:</h2>
+
+  <ul>
+    <% @map.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+
+<fieldset>
+  <legend>Données de départ de l'itinéraire</legend>
+  <div class="field"><div class="row">
+    <div class="small-12 medium-8 large-12 columns medium-centered">
+      <%= f.input :map_name, :autofocus => true, placeholder: 'Titre de le carte'%>
+    </div>
+    <div class="small-12 medium-8 large-12 columns medium-centered">
+      <%= f.input :latitude %>
+      <%= f.input :longitude %>
+      <%= f.input :city %>
+      <%= f.input :country %>
+      <input class="date-picker-custom" data-date data-date-format="%d/%m/%Y" />
+
+    </div>
+
+    <div class="small-12 medium-8 large-12 columns medium-centered">
+      
+    </div>
+
+   <!-- cf reserve I18n -->
+
+    <div class="small-12 medium-8 large-12 columns medium-centered">
+      <%= f.button :submit %>
+    </div>
+
+<% end %>
+
+
+

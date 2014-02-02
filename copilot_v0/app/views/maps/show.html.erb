@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<div class="small-6 large-6 columns">
 <p>
   <strong>Map name:</strong>
   <%= @map.user.email %>
   <%= @map.map_name %>
 </p>
+</div>
+
+
 
 <%= link_to 'Edit', edit_map_path(@map) %> |
 <%= link_to 'Back', maps_path %>
+</div>

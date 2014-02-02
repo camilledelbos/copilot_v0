@@ -6,6 +6,10 @@ class MapsController < ApplicationController
   def index
     @titre = "Maps"
     @maps = Map.all
+    @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
+      marker.lat map.latitude
+      marker.lng map.longitude
+end
   end
 
   # GET /maps/1
@@ -74,6 +78,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:map_name)
+      params.require(:map).permit(:map_name, :latitude, :longitude, :city, :country)
     end
 end

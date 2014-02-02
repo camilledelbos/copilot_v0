@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'modernizr-rails'
+gem 'foundation-datetimepicker-rails'
 
 
 
@@ -66,3 +67,11 @@ gem 'devise'
 
 # Simple_form
 gem 'simple_form'
+gem 'countries'
+gem 'country_select'
+gem 'currencies'
+gem 'calendar_date_select'
+
+#Gmaps4rails
+gem 'geocoder'
+gem 'gmaps4rails'

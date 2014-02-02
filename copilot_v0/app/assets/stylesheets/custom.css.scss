@@ -278,3 +278,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#6e000000',GradientType=1 ); /* IE6-9 */
     }
 
+
+/*Map*/
+
+#map img { 
+  max-width: none;
+}
+#map label { 
+  width: auto; display:inline; 
+} 
+
+
+/* Datepicker */
+
+.date-picker-custom{
+    top: 50px;
+left: 0;
+border: 1px solid #006687;
+width: auto;
+height: auto;
+background: #D95C00;
+}
+
+.calendar .date-picker .week {
+
+background: #D95C00;
+display: block;
+width: auto;
+height: auto;
+white-space: no-wrap;
+margin: 0;
+padding: 0;
+text-align: center;
+}

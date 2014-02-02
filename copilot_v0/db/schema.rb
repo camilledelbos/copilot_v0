@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124090331) do
+ActiveRecord::Schema.define(version: 20140202145306) do
 
   create_table "maps", force: true do |t|
     t.string   "map_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
+    t.string   "country"
+    t.string   "departure_date"
   end
 
   create_table "prospects", force: true do |t|

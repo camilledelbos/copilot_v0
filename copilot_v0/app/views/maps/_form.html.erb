@@ -13,25 +13,21 @@
 </div>
 <% end %>
 
-
 <fieldset>
   <legend>Données de départ de l'itinéraire</legend>
   <div class="field"><div class="row">
     <div class="small-12 medium-8 large-12 columns medium-centered">
-      <%= f.input :map_name, :autofocus => true, placeholder: 'Titre de le carte'%>
+      <%= f.input :map_name, :autofocus => true, placeholder: 'Map title'%>
     </div>
     <div class="small-12 medium-8 large-12 columns medium-centered">
-      <%= f.input :latitude %>
-      <%= f.input :longitude %>
       <%= f.input :city %>
       <%= f.input :country %>
-      <input class="date-picker-custom" data-date data-date-format="%d/%m/%Y" />
+      <input data-date data-date-format="%d/%m/%Y" /></input>
 
-    </div>
-
-    <div class="small-12 medium-8 large-12 columns medium-centered">
-      
-    </div>
+    </div>      
+  </div>
+  </div>
+</fieldset>
 
    <!-- cf reserve I18n -->
 

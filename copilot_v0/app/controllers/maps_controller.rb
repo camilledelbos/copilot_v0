@@ -17,6 +17,12 @@ end
   def show
     @titre = "My maps"
     @map = Map.find(params[:id])
+   # !!!!!! PROBLEME CAR MONTRE TOUS LES POINTS !!!!!! 
+    @maps = Map.all
+    @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
+      marker.lat map.latitude
+      marker.lng map.longitude
+end
   end
 
   # GET /maps/new

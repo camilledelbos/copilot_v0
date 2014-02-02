@@ -6,9 +6,10 @@
   <thead>
     <tr>
       <th>Map name</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
     </tr>
   </thead>
 
@@ -16,6 +17,10 @@
     <% @maps.each do |map| %>
       <tr>
         <td><%= map.map_name %></td>
+        <td><%= map.city %></td>
+        <td><%= map.country %></td>
+        <td><%= map.latitude %></td>
+        <td><%= map.longitude %></td>
         <td><%= link_to 'Show', map %></td>
         <td><%= link_to 'Edit', edit_map_path(map) %></td>
         <td><%= link_to 'Destroy', map, method: :delete, data: { confirm: 'Are you sure?' } %></td>

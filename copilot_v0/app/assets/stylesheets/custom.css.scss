@@ -278,7 +278,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
     background: linear-gradient(to right,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.43) 99%,rgba(0,0,0,0.43) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#6e000000',GradientType=1 ); /* IE6-9 */
     }
-
+    
+.picto-landing {
+    font-size: 60px;
+}
 
 /*Map*/
 

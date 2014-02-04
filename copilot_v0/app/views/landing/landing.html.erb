@@ -8,19 +8,51 @@
 
 
 <div id="panel_baseline"> 
-	<div class="row" >
-		<div class="small-12 large-12 columns">
-			<h1 id="baseline_1">Préparer un tour du monde ? 
+
+	<div class="row picto-landing-panel" >
+			<div style="margin-top: 50px;"></div>
+ 
+			<div class="small-3 large-3 columns " ><%= image_tag('8673-NB.png') %></div>
+
+			<div class="small-3 large-3 columns " ><%= image_tag('26945-NB.png') %></div>
+
+			<div class="small-3 large-3 columns " ><%= image_tag('3055-NB.png') %></div>
+			
+			<div class="small-3 large-3 columns " ><%= image_tag('logo3-NB.png') %></div>
+
+
+	</div>
+
+	<div class="row">
+			<div class="small-3 large-3 columns " ><h1 class="landing">Climat</h1></div>
+
+			<div class="small-3 large-3 columns " ><h1 class="landing">Itineraires</h1></div>
+
+			<div class="small-3 large-3 columns " ><h1 class="landing">Budget</h1></div>
+
+			<div class="small-3 large-3 columns " ><h1 class="landing">Budget</h1></div>
+	</div>
+
+
+			<!-- <div class="small-12 large-12 columns">	
+			<h1 id="baseline_1">	
+				Préparer un tour du monde ? 
 				</br> 6 à 18 mois en moyenne.
 			</h1>
-		</div>
+			</div> -->
+
+	<div class="row" >
 		<div class="small-12 large-12 columns">
 			<h1 id="baseline_2">
 				Consacrez plus de temps à voyager !
 			</h1>
 		</div>
 	</div>
+
 </div>
+
+
+
 
 <%= render "form_landing" %>
 
@@ -29,7 +61,7 @@
 
 	<div class="row">
 		<div class="medium-3 columns"><%= image_tag('icon_23095.png') %></div>
-		<div class="medium-9 columns">Copilot vous accompagne, avant, pendant et après votre voyage... Preparez votre sac !</div>
+		<div class="medium-9 columns"><h1 class="landing">Copilot vous accompagne, avant, pendant et après votre voyage... Preparez votre sac !</h1></div>
 	</div>
 
 			<%= render "budget" %>

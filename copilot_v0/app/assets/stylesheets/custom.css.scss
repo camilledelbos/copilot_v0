@@ -209,8 +209,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
 
 #baseline_1 {
     font-weight: bold;
-    color: #FFF6D2;
-    font-size: 40pt;
+/*    color: #FFF6D2;
+*/    color: white;
+    font-size: 30pt;
+    text-align: center;
+    margin-top: 30px;
 }
 
 #baseline_2 {
@@ -229,7 +232,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
     font-weight: bold;
     margin-top: 0px;
     margin-left: 20px;
-    margin-bottom: 120px;
+    margin-bottom: 20px;
 }
 
 /*Landing */
@@ -244,6 +247,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
     background-position: center center;
 }
 
+.picto-landing-panel{
+    margin-bottom: 30px;
+}
+
+h1.landing{
+    color: white;
+    text-align: center;
+}
+
 /* Disponible si Orbit ne fonctionne plus*/
 #landing_bg {
 	background-image: asset-url("oceanie.jpg");
@@ -252,7 +264,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', e
     background-size: cover;
     height: 100%;
 }
-        
+
+
 
  /*Landing Prospect form */
 

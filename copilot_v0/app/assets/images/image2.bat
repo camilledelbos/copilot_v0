@@ -1,1 +1,0 @@
-nconvert -rtype lanczos -rflag incr -rflag orient -resize 1920 1080  

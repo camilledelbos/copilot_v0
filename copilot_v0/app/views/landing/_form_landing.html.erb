@@ -1,25 +1,35 @@
 <div class="row" id="landing_form_position">
 
 
-	<div class="small-6 large-5 columns">
+<div class="small-9 large-9 columns">	
+	<div class="row">
+		<h4 class="landing">Un voyage de prévu ? Laissez votre e-mail et soyez informé du lancement</h4>
 	</div>
 
-	<div class="small-6 large-7 columns">
+
+
+	<div class="small-12 large-12 columns">
 
 		<%= form_for @prospect do |f| %>
 
 		<div class="row panel radius collapse panel-bg" id="form_prospect">
 
 			<div class="small-9 columns">
-				<%= f.email_field :email, placeholder: "mon.email@example.com"%>
+				<%= f.email_field :email, placeholder: "exemple@mail.com"%>
 			</div>
 
 			<div class="small-3 columns">
-				<%= f.submit "Inscription", class:"button postfix radius" %>
+				<%= f.submit "Take a trip !", class:"button postfix radius", style:"background-color:#D95C00" %>
 			</div>
 
 			<% end %>
 
 		</div>
 	</div>
+
+</div>
+<div class="small-3 large-3 columns">
+	<%= image_tag('arrow-orange.png', style:"height: 100px;") %>
+</div>
+
 </div>

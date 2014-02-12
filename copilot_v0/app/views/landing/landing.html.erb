@@ -1,74 +1,159 @@
-<%= render "landing_carousel" %>
-
-<div id="panel_top"> 
-	<div class="row" id="logo">
-		</br>Copilot
-	</div>
-</div>
-
-
 <div id="panel_baseline"> 
+	<%= render "landing_carousel" %>
 
-	<div class="row picto-landing-panel" >
-			<div style="margin-top: 50px;"></div>
- 
-			<div class="small-3 large-3 columns " ><%= image_tag('8673-NB.png') %></div>
 
-			<div class="small-3 large-3 columns " ><%= image_tag('26945-NB.png') %></div>
+		
+			<div class="large-12 columns baseline_1">
+				Ou, Quand, Comment, Combien ?
+			</div>
 
-			<div class="small-3 large-3 columns " ><%= image_tag('3055-NB.png') %></div>
+
+			<div class="large-12 columns baseline_2">
+				<h1 id="logo">COPILOT<span class="baseline_2"> Consacrez plus de temps à voyager.</span></h1>
+			</div>
 			
-			<div class="small-3 large-3 columns " ><%= image_tag('logo3-NB.png') %></div>
-
-
+		
+		<div class="row picto-landing-panel">
+			<ul class="small-block-grid-3" style="text-align: center;">
+			  <li><%= image_tag('itineraire-landing-NB.png', style:"height:200px;") %></li>
+			  <li><%= image_tag('budget-landing-NB.png', style:"height:200px;") %></li>
+			  <li><%= image_tag('logo3-NB.png', style:"height:200px;") %></li>
+			</ul>
 	</div>
-
-	<div class="row">
-			<div class="small-3 large-3 columns " ><h1 class="landing">Climat</h1></div>
-
-			<div class="small-3 large-3 columns " ><h1 class="landing">Itineraires</h1></div>
-
-			<div class="small-3 large-3 columns " ><h1 class="landing">Budget</h1></div>
-
-			<div class="small-3 large-3 columns " ><h1 class="landing">Budget</h1></div>
-	</div>
-
-
-			<!-- <div class="small-12 large-12 columns">	
-			<h1 id="baseline_1">	
-				Préparer un tour du monde ? 
-				</br> 6 à 18 mois en moyenne.
-			</h1>
-			</div> -->
-
-	<div class="row" >
-		<div class="small-12 large-12 columns">
-			<h1 id="baseline_2">
-				Consacrez plus de temps à voyager !
-			</h1>
-		</div>
-	</div>
-
-</div>
-
-
-
-
-<%= render "form_landing" %>
-
-<div class="row">
-
-
-	<div class="row">
-		<div class="medium-3 columns"><%= image_tag('icon_23095.png') %></div>
-		<div class="medium-9 columns"><h1 class="landing">Copilot vous accompagne, avant, pendant et après votre voyage... Preparez votre sac !</h1></div>
-	</div>
-
-			<%= render "budget" %>
-
 
 		<div class="row">
-			<div class="small-3 large-3 columns"><%= image_tag('icon_2107.png') %></div>
-			<div class="small-9 large-9 columns"></div>
+				<div class="small-4 large-4 columns " >
+					<div class="panel radius" style="text-align: center;">
+						  <h5 class="landing">Planifier votre itinéraire selon des critères objectifs</h5>
+					</div>
+				</div>
+				<div class="small-4 large-4 columns " >
+					<div class="panel radius" style="text-align: center;">
+						  <h5 class="landing">Budgéter et suivre ses dépenses en temps réel</h5>
+					</div>
+				</div>
+
+				<div class="small-4 large-4 columns " >
+					<div class="panel radius" style="text-align: center;">
+						  <h5 class="landing">Faire son sac, ne rien oublier et éviter la surcharge</h5>
+					</div>
+				</div>
 		</div>
+
+
+	
+
+	<%= render "form_landing" %> 
+<hr>
+
+</div>
+
+
+	<div class="row">
+		<div class="large-2 columns"><%= image_tag('icon_23095.png') %></div>
+		<div class="large-10 columns"><h4>Copilot vous accompagne où vous souhaitez, avant, pendant et après votre voyage.</h4></div>
+	</div>
+
+
+<hr>
+
+		<div class="row">
+			<div class="small-12 large-12 columns"><H1>How does it work ?</H1></div>
+		</div>
+		<div class="row">
+			<div class="small-4 large-4 columns"></div>
+			<div class="small-4 large-4 columns"></div>
+			<div class="small-4 large-4 columns"></div>
+
+			Copilot vous suggère un itinéraire optimal selon vos choix de pays, periode, durée, budget, activités.
+Créez, modifiez, comparez et partagez vos parcours.
+
+D'après vos itinéraires, Copilot vous permet de définir votre budget avant de partir.
+Votre tableau de bord vous indique l'état de vos finances durant votre séjour, la devise du pays, vos dépenses moyennes, ...
+
+Le poids est l'ennemi n°1 du voyageur. Copilot vous aide à faire votre sac pour n'emporter que ce que vous utiliserez.
+Les démarches administratives et sanitaires sont définies selon vos itinéraires.
+
+		</div>
+	<div class="row">
+			<div class="small-8 large-8 columns">
+				<H1>Why Copilot ?</H1>
+				<p>Copilot est né du besoin de voyageurs expérimentés et de futurs voyageurs de simplifier la préparation et favoriser le bon déroulement de leur voyage. Discret (et dévoué !), Copilot vous accompagne avant et pendant votre voyage, où que vous soyez pour que vous partiez serein et profitiez au mieux de votre séjour.</p>
+				
+				</br>
+ 
+				<p>Les informations éparpillées dans les guides, les blogs, les sites ne sont pas toujours actualisées et bien souvent difficiles à synthétiser. Copilot met à disposition les données nécessaires à l'organisation d'un voyage. Par ville ou par pays, Copilot vous renseigne sur les climats, dépenses quotidiennes, religions, devises, zones sensibles, modes de transport locaux, vaccins, visas, etc... Selon vos destinations et vos critères il génère un itinéraire que vous pourrez affiner.</p>
+				
+				</br> 
+
+				<p>Chaque voyage est une expérience formidable qui n'est cependant pas sans aléas. Perdre ses papiers ou son argent, avoir besoin d'un conseil santé, identifier et se comporter face à une situation dangeureuse, éviter les périodes de danger climatique, ou d'instabilité politique... Copilot est là pour vous.</p>
+				
+				</br>
+				 
+				<p>En voyage il n'est pas toujours facile d'avoir son smartphone ou encore de trouver une bonne connection, c'est pourquoi Copilot est disponible on-line ou off-line sur ordinateur et sur mobile. Vous synchroniserez vos données à votre prochain accès à Internet.</p>
+				
+				</br>
+				 
+				<p>Copilot. A votre service.</p>
+						<%= render "form_landing" %> 
+			</div>
+			<div class="small-4 large-4 columns panel radius panel-landing-middle">
+				<H1>What's Copilot ?</H1>
+				<p>Copilot est un <span style="font-weight: bold;">assistant de voyage collaboratif</span> et <span style="font-weight: bold;">gratuit</span>.</p>
+  
+				<p><span style="font-weight: bold;">Avant votre départ</span> il vous aide  à : 
+				<ul>
+				<li>définir vos itinéraires en évitant les mauvaises saisons (affluence touristique, climats rigoureux, ...)</li>
+				<li>définir précisément votre budget</li>
+				<li>lister les démarches à effectuer (vaccins, visas, check-list bagage)</li>
+				<li>sauvegarder vos documents administratifs et de voyages</li>
+				</ul>
+				</p>
+
+				<p>
+				<span style="font-weight: bold;">Durant votre séjour</span> Copilot vous permet de :
+				<ul>
+				<li>tenir votre budget pour prolonger votre séjour</li>
+				<li>replanifier votre itinéraire et votre budget si vous vous plaisez à un endroit</li>
+				</ul>
+				</p> 
+
+				<p>
+				<span style="font-weight: bold;">Après votre retour</span> :
+				<ul>
+				<li>partagez votre exprérience avec d'autres (futurs) voyageurs</p></div>
+				</ul>
+				</p>
+			</div>
+</div>
+<hr>
+<div class="row">
+	<div class="small-12 large-12 columns"><H3>Quelques-unes des nombreuses caractéristiques de Copilot</H3>
+	<ul>
+		<li>Application web et mobile</li>
+		<li>Définition d'itinéraires selon les climats</li>
+		<li>Plannification et suivi budgétaire</li>
+		<li>Check-list bagage, santé, administratif</li>
+		<li>Trip tips - Conseils de voyageurs</li>
+		<li>Guide par où commencer ?</li>
+		<li>Coffre-fort pour sécuriser vos documents de voyage</li>
+		<li>Système d'alerte situation dangeureuse (climatique, attentat, ...)</li>
+		<li>Calcul d'empreinte environnementale</li>
+		<li>Vues carte, pays, ville</li>
+		<li>Intégration des cartes sur votre blog</li>
+		<li>Contacter d'autres voyageurs aux parcours similaires</li>
+	</ul>
+	</div>
+
+</div>
+
+<div class="row panel ">
+	<div class="small-4 large-4 columns" style="text-align: right"><H3>Copilot vous suit ?</H3></div>
+	<div class="small-4 large-4 columns"style="text-align: left"><H3>Suivez Copilot !</H3></div>
+	<div class="small-4 large-4 columns" style="text-align: center">FACEBOOK | TWITTER | GOOLE+</div>
+</div>
+
+<div class="row>"
+	<div class="small-8 large-8 columns panel radius panel-landing-footer" style="text-align: left;">© 2014 Copilot. All Right Reserved.| Privacy Policy | Terms of Use | About| Contact</div>
+	<div class="small-4 large-4 columns panel radius panel-landing-footer" style="text-align: right;">Brought to you by <span style="color:#D95C00">COPILOT</span></div>
 </div>

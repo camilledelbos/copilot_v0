@@ -196,6 +196,7 @@ color: #5a6772;
 }
 
 #panel_baseline {
+    height: 730px; //attention PAS responsive
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
     background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
@@ -224,6 +225,11 @@ color: #5a6772;
     color: #D95C00;
     font-size: 40pt;
     font-weight: bold;
+}
+
+#logo-footer{
+    font-family: 'Weston Free';
+    color:#D95C00;
 }
 
 
@@ -262,18 +268,24 @@ border-color: #8F8A29;
 background: #BEB837;
 }
 
-.panel-footer {
+.panel-landing-footer {
 border-top: #1F3245;
-background: #40668D;
+background: #1F3245;
+color: white;
 }
+
+
 
 h1.landing{
     color: white;
 }
+
 h1 {
     font-family: 'Homenaje', sans-serif;
     color: #40668D;
 }
+
+.panel h1{}
 
 h3.landing{
     font-family: 'Homenaje', sans-serif;
@@ -326,6 +338,7 @@ h5.landing{
 }
 
 .panel-bg {
+    height: 80px;
     border-style: none;
     border-size: 0px;
     background: -moz-linear-gradient(left,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.43) 99%, rgba(0,0,0,0.43) 100%); /* FF3.6+ */

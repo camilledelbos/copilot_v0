@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,11 +8,8 @@
 
   <title><%= content_for?(:title) ? yield(:title) : "Copilot" %> | <%= @titre %></title>
 
-  <%= csrf_meta_tag %>
-
   <%= stylesheet_link_tag    "application"%>
   <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
   <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
@@ -25,7 +24,7 @@
 
 <div>
 <%= render "common/top_bar" %>
-  <div>
+</div>
 
 <!-- Message pour Devise
 -->    
@@ -52,12 +51,12 @@
 <!--  Add sign_in, sign_out, and sign_up 
 -->
 
+<%= javascript_include_tag "application" %>
 
 <%= yield %>
+
 </div>
 </div>
-
-
 </body>
 </html>
 

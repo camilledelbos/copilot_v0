@@ -79,11 +79,11 @@ display: inline;
     height: 50px;
     width: 50px;
 }
-.side-nav li a {
+.side-nav li a:not(.button) {
     color: #BEB837;
 }
 
-.side-nav li a:hover {
+.side-nav li a:not(.button):hover {
     color: #FFF6D2;
 }
         /*emplacement logo*/
@@ -96,7 +96,7 @@ display: inline;
 .tooltip.tip-right {
     background: #BEB837;
     color: #FFF6D2;
-    margin-left: 0px;
+    margin-left: -85px;
 }
 
 .tooltip.tip-right > .nub {
@@ -107,7 +107,7 @@ display: inline;
 .tooltip {
     background: #BEB837;
     color: #FFF6D2;
-    margin-top: 27px;
+    margin-top: 0px;
 }
 
 /* Top bar */
@@ -127,22 +127,29 @@ display: inline;
 
 
         /*top bar*/
-.top-bar-section li a:not(.button) {
+
+.top-bar-section li:not(.has-form) a:not(.button) {
 font-size: 16px;
 color: #2d3339; 
 background: white;
 }
 
         /*classe active*/
-.top-bar-section ul li.active > a {
-background: #edeff0;
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+padding: 0 15px;
+line-height: 45px;
 color: #b2bac2;
+background: #edeff0;
 }
 
-.top-bar-section ul li.active > a:hover {
-background: #b2bac2;
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+padding: 0 15px;
+line-height: 45px;
 color: #edeff0;
+background: #b2bac2;
 }
+
 
         /*dropdown*/
 .top-bar-section li a:not(.button):hover {

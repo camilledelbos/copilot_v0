@@ -16,8 +16,10 @@
 </head>
 
 <body style="margin-top: -40px; margin-left: 0px">
-
-<%= yield %>
+<div class="alert alert-success">
+  <%= flash[:notice] %>
+</div>
+	<%= yield %>
 <%= javascript_include_tag "application" %>
 </div>
 </div>

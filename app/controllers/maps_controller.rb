@@ -5,7 +5,7 @@ class MapsController < ApplicationController
   # GET /maps.json
   def index
     @titre = "Maps"
-    @maps = Map.all
+    @maps = current_user.maps
     @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
       marker.lat map.latitude
       marker.lng map.longitude
@@ -18,8 +18,7 @@ end
     @titre = "My maps"
     @map = Map.find(params[:id])
    # !!!!!! PROBLEME CAR MONTRE TOUS LES POINTS !!!!!! 
-    @maps = Map.all
-    @hash = Gmaps4rails.build_markers(@maps) do |map, marker|
+    @hash = Gmaps4rails.build_markers(@map) do |map, marker|
       marker.lat map.latitude
       marker.lng map.longitude
 end
@@ -39,8 +38,8 @@ end
   # POST /maps
   # POST /maps.json
   def create
-    @map = Map.new(map_name: params[:map][:map_name], user_id: current_user.id)
-
+    @map = Map.new(map_params)
+    @map.user = current_user
     respond_to do |format|
       if @map.save
         format.html { redirect_to @map, notice: 'Map was successfully created.' }

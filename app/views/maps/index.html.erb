@@ -46,3 +46,50 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });</script>
+
+
+
+<script>
+var Center=new google.maps.LatLng(18.210885,-67.140884);
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+var properties = {
+    center:Center,
+    zoom:20,
+    mapTypeId:google.maps.MapTypeId.SATELLITE
+};
+
+map=new google.maps.Map(document.getElementById("map"), properties);
+directionsDisplay.setMap(map);
+
+var marker=new google.maps.Marker({
+position:Center,
+animation:google.maps.Animation.BOUNCE,
+});
+
+marker.setMap(map);
+
+}
+
+function Route() {
+
+var start = new google.maps.LatLng(18.210885,-67.140884);
+var end =new google.maps.LatLng(38.211685,67.141684);
+var request = {
+origin:start,
+destination:end,
+travelMode: google.maps.TravelMode.WALKING
+ };
+ directionsService.route(request, function(result, status) {
+if (status == google.maps.DirectionsStatus.OK) {
+  directionsDisplay.setDirections(result);
+}
+});
+} 
+
+google.maps.event.addDomListener(window,'load',initialize);
+</script>

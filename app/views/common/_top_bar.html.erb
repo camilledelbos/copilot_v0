@@ -21,18 +21,19 @@
 <section class="top-bar-section">
   <!-- Right Nav Section -->
   <ul class="right hmenu">
+    <li class="top_bar_user_name">Hello <%= current_user.first_name %></li>
     <li >
       <%= link_to(edit_user_registration_path) do %><i class="fi-arrows-in picto"></i><% end %>
     </li>
     <li>
       <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso picto"></i></a>
         <ul id="hover1" class="f-dropdown" data-dropdown-content>
-                <li><a href="#">View profile</a></li>
+                <li><a href="#"><%= current_user.first_name %> <%= current_user.last_name %></a>View profile</li>
                 <li><%= render "devise/shared/registration_items" %></li>
-                <li><a href="#">Free Account</a></li>
-                <li><a href="#">Contact Support</a></li>
-                <li><a href="#">Shop</a></li>
-                <li class="active"><%= render "devise/shared/login_items" %></li>
+<!--                 <li><a href="#">Free Account</a></li>
+ -->                <li><a href="#">Contact Support</a></li>
+<!--                 <li><a href="#">Shop</a></li>
+ -->                <li class="active"><%= render "devise/shared/login_items" %></li>
         </ul>
     </li>
     <li >

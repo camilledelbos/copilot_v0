@@ -108,31 +108,37 @@ display: inline;
 .tooltip {
     background: #BEB837;
     color: #FFF6D2;
-    margin-top: 0px;
+    margin-top: -25px;
+    border-radius: 5px;
 }
 
 /* Top bar */
+
 
 .top-bar {
     background: none;
     margin-left: 70px;
 }
 
-.top-bar li a {
-    color: #BEB837;
-    background: none;
-}
-.top-bar li a:hover{
-    color: #FFF6D2;
-}
 
-
-        /*top bar*/
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+background: white;
+color: #D95C00;
+}
 
 .top-bar-section li:not(.has-form) a:not(.button) {
 font-size: 16px;
 color: #2d3339; 
 background: white;
+}
+
+.top_bar_user_name {
+    background: white;
+    color:#2d3339;
+}
+
+.top-bar-section ul {
+    background: none;
 }
 
         /*classe active*/

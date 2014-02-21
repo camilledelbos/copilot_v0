@@ -13,13 +13,17 @@ Obj.:
 
 Back
 
-1. générer un controller, vue et modèle Voyage
+X1. générer un controller, vue et modèle Travel
 
-2. générer un controller, vue et modèle Itineraire
+X2. générer un controller, vue et modèle Route
 
-2. générer un controller, vue et modèle Area
+X3. générer un modèle Stage comprenant des stopoff
 
-3. générer controller et model Ville, pays, climat, geocode
+4. générer des modèles Country
+
+5. generer un modèle Climate
+
+6. générer un modèle Geocode 
  
 
 

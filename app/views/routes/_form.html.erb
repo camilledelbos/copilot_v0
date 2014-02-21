@@ -1,0 +1,12 @@
+<%= simple_form_for(@route) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :route_name %>
+    <%= f.input :departure_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

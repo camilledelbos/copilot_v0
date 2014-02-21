@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202145306) do
+ActiveRecord::Schema.define(version: 20140221185219) do
 
   create_table "maps", force: true do |t|
     t.string   "map_name"
@@ -33,6 +33,26 @@ ActiveRecord::Schema.define(version: 20140202145306) do
   end
 
   add_index "prospects", ["user_id"], name: "index_prospects_on_user_id"
+
+  create_table "routes", force: true do |t|
+    t.string   "route_name"
+    t.datetime "departure_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stages", force: true do |t|
+    t.string   "stopoff"
+    t.integer  "duration"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "travels", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

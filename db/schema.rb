@@ -18,10 +18,6 @@ ActiveRecord::Schema.define(version: 20140221185219) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "city"
-    t.string   "country"
     t.string   "departure_date"
   end
 

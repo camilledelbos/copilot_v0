@@ -19,7 +19,7 @@ X2. générer un controller, vue et modèle Route
 
 X3. générer un modèle Stage comprenant des stopoff
 
-4. générer des modèles Country
+4. générer du modèle Country : model Country country_code:string capital:string surface_area:integer geo_zone:string pop_count:integer pop_density:integer   
 
 5. generer un modèle Climate
 

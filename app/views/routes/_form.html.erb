@@ -10,9 +10,13 @@
 		  <div class="form-inputs">
 		    <%= f.input :route_name, :autofocus => true, placeholder: 'Route title'%>
 		    <%= f.input :departure_date %>
-			<div class="row">
-			<%= f.input :address %>
-			</div>
+				
+				<div class="row">
+					<%= simple_form_for(@stage) do |xf| %>
+						<%= xf.input :address %>
+					<% end %>
+				</div>
+				
 		  </div>
 
 		  <div class="form-actions">

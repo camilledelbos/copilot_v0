@@ -40,10 +40,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    countries (0.9.3)
-      currencies (~> 0.4.2)
-    country_select (1.3.1)
-      countries (= 0.9.3)
     currencies (0.4.2)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
@@ -183,8 +179,6 @@ PLATFORMS
 DEPENDENCIES
   calendar_date_select
   coffee-rails (~> 4.0.0)
-  countries
-  country_select
   currencies
   devise
   foundation-datetimepicker-rails

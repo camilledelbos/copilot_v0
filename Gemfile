@@ -67,8 +67,6 @@ gem 'devise'
 
 # Simple_form
 gem 'simple_form'
-gem 'countries'
-gem 'country_select'
 gem 'currencies'
 gem 'calendar_date_select'
 

@@ -4,7 +4,9 @@ class TravelsController < ApplicationController
   # GET /travels
   # GET /travels.json
   def index
+    @titre = "Travel"
     @travels = Travel.all
+
   end
 
   # GET /travels/1
@@ -28,8 +30,7 @@ class TravelsController < ApplicationController
 
     respond_to do |format|
       if @travel.save
-        format.html { redirect_to @travel, notice: 'Travel was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @travel }
+        format.html { redirect_to routes_path, notice: 'Travel was successfully created.' }
       else
         format.html { render action: 'new' }
         format.json { render json: @travel.errors, status: :unprocessable_entity }

@@ -1,5 +1,6 @@
 class Travel < ActiveRecord::Base
 
-belongs_to :User
+belongs_to :user
+has_many :route
 
 end

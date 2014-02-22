@@ -11,6 +11,7 @@ CopilotV0::Application.routes.draw do
   get "home/contact"
   get "landing/landing"
   get "maps/index"
+  get "travels/index"
   resources :prospects
 
   resources :maps

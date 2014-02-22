@@ -1,12 +1,30 @@
 <%= simple_form_for(@route) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :route_name %>
-    <%= f.input :departure_date %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<fieldset>
+  <legend>Données de départ de l'itinéraire</legend>
+
+<div class="row">
+    <div class="small-4 medium-4 large-4 columns medium-centered">
+		  <div class="form-inputs">
+		    <%= f.input :route_name, :autofocus => true, placeholder: 'Route title'%>
+		    <%= f.input :departure_date %>
+			<div class="row">
+			<%= f.input :address %>
+			</div>
+		  </div>
+
+		  <div class="form-actions">
+		    <%= f.button :submit %>
+		  </div>
 <% end %>
+
+	</div>
+</div>
+
+</fieldset>
+
+
+
+

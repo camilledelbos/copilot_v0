@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Route name</th>
       <th>Departure date</th>
       <th></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @routes.each do |route| %>
       <tr>
+        <td><%= @user_route %></td>
         <td><%= route.route_name %></td>
         <td><%= route.departure_date %></td>
         <td><%= link_to 'Show', route %></td>

@@ -1,5 +1,7 @@
 CopilotV0::Application.routes.draw do
-  resources :routes
+  resources :routes do 
+    resources :stages
+  end
 
   resources :travels
 

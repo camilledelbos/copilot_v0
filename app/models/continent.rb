@@ -1,4 +1,4 @@
 class Continent < ActiveRecord::Base
 
-	has_many :country
+	has_many :countries
 end

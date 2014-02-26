@@ -6,5 +6,7 @@ class User < ActiveRecord::Base
          
 
 # has_many :maps
-has_many :travel
+has_many :travels
+has_many :routes, through: :travels
+# has_many :stages, through: :routes
 end

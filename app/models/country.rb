@@ -1,5 +1,5 @@
 class Country < ActiveRecord::Base
 
 	belongs_to :continent
-	has_many :main_city
+	has_many :main_cities
 end

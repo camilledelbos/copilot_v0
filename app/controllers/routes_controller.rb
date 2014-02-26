@@ -6,13 +6,26 @@ class RoutesController < ApplicationController
   def index
     @titre = "Route"
     @routes = Route.all
-  end
+
+    @hash = Gmaps4rails.build_markers(@stage) do |stage, marker|
+      marker.lat stage.latitude
+      marker.lng stage.longitude  end
+    end
 
   # GET /routes/1
   # GET /routes/1.json
   def show
-  end
+    @titre = "My Routes"
+    route = Route.find(params[:id])
+    @stage = Stage.all
+    # @stage = Stage.find(params[:id])
+    @user_route = current_user
 
+   # !!!!!! PROBLEME CAR MONTRE TOUS LES POINTS !!!!!! 
+   @hash = Gmaps4rails.build_markers(@stage) do |stage, marker|
+      marker.lat stage.latitude
+      marker.lng stage.longitude  end
+end
   # GET /routes/new
   def new
     @route = Route.new
@@ -26,6 +39,8 @@ class RoutesController < ApplicationController
   # POST /routes.json
   def create
     @route = Route.new(route_params)
+    # travel = route.travel
+
 
     respond_to do |format|
       if @route.save

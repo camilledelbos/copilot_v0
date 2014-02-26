@@ -4,7 +4,8 @@
 <p id="notice"><%= notice %></p>
 
 <%= @user_route.first_name %>
-<h1><strong>Ajouter nom du Voyage ICI ou Breadcrump</strong></h1>
+
+<h1><strong><%= @travel.name %></strong></h1>
 
 <div class="small-4 large-4 columns">
 
@@ -28,12 +29,11 @@
     </tr>
   </thead>
     <tbody>
-      <%= @stage.each do |stage| %>
+      <% @stages.each do |stage| %>
   <tr>
-        <td><%= stage %></td>
-         <td><%= @stage.duration %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td><%= stage.address %></td>
+         <td><%= stage.duration %></td>
+        
       </tr>
     <% end %>
       </tbody>
@@ -44,13 +44,14 @@
 <%= minimal_form_for(@route) do |r| %>
   
       <div class="form-inputs">
-          <%= r.fields_for(@route.stages.build) do |s| %>
+         <%= r.fields_for :stages do |s| %>
             <%= s.input :address, placeholder: 'New Stop off' %>
           <% end %>
         </div>
-  <dl class="tabs pill small"></dl>      
+        
+      <div class="form-actions">
         <%= r.button :submit %>
-  </dl> 
+      </div>
 <% end %>
 
 

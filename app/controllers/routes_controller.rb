@@ -17,9 +17,10 @@ class RoutesController < ApplicationController
   def show
     @titre = "My Routes"
     route = Route.find(params[:id])
-    @stage = Stage.all
+    @stages = Stage.all
     # @stage = Stage.find(params[:id])
     @user_route = current_user
+    @travel = Travel.find(params[:id])
 
    # !!!!!! PROBLEME CAR MONTRE TOUS LES POINTS !!!!!! 
    @hash = Gmaps4rails.build_markers(@stage) do |stage, marker|
@@ -29,6 +30,8 @@ end
   # GET /routes/new
   def new
     @route = Route.new
+    @route.stages.build
+
   end
 
   # GET /routes/1/edit
@@ -40,7 +43,6 @@ end
   def create
     @route = Route.new(route_params)
     # travel = route.travel
-
 
     respond_to do |format|
       if @route.save
@@ -85,6 +87,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:route_name, :departure_date)
+      params.require(:route).permit(:route_name, :departure_date, stages_attributes: [:address, :departure_date, :duration])
     end
 end

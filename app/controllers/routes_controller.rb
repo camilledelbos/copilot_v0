@@ -7,25 +7,22 @@ class RoutesController < ApplicationController
     @titre = "Route"
     @routes = Route.all
 
-    @hash = Gmaps4rails.build_markers(@stage) do |stage, marker|
-      marker.lat stage.latitude
-      marker.lng stage.longitude  end
     end
 
   # GET /routes/1
   # GET /routes/1.json
   def show
     @titre = "My Routes"
-    route = Route.find(params[:id])
+    @route = Route.find(params[:id])
     @stages = Stage.all
     # @stage = Stage.find(params[:id])
     @user_route = current_user
     @travel = Travel.find(params[:id])
 
-   # !!!!!! PROBLEME CAR MONTRE TOUS LES POINTS !!!!!! 
-   @hash = Gmaps4rails.build_markers(@stage) do |stage, marker|
-      marker.lat stage.latitude
-      marker.lng stage.longitude  end
+     # fill bounds: http://leafletjs.com/reference.html#latlngbounds
+    @bounds = @route.stages.map{ |l| [l.latitude, l.longitude] }
+
+
 end
   # GET /routes/new
   def new
@@ -42,7 +39,7 @@ end
   # POST /routes.json
   def create
     @route = Route.new(route_params)
-    # travel = route.travel
+    travel = @route.travel
 
     respond_to do |format|
       if @route.save

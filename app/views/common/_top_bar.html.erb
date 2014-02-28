@@ -21,30 +21,57 @@
 <section class="top-bar-section">
   <!-- Right Nav Section -->
   <ul class="right hmenu">
+
     <li >
-      <%= link_to(edit_user_registration_path) do %><i class="fi-arrows-in picto"></i><% end %>
+<!--        link_to(edit_user_registration_path) do %><i class="fi-arrows-in picto"></i> end 
+    -->
+
+
+  <% if user_signed_in? %>
+      <li class="top_bar_user_name">Hello <%= current_user.first_name %></li>
+      <li>
+        <%= link_to(edit_user_registration_path) do %><i class="fi-arrows-in picto"></i><% end %>
+      </li>
     </li>
-    <li>
-      <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso picto"></i></a>
+
+      <li>
+        <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso picto"></i></a>
         <ul id="hover1" class="f-dropdown" data-dropdown-content>
-                <li><a href="#">View profile</a></li>
-                <li><%= render "devise/shared/registration_items" %></li>
-                <li><a href="#">Free Account</a></li>
-                <li><a href="#">Contact Support</a></li>
-                <li><a href="#">Shop</a></li>
-                <li class="active"><%= render "devise/shared/login_items" %></li>
+          <li><%= link_to current_user.first_name+' '+current_user.last_name, home_profile_path %>view profile</li>
+          <li><%= render "devise/shared/registration_items" %></li>
+          <li><a href="#">Contact Support</a></li>
+          <li><a href="#">Shop</a></li>
+          <li class="active" style="text-align: center;"><%= render "devise/shared/login_items" %></li>
         </ul>
-    </li>
-    <li >
+      </li>
+      <li >
       <%= link_to(edit_user_registration_path) do %><i class="fi-megaphone picto"></i><% end %>
     </li>
-  </ul>
-  <!-- Left Nav Section -->
-  <ul class="left">
-    <li><a href="#">Itineraire</a></li>
-    <li><a href="#">Budget</a></li>
-    <li><a href="#">Préparatifs</a></li>
-  </ul>
+
+    <% else %>
+      <li>
+        <%= link_to('Help', home_help_path)  %>
+      </li>
+      <li>
+        <%= render "devise/shared/login_items" %>
+      </li>
+      <li>
+        <%= link_to('Free account !', new_user_registration_path)  %>
+      </li>
+    <% end %>
+</ul>
+
+
+
+
+
+<!-- Left Nav Section -->
+<ul class="left">
+  <li><%= link_to 'Mes voyages', travels_path %></li> 
+  <li><%= link_to 'Mes itineraires', routes_path %></li> 
+  <li><%= link_to 'Mon budget' %></li>
+  <li><%= link_to 'Mes démarches' %></li>
+</ul>
 </section>
 </nav>
 </div>

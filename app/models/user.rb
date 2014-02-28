@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
 
-has_many :maps
+# has_many :maps
+has_many :travels
+has_many :routes, through: :travels
+
 end

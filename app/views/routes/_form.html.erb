@@ -1,0 +1,33 @@
+<%= minimal_form_for(@route) do |r| %>
+  <%= r.error_notification %>
+
+
+<fieldset>
+  <legend>Initial data of the itinerary</legend>
+
+
+
+<div class="row">
+    <div class="small-4 medium-4 large-4 columns">
+		  <div class="form-inputs">
+		    <%= r.input :route_name, :autofocus => true, placeholder: 'Route title'%>
+
+					<%= r.fields_for :stages do |s| %>
+						<%= s.text_field :departure_date , :id => "datepicker", placeholder: 'departure date', label: 'Departure date' %>
+						<%= s.input :address, placeholder: 'Base camp' %>
+					<% end %>
+		  </div>
+
+		  <div class="form-actions">
+		    <%= r.button :submit %>
+		  </div>
+<% end %>
+
+	</div>
+</div>
+
+</fieldset>
+
+
+
+

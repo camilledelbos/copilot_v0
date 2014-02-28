@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require turbolinks
 //= require foundation
 //= require underscore
-//= require gmaps/google
+//= require foundation-datetimepicker
 //= require_tree .
 
 
@@ -24,3 +25,6 @@ $(function(){ $(document).foundation(); });
 
 $(document).foundation();
 
+$(function() {
+  $('#datepicker').datepicker();
+});

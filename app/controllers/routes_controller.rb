@@ -14,9 +14,16 @@ class RoutesController < ApplicationController
   def show
     @titre = "My Routes"
     @route = Route.find(params[:id])
-    @stages = Stage.all
-    # @stage = Stage.find(params[:id])
+
+  # A VERIFIER AVEC ANDREI
+    @stage = Stage.find(params[:id])
+    @stages = @route.stages.all
+
+
+
     @user_route = current_user
+
+  # A MODIFIER AVEC ANDREI (n retrouve pas l'id du Travel car recherche l'id du Travel avec l'id de la Route or plusieurs Route dans 1 Travle)
     @travel = Travel.find(params[:id])
 
      # fill bounds: http://leafletjs.com/reference.html#latlngbounds
@@ -84,6 +91,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:route_name, :departure_date, stages_attributes: [:address, :departure_date, :duration])
+      params.require(:route).permit(:route_name, stages_attributes: [:address, :departure_date, :duration])
     end
 end

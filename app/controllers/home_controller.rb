@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
      @titre = "Home"
+     @travel = Travel.all
   end
 
  def profile

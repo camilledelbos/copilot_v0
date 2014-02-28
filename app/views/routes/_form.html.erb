@@ -3,7 +3,7 @@
 
 
 <fieldset>
-  <legend>Données de départ de l'itinéraire</legend>
+  <legend>Initial data of the itinerary</legend>
 
 
 
@@ -11,16 +11,11 @@
     <div class="small-4 medium-4 large-4 columns">
 		  <div class="form-inputs">
 		    <%= r.input :route_name, :autofocus => true, placeholder: 'Route title'%>
-		    <input data-date data-date-format="%d/%m/%Y" /></input>
-		    <%= r.input :departure_date, label: 'Departure date' %>
 
-				<div class="row">
 					<%= r.fields_for :stages do |s| %>
-						<%= s.input :departure_date, :as => :data, placeholder: 'departure date' %>
+						<%= s.text_field :departure_date , :id => "datepicker", placeholder: 'departure date', label: 'Departure date' %>
 						<%= s.input :address, placeholder: 'Base camp' %>
 					<% end %>
-				</div>
-				
 		  </div>
 
 		  <div class="form-actions">

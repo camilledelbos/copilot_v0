@@ -14,12 +14,17 @@
 
   <%= csrf_meta_tags %>
 
-  <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+  <% unless Rails.env.development? %>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css'>
+  <% end %>
+  
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 </head>
 
 <body>
+
 <div>
 <%= render "common/side_bar" %>
 </div>
@@ -53,9 +58,10 @@
 <!--  Add sign_in, sign_out, and sign_up 
 -->
 
-<%= javascript_include_tag "application" %>
 
 <%= yield %>
+    <%= javascript_include_tag "application" %>
+
 
 
 </div>

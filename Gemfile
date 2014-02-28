@@ -28,6 +28,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -39,6 +40,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -68,11 +71,9 @@ gem 'devise'
 # Simple_form
 gem 'simple_form'
 gem 'currencies'
-gem 'calendar_date_select'
 
-#Gmaps4rails
+# Geocoder
 gem 'geocoder'
-gem 'gmaps4rails'
 
 group :production do
   gem 'pg', '0.15.1'

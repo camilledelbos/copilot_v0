@@ -16,7 +16,7 @@
 
 				<div class="row">
 					<%= r.fields_for :stages do |s| %>
-						<%= s.input :departure_date, placeholder: 'departure date' %>
+						<%= s.input :departure_date, :as => :data, placeholder: 'departure date' %>
 						<%= s.input :address, placeholder: 'Base camp' %>
 					<% end %>
 				</div>

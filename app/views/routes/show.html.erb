@@ -19,13 +19,15 @@
     <%= @route.departure_date %>
 </p>
 
-<h3><strong>Stops off</strong></h3>
+<h3><strong>Stages</strong></h3>
  <p> 
   <table>
     <thead>
     <tr>
-      <th>Stops off</th>
+      <th>Stop off</th>
       <th>Duration</th>
+      <th>Update</th>
+      <th>Delete</th>
     </tr>
   </thead>
     <tbody>
@@ -33,26 +35,19 @@
   <tr>
          <td><%= stage.address %></td>
          <td><%= stage.duration %></td>
+        <td><%= link_to 'Edit', edit_route_stage_path(@route, stage) %></td>
         
-      </tr>
+  </tr>
     <% end %>
       </tbody>
 </table>
 </p>
+<h3>
+<%= link_to 'Add a stop', new_route_stage_path(@route) %>
+</h3>
 
 
-<%= minimal_form_for(@route) do |r| %>
-  
-      <div class="form-inputs">
-         <%= r.fields_for :stages do |s| %>
-            <%= s.input :address, placeholder: 'New Stop off' %>
-          <% end %>
-        </div>
-        
-      <div class="form-actions">
-        <%= r.button :submit %>
-      </div>
-<% end %>
+
 
 <%= link_to 'Edit', edit_route_path(@route) %> |
 <%= link_to 'Back', routes_path %>

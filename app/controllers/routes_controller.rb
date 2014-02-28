@@ -27,7 +27,7 @@ end
   # GET /routes/new
   def new
     @route = Route.new
-    @route.stages.build
+    1.times { @route.stages.build }
 
   end
 

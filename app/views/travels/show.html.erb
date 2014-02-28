@@ -3,7 +3,12 @@
 <p>
   <strong>Name:</strong>
   <%= @travel.name %>
+  <%= @travel.routes.all %>
 </p>
+
+
+<%= link_to 'Add a new Route', new_route_path %>
+
 
 <%= link_to 'Edit', edit_travel_path(@travel) %> |
 <%= link_to 'Back', travels_path %>

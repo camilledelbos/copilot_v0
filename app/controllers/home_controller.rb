@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
      @titre = "Home"
-     @maps = Map.all
   end
 
  def profile

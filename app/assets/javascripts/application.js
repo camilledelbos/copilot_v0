@@ -28,3 +28,16 @@ $(document).foundation();
 $(function() {
   $('#datepicker').datepicker();
 });
+
+$(function() {
+    $( "#stage" ).sortable();
+    $( "#stage" ).disableSelection();
+  });
+
+
+$(function () {
+  $('#ajouter_ville').click(function () {
+    alert(this.getAttribute('data-message'));
+    return false;
+   })
+});

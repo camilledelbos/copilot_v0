@@ -1,49 +1,41 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
-  # GET /routes
-  # GET /routes.json
+
   def index
     @titre = "Route"
     @routes = Route.all
+  end
 
-    end
-
-  # GET /routes/1
-  # GET /routes/1.json
   def show
+     
     @titre = "My Routes"
     @route = Route.find(params[:id])
 
   # A VERIFIER AVEC ANDREI
-    @stage = Stage.find(params[:id])
-    @stages = @route.stages.all
-
-
+    @stage = Route.find(params[:id])
+    @stages = Stage.order("stage_position")
 
     @user_route = current_user
 
   # A MODIFIER AVEC ANDREI (n retrouve pas l'id du Travel car recherche l'id du Travel avec l'id de la Route or plusieurs Route dans 1 Travle)
-    @travel = Travel.find(params[:id])
+    @travel = @route.travel
 
      # fill bounds: http://leafletjs.com/reference.html#latlngbounds
     @bounds = @route.stages.map{ |l| [l.latitude, l.longitude] }
+  end
 
 
-end
-  # GET /routes/new
   def new
     @route = Route.new
     1.times { @route.stages.build }
-
   end
 
-  # GET /routes/1/edit
+
   def edit
   end
 
-  # POST /routes
-  # POST /routes.json
+
   def create
     @route = Route.new(route_params)
     travel = @route.travel
@@ -51,37 +43,37 @@ end
     respond_to do |format|
       if @route.save
         format.html { redirect_to @route, notice: 'Route was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @route }
       else
         format.html { render action: 'new' }
-        format.json { render json: @route.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /routes/1
-  # PATCH/PUT /routes/1.json
+
   def update
     respond_to do |format|
       if @route.update(route_params)
         format.html { redirect_to @route, notice: 'Route was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @route.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /routes/1
-  # DELETE /routes/1.json
   def destroy
     @route.destroy
     respond_to do |format|
       format.html { redirect_to routes_url }
-      format.json { head :no_content }
     end
   end
+
+
+def sort
+  params[:stages_attributes].each_with_index do |id, index|
+Stage.update_all({stage_position: index+1}, {id: id})
+  end
+render nothing: true
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

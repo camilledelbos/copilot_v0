@@ -6,21 +6,25 @@ var bounds = <%= @bounds %> //=> [[lat0, lng0], [lat1, lng1]]
 padded = L.latLngBounds( bounds ).pad(0.6)
 map.fitBounds(padded)
 
-marker = L.marker(bounds[0]).addTo(map)
-marker = L.marker(bounds[1]).addTo(map);
+// marker = L.marker(bounds[0]).addTo(map)
+// marker = L.marker(bounds[1]).addTo(map);
 
+
+for (index = 0; index < bounds.length; ++index) {
+    marker = L.marker(bounds[index]).addTo(map);
+};
 
 L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 	subdomains: 'abcd',
-	minZoom: 3,
+	minZoom: 0,
 	maxZoom: 16
 }).addTo(map);
 
 L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-labels/{z}/{x}/{y}.png', {
 	attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
 	subdomains: '0123',
-	minZoom: 2,
+	minZoom: 0,
 	maxZoom: 18
 }).addTo(map);
 

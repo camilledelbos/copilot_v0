@@ -11,8 +11,18 @@ class StagesController < ApplicationController
   end
 
 def new
-@stage = Stage.new
+  @route = Route.new
+    1.times { @route.stages.build }
 end
+
+ def create
+    @stage = Stage.new(stage_params)
+     route = @stage.route
+    @stage.save
+  redirect_to route_path
+  end
+
+
 
 private
     

@@ -4,7 +4,15 @@
 
 <%= @user_route.first_name %>
 
-<h1><strong><%= @travel.name %></strong></h1>
+
+
+
+<h1><strong><%= @travel %></strong></h1>
+
+
+
+
+
 
 <div class="small-4 large-4 columns">
 
@@ -28,20 +36,31 @@
       <th>Update</th>
       <th>Delete</th>
     </tr>
-  </thead>
-    <tbody>
-      <% @stages.each do |stage| %>
-  <tr>
-         <td><%= stage.address %></td>
-         <td><%= stage.duration %></td>
-        <td><%= link_to 'Edit', edit_route_stage_path(@route, stage) %></td>
-        
-  </tr>
-    <% end %>
+  
+
+</thead>
+    <tbody id="stage" data-update-url="<%= sort_routes_url %>">
+        <% @stages.each do |stage| %>
+          <tr>
+            <%= content_tag_for :td, stage do %>
+                <span class="handle">[drag]</span>
+                <%= link_to h(stage.address), routes_path %>
+            <% end %>
+              </tr>
+        <% end %>
       </tbody>
 </table>
+
+
+
+ <div class="button" id="ajouter_ville" data-message="Encore bcp de taf">
+        Add a stop
+      </div>
+
+
+
 </p>
-<h3>
+<h3 >
 <%= link_to 'Add a stop', new_route_stage_path(@route) %>
 </h3>
 
@@ -50,8 +69,8 @@
 <%= minimal_form_for(@route) do |r| %>
   <%= r.error_notification %>
           <%= r.fields_for :stage do |s| %>
-            <%= s.text_field :departure_date , :id => "datepicker", placeholder: 'departure date', label: 'Departure date' %>
-            <%= s.input :address, placeholder: 'Base camp' %>
+            <%= s.input :duration , placeholder: 'duration', label: 'Duration' %>
+            <%= s.input :address, placeholder: 'Stop-off' %>
           <% end %>
 
         <%= r.button :submit, value: 'Update the route'%>

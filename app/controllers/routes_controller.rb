@@ -18,7 +18,7 @@ class RoutesController < ApplicationController
     @route = Route.find(params[:id])
 
   # A VERIFIER AVEC ANDREI
-    @stage = Route.find(params[:id])
+    @stage = Stage.find(params[:id])
     @stages = Stage.order("stage_position")
 
     @user_route = current_user
@@ -32,6 +32,7 @@ class RoutesController < ApplicationController
 
 
   def new
+    add_breadcrumb "New Route", new_route_path
     @route = Route.new
     1.times { @route.stages.build }
   end

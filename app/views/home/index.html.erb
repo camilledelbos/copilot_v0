@@ -1,3 +1,10 @@
-<h2>Home</h2>
+<div class="row">
+	<div class="large-6 columns"><h1><%= link_to 'Travels', travels_path %></h1></div>
+	<div class="large-6 columns"><h1><%= link_to 'Budget' %></h1></div>
+</div>
+<div class="row">
+<div class="large-3 columns button radius"><%= link_to 'Make a trip', new_travel_path(@travel) %></div>
+<div class="large-3 columns"></div>
+	<div class="large-6 columns"><h1><%= link_to 'Preparation'%></h1></div>
 
-<%= link_to 'Concevoir un voyage', new_travel_path(@travel) %>
+</div>

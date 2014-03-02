@@ -1,5 +1,6 @@
 class TravelsController < ApplicationController
   before_action :set_travel, only: [:show, :edit, :update, :destroy]
+  add_breadcrumb "Travels", :travels_path
 
   # GET /travels
   # GET /travels.json
@@ -12,6 +13,15 @@ class TravelsController < ApplicationController
   # GET /travels/1
   # GET /travels/1.json
   def show
+    add_breadcrumb Travel.find(params[:id]).name, travels_path
+    
+    @titre = "Travel"
+    @routes = Route.all
+
+    @user_travel = current_user
+
+  # A MODIFIER AVEC ANDREI (n retrouve pas l'id du Travel car recherche l'id du Travel avec l'id de la Route or plusieurs Route dans 1 Travle)
+
   end
 
   # GET /travels/new

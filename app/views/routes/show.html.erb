@@ -30,34 +30,32 @@
  <p> 
   <table>
     <thead>
-    <tr>
-      <th>Stop off</th>
-      <th>Duration</th>
-    </tr>
-  
-
-</thead>
-    <tbody id="stage" data-update-url="<%= sort_routes_url %>">
-        <% @stages.each do |stage| %>
-          <tr>
-            <%= content_tag_for :td, stage do %>
-                <span class="handle">[drag]</span>
-                <%= link_to h(stage.address), routes_path %>
-            <% end %>
-              </tr>
+      <tr>
+        <th>Stop off</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+  <tbody id="stage" data-update-url="<%= sort_routes_url %>">
+    <% @stages.each do |s| %>
+      <tr>
+        <%= content_tag_for :td, s do %>
+            <span class="handle">[drag]</span>
+            <%= link_to h(s.address), routes_path %>
         <% end %>
-      </tbody>
+          </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <div class="small-8 large-10 columns">
   
-<div id="InputsWrapper">
-<div><input type="text" name="mytext[]" id="field_1" value="Text 1"><a href="#" class="removeclass">x</a></div>
-</div>
+  <div id="InputsWrapper">
+    <div><input type="text" name="mytext[]" id="field_1" value="Text 1"><a href="#" class="removeclass">x</a></div>
+  </div>
 </div>
 
 <div class="small-4 large-2 columns">
-<a href="#" id="AddMoreFileBox" class="button">Add a Stop</a>
+  <a href="#" id="AddMoreFileBox" class="button">Add a Stop</a>
 </div>
 
 

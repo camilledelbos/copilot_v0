@@ -1,11 +1,10 @@
-<h1>Listing routes</h1>
+<h1>My routes</h1>
+
 
 <table>
   <thead>
     <tr>
-      <th></th>
       <th>Route name</th>
-      <th>Departure date</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,9 +14,7 @@
   <tbody>
     <% @routes.each do |route| %>
       <tr>
-        <td><%= @user_route %></td>
         <td><%= route.route_name %></td>
-        <td><%= route.departure_date %></td>
         <td><%= link_to 'Show', route %></td>
         <td><%= link_to 'Edit', edit_route_path(route) %></td>
         <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,6 +22,12 @@
     <% end %>
   </tbody>
 </table>
+
+
+
+
+
+
 
 <br>
 

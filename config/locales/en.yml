@@ -21,3 +21,16 @@
 
 en:
   hello: "Hello world"
+# config/locales/en.yml
+en:
+  breadcrumbs:
+    home: Home
+    travels: Travels
+	routes: Routes
+
+# config/locales/fr.yml
+fr:
+  breadcrumbs:
+    home: Acceuil
+    travels: Voyages
+	routes: Itineraire

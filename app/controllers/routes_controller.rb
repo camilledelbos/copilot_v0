@@ -1,14 +1,19 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
+  
+  add_breadcrumb "Travels", :travels_path
+  add_breadcrumb "Routes", :routes_path
 
 
   def index
     @titre = "Route"
     @routes = Route.all
+
   end
 
   def show
-     
+    add_breadcrumb Route.find(params[:id]).route_name, routes_path
+
     @titre = "My Routes"
     @route = Route.find(params[:id])
 

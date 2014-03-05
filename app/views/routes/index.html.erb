@@ -15,9 +15,9 @@
     <% @routes.each do |route| %>
       <tr>
         <td><%= route.route_name %></td>
-        <td><%= link_to 'Show', route %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', travel_route_path(route.travel_id, route.id) %></td>
+        <td><%= link_to 'Edit', edit_travel_route_path(route.travel_id, route.id) %></td>
+        <td><%= link_to 'Destroy', travel_route_path(route.travel_id, route.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Route', new_route_path %>
+<%= link_to 'New Route', new_travel_route_path %>

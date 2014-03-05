@@ -16,12 +16,7 @@ class TravelsController < ApplicationController
     add_breadcrumb Travel.find(params[:id]).name, travels_path
     
     @titre = "Travel"
-    @routes = Route.all
-
     @user_travel = current_user
-
-  # A MODIFIER AVEC ANDREI (n retrouve pas l'id du Travel car recherche l'id du Travel avec l'id de la Route or plusieurs Route dans 1 Travle)
-
   end
 
   # GET /travels/new
@@ -40,7 +35,7 @@ class TravelsController < ApplicationController
     @travel.user = current_user
     respond_to do |format|
       if @travel.save
-        format.html { redirect_to new_route_path, notice: 'Travel was successfully created.' }
+        format.html { redirect_to @travel, notice: 'Travel was successfully created.' }
       else
         format.html { render action: 'new' }
         format.json { render json: @travel.errors, status: :unprocessable_entity }

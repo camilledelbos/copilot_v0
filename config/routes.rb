@@ -1,11 +1,12 @@
 CopilotV0::Application.routes.draw do
-  resources :routes do 
-    resources :stages 
-      collection { post :sort }
-    
+  resources :travels do
+    resources :routes do
+      resources :stages 
+        collection { post :sort }
+    end    
   end
 
-  resources :travels
+  
 
   devise_for :users, controllers: { registrations: 'registrations'}
   get "home/index"

@@ -2,23 +2,22 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
   
   add_breadcrumb "Travels", :travels_path
-  add_breadcrumb "Routes", :routes_path
+  # add_breadcrumb "Routes", :routes_path
 
 
   def index
     @titre = "Route"
-    @routes = Route.all
-
+    @routes = Route.where travel_id: params[:travel_id]
   end
 
   def show
-    add_breadcrumb Route.find(params[:id]).route_name, routes_path
-
+    # add_breadcrumb Route.find(params[:id]).route_name, routes_path
+    binding.pry
     @titre = "My Routes"
     @route = Route.find(params[:id])
 
   # A VERIFIER AVEC ANDREI
-    @stage = Stage.find(params[:id])
+    @stage = Stage.where stage_id: params[:stage_id]
     @stages = Stage.order("stage_position")
 
     @user_route = current_user
@@ -32,8 +31,9 @@ class RoutesController < ApplicationController
 
 
   def new
-    add_breadcrumb "New Route", new_route_path
+    # add_breadcrumb "New Route", new_route_path
     @route = Route.new
+    @travel = Travel.find(params[:travel_id])
     1.times { @route.stages.build }
   end
 
@@ -43,12 +43,13 @@ class RoutesController < ApplicationController
 
 
   def create
-    @route = Route.new(route_params)
-    travel = @route.travel
+    @route = Route.new route_name: route_params[:route][:route_name], travel_id: route_params[:travel_id]
+# @route.travel_id = travel.id
+    # travel = @route.travel
 
     respond_to do |format|
       if @route.save
-        format.html { redirect_to @route, notice: 'Route was successfully created.' }
+        format.html { redirect_to travel_routes_path, notice: 'Route was successfully created.' }
       else
         format.html { render action: 'new' }
       end
@@ -59,7 +60,7 @@ class RoutesController < ApplicationController
   def update
     respond_to do |format|
       if @route.update(route_params)
-        format.html { redirect_to @route, notice: 'Route was successfully updated.' }
+        format.html { redirect_to travel_route_path(@travel), notice: 'Route was successfully updated.' }
       else
         format.html { render action: 'edit' }
       end
@@ -89,6 +90,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
-      params.require(:route).permit(:route_name, stages_attributes: [:address, :departure_date, :duration])
+      # params.require(:route).permit(:route_name, :travel_id, stages_attributes: [:address, :departure_date, :duration])
+      params.permit(:travel_id, :route => [:route_name])
     end
 end

@@ -11,7 +11,7 @@ class RoutesController < ApplicationController
   end
 
   def show
-    # add_breadcrumb Route.find(params[:id]).route_name, travel_routes_path
+    add_breadcrumb Route.find(params[:id]).route_name, travel_routes_path
     @titre = "My Routes"
 
     @stages = @route.stages.order("stage_position")

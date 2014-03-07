@@ -20,7 +20,7 @@ html{
 body {
 /*  margin: 10px ;
 */  height: 100%;
-margin-left: 140px;
+margin-left: 70px;
 margin-top: 50px;
 }
 
@@ -92,8 +92,8 @@ display: inline;
 }
         /*emplacement logo*/
 .side-nav li.active {
-    background: #C19D56;
-    border-radius: 50px;
+    height: auto;
+    width: auto;
 }
 
         /* tooltip */
@@ -120,7 +120,7 @@ display: inline;
 
 .top-bar {
     background: white;
-    margin-left: 70px;
+    margin-left: 140px;
 }
 
 
@@ -130,7 +130,7 @@ color: #D95C00;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
-font-size: 16px;
+font-size: 14px;
 color: #2d3339; 
 background: white;
 }
@@ -375,9 +375,17 @@ h5.landing{
 
 #map img { 
   max-width: none;
+
 }
 #map label { 
-  width: auto; display:inline; 
+  display:inline;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 } 
 
 
@@ -418,8 +426,7 @@ h5.landing{
 
 
 /* Route */
-.tabs.pill.small dd {
-margin-right: 0px;
-margin-left: 6px;
-border-bottom: 0 !important;
+.roun {
+    font-family: Helvetica, Tahoma, Geneva, sans-serif;
+    background: #c7c8ca;
 }

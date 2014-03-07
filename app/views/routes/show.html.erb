@@ -7,7 +7,7 @@
 
 
 
-<h1><strong><%= @travel %></strong></h1>
+<h1><strong><%= @travel.name %></strong></h1>
 
 
 
@@ -23,7 +23,7 @@
 
 <h4><strong>Departure date</strong></h4>
 <p>
-    <%= @route.stage.departure_date %>
+    <%= @route.departure_date %>
 </p>
 
 <h3><strong>Stages</strong></h3>
@@ -35,12 +35,12 @@
         <th>Duration</th>
       </tr>
     </thead>
-  <tbody id="stage" data-update-url="<%= sort_routes_url %>">
+  <tbody id="stage" data-update-url="<%= sort_travel_route_stages_url(@travel, @route) %>">
     <% @stages.each do |s| %>
       <tr>
         <%= content_tag_for :td, s do %>
             <span class="handle">[drag]</span>
-            <%= link_to h(s.address), routes_path %>
+            <%= link_to h(s.address), travel_routes_path(@travel) %>
         <% end %>
           </tr>
     <% end %>
@@ -71,8 +71,8 @@
 </div>
 </div>
 <div class="row">
-  <%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back', routes_path %>
+  <%= link_to 'Edit', edit_travel_route_path(@travel, @route) %> |
+<%= link_to 'Back', travel_routes_path(@travel) %>
 </div>
 
 

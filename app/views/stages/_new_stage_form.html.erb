@@ -1,0 +1,9 @@
+
+<%= minimal_form_for [@travel, @route, @route.stages.build], remote: true do |s| %>
+	<%= s.error_notification %>
+		<%= s.input :address, placeholder: 'stop-off' %>
+		<%= s.text_field :duration %>
+		<%= s.button :submit, value: 'Update'%>
+
+	<% end %>
+

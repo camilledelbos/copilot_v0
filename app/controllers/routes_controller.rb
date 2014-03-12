@@ -13,6 +13,8 @@ class RoutesController < ApplicationController
   def show
     add_breadcrumb Route.find(params[:id]).route_name, travel_routes_path
     @titre = "My Routes"
+    @route = Route.find(params[:id])
+
 
     @stages = @route.stages.order("stage_position")
 
@@ -31,6 +33,7 @@ class RoutesController < ApplicationController
     @route = Route.new
     @route.stages.build
     @travel = Travel.find(params[:travel_id])
+
   end
 
 
@@ -40,12 +43,16 @@ class RoutesController < ApplicationController
 
   def create
     @route = Route.new(route_params[:route].merge(travel_id: route_params[:travel_id]))
-      
+
+      respond_to do |format|
       if @route.save
-        redirect_to travel_routes_path, notice: 'Route was successfully created.'
+        format.html { redirect_to travel_routes_path, notice: 'Route was successfully created.' }
+        format.js
       else
-        render action: 'new'
+        format.html { render action: 'new' }
       end
+
+    end
   end
 
 

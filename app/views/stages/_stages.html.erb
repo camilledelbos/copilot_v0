@@ -1,25 +1,16 @@
 <tbody id="stage">
-    <% @stages.each do |s| %>
+    <% @stages.each do |stage| %>
       <tr>
-        <%= content_tag_for :td, s do %>
+        <%= content_tag_for :td, stage do %>
             <span class="handle">[drag]</span>
-            <%# link_to 'Destroy', new_travel_route_stage_path(@travel.id, @route.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to h(s.address), travel_routes_path(@travel) %>
+            <%= link_to h(stage.address), travel_routes_path(@travel) %>
         <% end %>
           <td>
+            <%= stage.duration %>
           </td>
-          <td>
-            <a href="#" class="button round tiny new-route">+</a>
-          </td>                    
+            <td><%= button_to '-', travel_route_stage_path(@travel, @route, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
       </tr>
      <% end %>
 </tbody>
 
-
-
-
-            <%# minimal_form_for @route, url: travel_routes_path(@travel) do |r| %>
-              <%# r.error_notification %>
-                <%# r.fields_for :stages do |s| %>
-                <%# s.text_field :duration , placeholder: 'duration', label: 'Duration' %>
-              <%# end %>

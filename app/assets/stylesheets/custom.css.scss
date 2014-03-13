@@ -332,15 +332,6 @@ h5.landing{
 
 
 
-
-
-
-
-
-
-
-
-
  /*Landing Prospect form */
 
 #landing_form_position {
@@ -425,8 +416,12 @@ h5.landing{
 
 
 
-/* Route */
-.roun {
-    font-family: Helvetica, Tahoma, Geneva, sans-serif;
-    background: #c7c8ca;
+/* Route_table */
+table tr th, table tr td {
+    font-size: 12px;
 }
+
+.handle {
+font-size: 7px;
+}
+

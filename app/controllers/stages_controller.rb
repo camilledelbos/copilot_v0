@@ -1,10 +1,8 @@
 class StagesController < ApplicationController
 
 	def new
-
 		@travel = Travel.find(params[:travel_id])
 		@route = Route.find(params[:route_id])
-
 		respond_to do |format|       
 	        format.js
 	    end
@@ -26,13 +24,17 @@ class StagesController < ApplicationController
 	    end
 	end
 	
-	# def destroy
-	#     @stage.destroy
-	#     respond_to do |format|
-	#       format.html { redirect_to travel_route_stage_path }
-	#       format.js
-	#     end
- #  	end
+def destroy
+    @stage = Stage.find(params[:id])
+    if @stage.present?
+      @stage.destroy
+    end
+    respond_to do |format|
+	      format.html { redirect_to travel_route_stage_path }
+	      format.js
+	end
+end
+
 
  private
   

@@ -1,0 +1,5 @@
+<tr>
+<td><span class="handle">[drag]</span><%= @stage.address %></td>
+<td><%= @stage.duration %></td>
+<td><%= button_to '-', travel_route_stage_path(@travel, @route, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

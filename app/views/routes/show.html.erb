@@ -4,20 +4,8 @@
   <%= render 'map_script' %>
  
 
-<div class="row">
-  <p id="notice"><%= notice %></p>
-  <%= @user_route.first_name %>
-  <h1><strong><%= @travel.name %></strong></h1>
-</div>
-
-<div class="row">
-    <%= link_to 'Edit', edit_travel_route_path(@travel, @route) %> |
-    <%= link_to 'Back', travel_routes_path(@travel) %>
-</div>
-
-
-<div class="small-2 large-2 large-offset-10 columns panel" id="stages_list">
-  <h1><%= @route.route_name %></h1>
+<div class="small-3 large-3 large-offset-9 columns panel" style="margin-top = -70px;">
+  <h1><strong><%= @travel.name %></strong>/<%= @route.route_name %></h1>
   <h5>Departure date</h5>
   <p><%= @route.departure_date %></p>
    <p> 
@@ -28,29 +16,18 @@
           <th>Duration</th>
         </tr>
       </thead>
-<%= render '/stages/stages' %>
+        <%= render '/stages/stages' %>
   <div class="form-actions">
 
   </div>
      
   </table>
   <%= link_to "new stage", new_travel_route_stage_path(@travel, @route), id: "add", method: :get, remote: true %>
-
- <input type="button" id="add" value="+" />
-  <input type="button" id="del" value="-" />
-
+</div>
 <!-- 
-  <div>
-  <div class="small-8 large-8 columns"> 
-    <div id="InputsWrapper">
-      <div><input type="text" name="mytext[]" id="field_1" value="Text 1"><a href="#" class="removeclass">x</a></div>
-    </div>
-  </div>
-  <div class="small-4 large-4 columns">
-    <a href="#" id="AddMoreFileBox" class="button">Add a Stop</a>
-  </div>
-</div>
-</div>
- -->
 
-</div>
+<div class="row">
+    <%# link_to 'Edit', edit_travel_route_path(@travel, @route) %> |
+    <%# link_to 'Back', travel_routes_path(@travel) %>
+</div> -->
+

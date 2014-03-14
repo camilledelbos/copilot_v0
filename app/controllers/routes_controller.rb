@@ -20,7 +20,7 @@ class RoutesController < ApplicationController
 
     @user_route = current_user
 
-  # A MODIFIER AVEC ANDREI (n retrouve pas l'id du Travel car recherche l'id du Travel avec l'id de la Route or plusieurs Route dans 1 Travle)
+  # A MODIFIER 
     @travel = @route.travel
 
      # fill bounds: http://leafletjs.com/reference.html#latlngbounds

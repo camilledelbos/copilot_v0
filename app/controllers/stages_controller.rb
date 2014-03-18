@@ -35,12 +35,19 @@ def destroy
 	end
 end
 
+def sort
+  params[:stage].each_with_index do |id, index|
+  Stage.update_all({stage_position: index+1}, {id: id})
+  end
+render nothing: true
+end
+
 
  private
   
     # Never trust parameters from the scary internet, only allow the white list through.
     def stage_params
-      params.permit(:stage => [:address, :departure_date, :duration])
+      params.permit(:stage => [:address, :departure_date, :duration, :stage_position])
     end
 
 end

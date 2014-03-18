@@ -15,7 +15,7 @@ padded = L.latLngBounds( bounds ).pad(0.6)
 	    marker = L.marker(bounds[index]).addTo(map);
 	};
 
-	L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+	L.tileLayer('http://{s}.tiles.mapbox.com/v3/aj.Sketchy2/{z}/{x}/{y}.jpg', {
 		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
 		subdomains: 'abcd',
 		minZoom: 0,

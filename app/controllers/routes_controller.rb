@@ -74,12 +74,7 @@ class RoutesController < ApplicationController
   end
 
 
-def sort
-  params[:stages_attributes].each_with_index do |id, index|
-  Stage.update_all({stage_position: index+1}, {id: id})
-  end
-render nothing: true
-end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,4 +1,4 @@
-<tbody id="stage">
+<tbody id="stage" data-update-url="<%= sort_travel_route_stages_url(@travel, @route) %>">
     <% @stages.each do |stage| %>
       <tr>
         <%= content_tag_for :td, stage do %>
@@ -13,4 +13,3 @@
       </tr>
      <% end %>
 </tbody>
-

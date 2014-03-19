@@ -2,10 +2,12 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+$('#stage').sortable
+	axis: 'y'
+	handle: '.handle'
+	update: ->
+		stages_id = []
+		$('.stage').each ->
+			stages_id.push($(this).attr('id'))
+		$.post $(this).data('update-url'), 'stages_id': stages_id
 
-  jQuery ->
-	$('#stage').sortable
-		axis: 'y'
-		handle: '.handle'
-		update: ->
-			$.post($(this).data('update-url'), $(this).sortable('serialize'))

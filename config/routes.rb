@@ -2,7 +2,7 @@ CopilotV0::Application.routes.draw do
   resources :travels do
     resources :routes do
       resources :stages do
-        collection { post :sort }
+            collection { post :sort }
       end
     end    
   end

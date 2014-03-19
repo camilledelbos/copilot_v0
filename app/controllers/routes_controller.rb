@@ -17,7 +17,6 @@ class RoutesController < ApplicationController
 
 
     @stages = @route.stages.order("stage_position")
-
     @user_route = current_user
 
   # A MODIFIER 
@@ -75,7 +74,6 @@ class RoutesController < ApplicationController
 
 
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_route
@@ -85,7 +83,7 @@ class RoutesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def route_params
       # params.permit(:travel_id, :route => [:route_name])
-      params.permit(:travel_id, :route => [:route_name, :stages_attributes => [:address, :departure_date, :duration]])
+      params.permit(:travel_id, :route => [:route_name, :stages_attributes => [:address, :departure_date, :duration, :stage_position]])
       # params.require(:route).permit(:route_name, :travel_id, stages_attributes: [:address, :departure_date, :duration])
     end
 end

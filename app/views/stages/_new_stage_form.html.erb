@@ -3,6 +3,7 @@
 	<%= s.error_notification %>
 		<%= s.input :address, placeholder: 'stop-off', :autofocus => true %>
 		<%= s.text_field :duration %>
+		<%= s.hidden_field :stage_position, value: @route.stages.count + 1 %>
 		<%= s.button :submit, value: 'Update'%>
 
 	<% end %>

@@ -5,7 +5,7 @@
  
 
 <div class="small-3 large-3 large-offset-9 columns panel" style="margin-top = -70px;">
-  <h1><strong><%= @travel.name %></strong>/<%= @route.route_name %></h1>
+  <h1><strong></strong>/<%= @route.route_name %></h1>
   <h5>Departure date</h5>
   <p><%= @route.departure_date %></p>
    <p> 
@@ -20,12 +20,49 @@
  
      
   </table>
-  <%= link_to "new stage", new_travel_route_stage_path(@travel, @route), id: "add", method: :get, remote: true %>
+  <%= link_to "new stage", new_stage_path , id: "add", method: :get, remote: true %>
 </div>
-<!-- 
 
-<div class="row">
-    <%# link_to 'Edit', edit_travel_route_path(@travel, @route) %> |
-    <%# link_to 'Back', travel_routes_path(@travel) %>
-</div> -->
+
+
+  <div class="large-3 large-offset-9 columns">
+  <div class="off-canvas-wrap ">
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">Foundation</h1>
+      </section>
+
+      <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+      </section>
+    </nav>
+
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Foundation</label></li>
+        <li><a href="#">The Psychohistorians</a></li>
+        ...
+      </ul>
+    </aside>
+
+    <aside class="right-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li><label>Users</label></li>
+        <li><a href="#">Hari Seldon</a></li>
+        ...
+      </ul>
+    </aside>
+
+    <section class="main-section">
+      <!-- content goes here -->
+    </section>
+
+  <a class="exit-off-canvas"></a>
+
+  </div>
+</div>
+</div>
 

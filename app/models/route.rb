@@ -1,9 +1,14 @@
 class Route < ActiveRecord::Base
 
-	has_many :stages
-	belongs_to :travel
+has_many :stages
+belongs_to :travel
 
-	accepts_nested_attributes_for :stages
+
+    def create_stage
+        Stage.new(stage_params)
+    end
+
+
 
     def departure_date
     	first_stages = stages.where(stage_position: 1).limit(1)

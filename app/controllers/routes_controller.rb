@@ -1,8 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
   
-  add_breadcrumb "Travels", :travels_path
-  add_breadcrumb "Routes", :travel_routes_path
 
 
   def index
@@ -11,7 +9,6 @@ class RoutesController < ApplicationController
   end
 
   def show
-    add_breadcrumb Route.find(params[:id]).route_name, travel_routes_path
     @titre = "My Routes"
     @route = Route.find(params[:id])
 
@@ -28,7 +25,6 @@ class RoutesController < ApplicationController
 
 
   def new
-    add_breadcrumb "New Route", new_travel_route_path
     @route = Route.new
     @route.stages.build
     @travel = Travel.find(params[:travel_id])

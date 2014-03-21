@@ -1,14 +1,14 @@
-<tbody id="stage" data-update-url="<%= sort_travel_route_stages_url(@travel, @route) %>">
+<tbody id="stage" data-update-url="<%= sort_stages_url %>">
     <% @stages.each do |stage| %>
       <tr>
         <%= content_tag_for :td, stage do %>
             <span class="handle">[drag]</span>
-            <%= link_to h(stage.address), travel_routes_path(@travel) %>
+            <%= link_to h(stage.address), (@stage) %>
         <% end %>
           <td>
             <%= stage.duration %>
           </td>
-            <td><%= button_to '-', travel_route_stage_path(@travel, @route, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <td><%= button_to '-', stages_path, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
       </tr>
      <% end %>

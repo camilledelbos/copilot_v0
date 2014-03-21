@@ -1,10 +1,8 @@
 CopilotV0::Application.routes.draw do
-  resources :travels do
-    resources :routes do
-      resources :stages do
-            collection { post :sort }
-      end
-    end    
+  resources :travels 
+  resources :routes 
+  resources :stages do
+    collection { post :sort }
   end
 
   
@@ -26,7 +24,7 @@ CopilotV0::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'travels#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

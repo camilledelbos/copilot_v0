@@ -1,5 +1,10 @@
-<h1>New travel</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', travels_path %>
+<div id="map" style='position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: -1;'>
+</div>
+ 	<%= render 'map_empty_script' %>
+
+
+<div>
+	<%= render 'stages/new_stage_form' %>
+</div>

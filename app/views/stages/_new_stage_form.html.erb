@@ -1,10 +1,18 @@
+    
+    <div class="small-8 large-centered columns panel-bg" style="margin-top: 15%; padding: 5px; height: 50px; border-radius: 5px;">
+    <ul style="inline-block">
+		<%= minimal_form_for @stage do |s| %>
+		
+			<%= s.error_notification %>
+			<div class="row">
+			<ul class="inline-list">
+				 <div class="large-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
+				<div class="large-3 columns"><%= s.text_field :departure_date, :id => "datepicker", placeholder: 'Departure date', label: 'Departure date' %></div>
+				<div class="large-2 columns"><%= s.button :submit, value: 'Make a trip', class: "button small radius"%></div>
+				<%= s.hidden_field :route_id %>
+			</ul>
+		<% end %>
+	</div>
+</div>
 
-<%= minimal_form_for [@travel, @route, @route.stages.build], remote: true do |s| %>
-	<%= s.error_notification %>
-		<%= s.input :address, placeholder: 'stop-off', :autofocus => true %>
-		<%= s.text_field :duration %>
-		<%= s.hidden_field :stage_position, value: @route.stages.count + 1 %>
-		<%= s.button :submit, value: 'Update'%>
-
-	<% end %>
-
+<!-- , remote: true -->

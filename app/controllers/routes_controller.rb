@@ -12,7 +12,6 @@ class RoutesController < ApplicationController
     @titre = "My Routes"
     @route = Route.find(params[:id])
 
-
     @stages = @route.stages.order("stage_position")
     @user_route = current_user
 

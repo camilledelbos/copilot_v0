@@ -35,7 +35,9 @@ margin-top: 50px;
     height:39px;
 }
 
-
+.inline {
+    vertical-align: center;
+}
 
 .row {
     margin-left: 0px;
@@ -79,7 +81,7 @@ display: inline;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 50%;
     margin-bottom: 10px;
     text-align: center;
     line-height: 1.25;
@@ -101,12 +103,21 @@ display: inline;
 }
 
 .side-nav li a:not(.button):hover {
-    color: #FFF6D2;
+    color: #FFF;
+    background: #40668D;
 }
+
+.side-nav li.active a:not(.button):hover {
+    color: #FFF;
+    background: #1F3245;
+}
+
         /*emplacement logo*/
 .side-nav li.active {
     height: auto;
     width: auto;
+    border-radius: 0%;
+
 }
 
         /* tooltip */

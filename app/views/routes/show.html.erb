@@ -8,6 +8,28 @@
   <h1><strong></strong>/<%= @route.route_name %></h1>
   <h5>Departure date</h5>
   <p><%= @route.departure_date %></p>
+
+<div class="row">
+
+<div class="small-3 columns">
+          <label for="right-label" class="right inline"><i class="fi-torsos picto"></i></label>
+        </div>
+        <div class="small-3 small-pull-6 columns">
+          <select id="right-label">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        </div>
+
+
+  </div>
+
    <p> 
     <table>
       <thead>
@@ -21,48 +43,5 @@
      
   </table>
   <%= link_to "new stage", new_stage_path , id: "add", method: :get, remote: true %>
-</div>
-
-
-
-  <div class="large-3 large-offset-9 columns">
-  <div class="off-canvas-wrap ">
-  <div class="inner-wrap">
-    <nav class="tab-bar">
-
-
-      <section class="middle tab-bar-section">
-        <h1 class="title">Foundation</h1>
-      </section>
-
-      <section class="right-small">
-        <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
-      </section>
-    </nav>
-
-    <aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Foundation</label></li>
-        <li><a href="#">The Psychohistorians</a></li>
-        ...
-      </ul>
-    </aside>
-
-    <aside class="right-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Users</label></li>
-        <li><a href="#">Hari Seldon</a></li>
-        ...
-      </ul>
-    </aside>
-
-    <section class="main-section">
-      <!-- content goes here -->
-    </section>
-
-  <a class="exit-off-canvas"></a>
-
-  </div>
-</div>
 </div>
 

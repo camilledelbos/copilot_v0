@@ -9,8 +9,9 @@ class StagesController < ApplicationController
 	end
 
 	def new
-		@travel = Travel.find(params[:travel_id])
-		@route = Route.find(params[:route_id])
+
+	    @stage = Stage.new(:route_id=>18)
+
 		respond_to do |format|       
 	        format.js
 	    end
@@ -19,8 +20,9 @@ class StagesController < ApplicationController
 	def create
 		
 		@stage = Stage.new(stage_params)
-		
 
+
+		
 
 		respond_to do |format|
 		    if  @stage.save

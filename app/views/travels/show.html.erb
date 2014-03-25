@@ -7,16 +7,16 @@
  
 
 <div class="small-3 large-3 large-offset-9 columns panel" style="margin-top = -70px;">
-  <h1><strong></strong>/<%= @travel.name %></h1>
-  <h5>Departure date</h5>
+  <div class="small-block-grid-12">
+  <h1><%= @travel.name %><span class="handle"><%= link_to '[Edit]', edit_travel_path(@travel) %></span></h1>
+  </div>
 
-<div class="row">
-
-<div class="small-3 columns">
-          <label for="right-label" class="right inline"><i class="fi-torsos picto"></i></label>
-        </div>
-        <div class="small-3 small-pull-6 columns">
-          <select id="right-label">
+  <div class="row">
+    <div class="small-2 columns">
+        <label><i class="fi-torsos picto" style="font-size: 24px;"></i></label>
+    </div>
+    <div class="small-3 small-pull-7 columns">
+      <select id="right-label">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -25,25 +25,48 @@
           <option value="6">6</option>
           <option value="7">7</option>
           <option value="8">8</option>
-        </select>
-        </div>
-
-
+      </select>
+    </div>
   </div>
-
-   <p> 
-    <table>
-      <thead>
-        <tr>
-          <th>Stage</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-        <%= render '/stages/stages' %>
- 
-     
+  <table>
+    <thead>
+      <tr>
+        <th>Stop</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+      <%= render '/stages/stages' %>
   </table>
-  <%= link_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
+
+
+  <%= button_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
+  <div class="row">
+    <div class="small-1 columns">
+      <i class="fi-marker" style="font-size: 24px;"></i></h4>
+    </div>
+    <div class="small-2 columns">
+      <%= @travel.stages.count %>stops
+    </div>
+    <div class="small-1 columns">
+      <i class="fi-calendar" style="font-size: 24px;"></i></h4>
+    </div>
+    <div class="small-1 columns">
+      <%= @travel.stages.count %>d
+    </div>
+    <div class="small-1 columns">
+      <i class="fi-dollar-bill" style="font-size: 24px;"></i></h4>
+    </div>
+    <div class="small-1 columns">
+      <%= @travel.stages.count %>€
+    </div>
+    <div class="small-1 columns">
+      <i class="fi-share" style="font-size: 24px;"></i></h4>
+    </div>
+    <div class="small-1 columns end">
+      <%= @travel.stages.count %>km
+    </div>
+  </div>
 </div>
+
 
 

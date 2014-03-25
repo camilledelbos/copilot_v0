@@ -1,18 +1,31 @@
-    
-    <div class="small-8 large-centered columns panel-bg" style="margin-top: 15%; padding: 5px; height: 50px; border-radius: 5px;">
-    <ul style="inline-block">
-		<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>
-		
+<% if @stage == @travel.stages.first %>
+	<div class="small-8 large-centered columns panel-bg" style="margin-top: 15%; padding: 5px; height: 50px; border-radius: 5px;">
+	    <ul style="inline-block">
+			<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>
 			<%= s.error_notification %>
-			<div class="row">
-			<ul class="inline-list">
-				 <div class="large-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
-				<div class="large-3 columns"><%= s.text_field :departure_date, :id => "datepicker", placeholder: 'Departure date', label: 'Departure date' %></div>
-				<div class="large-2 columns"><%= s.button :submit, value: 'Make a trip', class: "button small radius"%></div>
-				<%= s.hidden_field :route_id %>
-			</ul>
-		<% end %>
+				<div class="row">
+					<ul class="inline-list">
+						 <div class="large-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
+						
+							<div class="large-3 columns"><%= s.text_field :departure_date, :id => "datepicker", placeholder: 'Departure date', label: 'Departure date' %></div>
+						
+						<div class="large-2 columns"><%= s.button :submit, value: 'Make a trip', class: "button small radius"%></div>
+						<%= s.hidden_field :route_id %>
+					</ul>
+				</div>
+			<% end %>
+		</ul>
 	</div>
-</div>
+<% else %>
+	<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>
+	<%= s.error_notification %>
+	<div class="row">
+				<div class="small-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
+				<div class="small-3 columns"><%= s.input :duration, placeholder: 'Duration' %></div>
+				<div class="small-2 columns"><%= s.button :submit, value: '+', class: "button small radius"%></div>
+	</div>
+	<% end %>
+<% end %>
+
 
 <!-- , remote: true -->

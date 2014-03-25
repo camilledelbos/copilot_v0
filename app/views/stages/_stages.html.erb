@@ -6,6 +6,7 @@
             <%= link_to h(stage.address), (@stage) %>
         <% end %>
           <td>
+            <%= stage.departure_date %>
             <%= stage.duration %>
           </td>
             <td><%= button_to '-', travel_stage_path(@travel, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>

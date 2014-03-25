@@ -1,16 +1,8 @@
 class StagesController < ApplicationController
 
-	def index
-		 @stages = Stage.all
-	end
-	
-	def show
-		@stage = Stage.all
-	end
-
 	def new
-
-	    @stage = Stage.new(:route_id=>18)
+		@travel = Travel.find(params[:travel_id])
+	    @stage = @travel.stages.build
 
 		respond_to do |format|       
 	        format.js
@@ -19,14 +11,13 @@ class StagesController < ApplicationController
 
 	def create
 		
-		@stage = Stage.new(stage_params)
-
-
+		@travel = Travel.find(params[:travel_id])
+		@stage = @travel.stages.new(stage_params)
 		
 
 		respond_to do |format|
 		    if  @stage.save
-		        format.html { redirect_to @stage.route, notice: 'Stage was successfully created.' }
+		        format.html { redirect_to travel_path(@travel), notice: 'Stage was successfully created.' }
 		        # format.js
 		    else
 	       		format.html { render action: 'new' }
@@ -46,10 +37,10 @@ def destroy
 end
 
 def sort
-    route = Route.find(params[:route_id])
-	sort_params[:stages_id].each_with_index do |stage_id, position|
-		id = stage_id.split('_')[1]
-        stage = route.stages.find(id)
+    # route = Route.find(params[:route_id])
+	sort_params[:id].each_with_index do |stage_id, position|
+		id = id.split('_')[1]
+        stage = stages.find(id)
   	    stage.stage_position = position
   	    stage.save
   	end
@@ -65,7 +56,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stage_params
-    	params.require(:stage).permit(:address, :departure_date, :duration, :route_id)
+    	params.require(:stage).permit(:address, :departure_date, :duration, :route_id, :stage_position)
     end
 
 end

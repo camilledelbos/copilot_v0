@@ -1,7 +1,7 @@
     
     <div class="small-8 large-centered columns panel-bg" style="margin-top: 15%; padding: 5px; height: 50px; border-radius: 5px;">
     <ul style="inline-block">
-		<%= minimal_form_for @stage do |s| %>
+		<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>
 		
 			<%= s.error_notification %>
 			<div class="row">

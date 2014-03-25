@@ -1,4 +1,4 @@
-<tbody id="stage" data-update-url="<%= sort_stages_url %>">
+<tbody id="stage" data-update-url="<%= sort_travel_stages_url(@travel)%>">
     <% @stages.each do |stage| %>
       <tr>
         <%= content_tag_for :td, stage do %>
@@ -8,7 +8,7 @@
           <td>
             <%= stage.duration %>
           </td>
-            <td><%= button_to '-', stages_path, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <td><%= button_to '-', travel_stage_path(@travel, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
       </tr>
      <% end %>

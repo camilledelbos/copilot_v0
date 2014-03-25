@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140303134005) do
+ActiveRecord::Schema.define(version: 20140325104004) do
 
   create_table "continents", force: true do |t|
     t.string   "continent_code"
@@ -72,9 +72,11 @@ ActiveRecord::Schema.define(version: 20140303134005) do
     t.string   "route_id"
     t.date     "departure_date"
     t.integer  "stage_position"
+    t.integer  "travel_id"
   end
 
   add_index "stages", ["route_id"], name: "index_stages_on_route_id"
+  add_index "stages", ["travel_id"], name: "index_stages_on_travel_id"
 
   create_table "travels", force: true do |t|
     t.string   "name"

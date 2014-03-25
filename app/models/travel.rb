@@ -1,7 +1,7 @@
 class Travel < ActiveRecord::Base
 
 	belongs_to :user
-	has_many :routes
+	has_many :stages
 
 end
 	

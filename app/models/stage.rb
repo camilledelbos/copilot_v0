@@ -1,6 +1,6 @@
 class Stage < ActiveRecord::Base
 
-belongs_to :route
+belongs_to :travel
 
 
 geocoded_by :address

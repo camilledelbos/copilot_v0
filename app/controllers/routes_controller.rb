@@ -9,6 +9,7 @@ class RoutesController < ApplicationController
   end
 
   def show
+
     @titre = "My Routes"
     @route = Route.find(params[:id])
 
@@ -18,8 +19,7 @@ class RoutesController < ApplicationController
   # A MODIFIER 
     @travel = @route.travel
 
-     # fill bounds: http://leafletjs.com/reference.html#latlngbounds
-    @bounds = @route.stages.map{ |l| [l.latitude, l.longitude] }
+   
   end
 
 

@@ -1,5 +1,4 @@
 class StagesController < ApplicationController
-
 	def new
 		@travel = Travel.find(params[:travel_id])
 	    @stage = @travel.stages.build
@@ -33,7 +32,7 @@ def destroy
 end
 
 def sort
-sort_params[:stages_id].each_with_index do |stage, position|
+		sort_params[:stages_id].each_with_index do |stage, position|
 		id = stage.split('_')[1]
         stage = Stage.find(id)
   	    stage.stage_position = position

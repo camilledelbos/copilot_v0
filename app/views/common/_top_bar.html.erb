@@ -1,76 +1,38 @@
 <div class="fixed">
   <nav class="top-bar" data-topbar data-options="is_hover: false">
     <ul class="title-area">
-<!--       <li class="name">
-        <h1><a href="#">My Site</a></h1>
-      </li> -->
-      
-<!--     <li class="divider"></li>
--->    <li class="has-form">
-<div class="row collapse">
-  <div class="large-8 small-9 columns">
-    <input type="text" placeholder="Find Stuff">
-  </div>
-  <div class="large-4 small-3 columns">
-  </div>
-</div>
-</li>
-
-</ul>
+      <li><h1 class="main">COPILOT</h1></li>
+    </ul>
 
 <section class="top-bar-section">
   <!-- Right Nav Section -->
   <ul class="right hmenu">
 
-    <li >
-<!--        link_to(edit_user_registration_path) do %><i class="fi-arrows-in picto"></i> end 
-    -->
-
-
-  <% if user_signed_in? %>
-      <li class="top_bar_user_name left inline">Hello <%= current_user.first_name %></li>
+    <% if user_signed_in? %>
+      <li class="top_bar_user_name inline" >Hello <%= current_user.first_name %></li>
+      <span style="margin-right: 10px;"></span>
       <li>
-        <%= link_to(edit_user_registration_path) do %><i class="fi-arrows-in picto"></i><% end %>
-      </li>
-    </li>
-
-      <li>
-        <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso picto"></i></a>
+        <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso"></i></a>
         <ul id="hover1" class="f-dropdown" data-dropdown-content>
-          <li><%= link_to current_user.first_name+' '+current_user.last_name, home_profile_path %>view profile</li>
-          <li><%= render "devise/shared/registration_items" %></li>
-          <li><a href="#">Contact Support</a></li>
-          <li><a href="#">Shop</a></li>
+          <li class="down"><%= link_to 'Manage account '+current_user.first_name+' '+current_user.last_name, home_profile_path %></li>
+          <li class="down"><%= render "devise/shared/registration_items" %></li>
+          <li class="down"><a href="#">Contact Support</a></li>
+          <li class="down"><a href="#">Shop</a></li>
           <li class="active" style="text-align: center;"><%= render "devise/shared/login_items" %></li>
         </ul>
       </li>
       <li >
-      <%= link_to(edit_user_registration_path) do %><i class="fi-megaphone picto"></i><% end %>
+      <%= link_to(home_index_path) do %><i class="fi-mail"></i><% end %>
     </li>
-
     <% else %>
-      <li>
-        <%= link_to('Help', home_help_path)  %>
-      </li>
       <li>
         <%= render "devise/shared/login_items" %>
       </li>
-      <li>
-        <%= link_to('Free account !', new_user_registration_path)  %>
+      <li class="sign_up_button">
+        <%= link_to('Sign up !', new_user_registration_path) %>
       </li>
     <% end %>
-</ul>
-
-
-
-
-
-<!-- Left Nav Section -->
-<ul class="left">
-  <li><%= link_to 'Mes voyages', travels_path %></li> 
-  <li><%= link_to 'Mon budget' %></li>
-  <li><%= link_to 'Mes démarches' %></li>
-</ul>
+  </ul>
 </section>
 </nav>
 </div>

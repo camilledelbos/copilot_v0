@@ -21,22 +21,25 @@ body {
 /*  margin: 10px ;
 */  height: 100%;
 margin-left: 70px;
-margin-top: 50px;
+margin-top: 45px;
 }
 
 
 .button {
     background-color:#D95C00;
-    height: 39px;
+    height: 38px;
 }
 
 .button:hover {
-    background-color:#8C3B00;
-    height:39px;
+    background-color:white;
+    color: #D95C00;
+    height:38px;
 }
 
 .inline {
-    vertical-align: center;
+    /*vertical-align: center;*/
+    padding: 0.75rem 0;
+
 }
 
 .row {
@@ -47,7 +50,6 @@ margin-top: 50px;
 
 ul.hmenu {
 list-style: none;   
-padding: 0;
 text-align: right;
 }
 
@@ -123,7 +125,7 @@ display: inline;
         /* tooltip */
 .tooltip.tip-right {
     background: #40668D;
-    color: #FFF6D2;
+    color: white;
     margin-left: -15px;
 }
 
@@ -134,72 +136,105 @@ display: inline;
 
 .tooltip {
     background: #40668D;
-    color: #FFF6D2;
+    color: white;
     margin-top: -25px;
     border-radius: 5px;
 }
 
 /* Top bar */
 
+        /*Boutton inscription*/
+
+
+        .top-bar-section li.sign_up_button:not(.has-form) a:not(.button) {
+        background: white;
+        color: #D95C00;
+        }
+
+        .top-bar-section li.sign_up_button:not(.has-form) a:not(.button):hover {
+        background: white;
+        color: #1F3245;
+        }
+
+
 
 .top-bar {
-    background: white;
-    margin-left: 140px;
+    background: #D95C00;
+    margin-left: 70px;
+    height: 45px;
+}
+.top-bar-section {
+    background: #D95C00;
+    margin-left: 500px;
+    height: 45px;
 }
 
+.picto {
+    font-size: 17px;
+}
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
-background: white;
-color: #D95C00;
+    background: white;
+    color: #D95C00;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
-font-size: 14px;
-color: #2d3339; 
-background: white;
+    color: white; 
+    background: #D95C00;
 }
 
-.top_bar_user_name {
+.top-bar-section li.down:not(.has-form) a:not(.button) {
+    color: #D95C00; 
     background: white;
-    color:#2d3339;
+}
+
+.top-bar-section li.down:not(.has-form) a:not(.button):hover {
+    color: white; 
+    background: #D95C00;
+}
+
+
+.top_bar_user_name {
+    background: #D95C00;
+    color: white;
+    vertical-align: text-bottom;
 }
 
 .top-bar-section ul {
-    background: white;
+    background: #D95C00;
+}
+.top-bar-section ul li {
+    font-size: 14px;
 }
 
-        /*classe active*/
+/*classe active*/
+
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
-padding: 0 15px;
-line-height: 45px;
-color: #b2bac2;
-background: #edeff0;
+    /*padding: 0 15px;
+    *//*line-height: 45px;
+    */color: #b2bac2;
+    background: #edeff0;
 }
 
 .top-bar-section li.active:not(.has-form) a:not(.button):hover {
-padding: 0 15px;
-line-height: 45px;
-color: #edeff0;
-background: #b2bac2;
+    /*padding: 0 15px;
+    line-height: 45px;*/
+    color: #edeff0;
+    background: #b2bac2;
 }
 
 
         /*dropdown*/
 .top-bar-section li a:not(.button):hover {
-background: #edeff0;
-color: #5a6772;
+    background: #edeff0;
+    color: #5a6772;
 }
 
 .f-dropdown, .f-dropdown li {
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    -o-border-radius: 7px;
-    border-radius: 7px;
     text-align: left;
     width: 200px;
-    background: white;
+    color: #D95C00;
 }
 
 .hover1 {
@@ -207,7 +242,7 @@ color: #5a6772;
 }
 
 .picto {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 /*Headers Landing*/
@@ -268,6 +303,7 @@ color: #5a6772;
     font-weight: bold;
 }
 
+
 #logo-footer{
     font-family: 'Weston Free';
     color:#D95C00;
@@ -318,6 +354,14 @@ color: white;
 
 h1.landing{
     color: white;
+}
+
+h1.main{
+    font-family: 'Homenaje', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 20px;
 }
 
 h1 {

@@ -10,4 +10,3 @@ $('#stage').sortable
 		$('.stage').each ->
 			stages_id.push($(this).attr('id'))
 		$.post $(this).data('update-url'), 'stages_id': stages_id
-

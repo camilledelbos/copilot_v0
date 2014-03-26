@@ -3,7 +3,7 @@
 
   
     <div id="map" style='position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;'></div>
-  <%= render 'routes/map_script' %>
+  <%= render 'map_script' %>
  
 
 <div class="small-3 large-3 large-offset-9 columns panel" style="margin-top = -70px;">
@@ -33,6 +33,7 @@
       <tr>
         <th>Stop</th>
         <th>Duration</th>
+        <th></th>
       </tr>
     </thead>
       <%= render '/stages/stages' %>

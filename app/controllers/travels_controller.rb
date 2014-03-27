@@ -13,7 +13,7 @@ class TravelsController < ApplicationController
     @stages = @travel.stages.order("stage_position")
 
     # fill bounds: http://leafletjs.com/reference.html#latlngbounds
-    @bounds = @travel.stages.map{ |l| [l.latitude, l.longitude] }
+    @bounds = @stages.map{ |l| [l.latitude, l.longitude] }
   end
 
 
@@ -21,7 +21,6 @@ class TravelsController < ApplicationController
   def new
     @travel = Travel.create(name: "TravelName")
     @stage =  @travel.stages.build
-
   end
 
   def edit
@@ -29,7 +28,6 @@ class TravelsController < ApplicationController
 
   
   def create
-
     # @travel.user = current_user
     respond_to do |format|
       if @stage.save
@@ -64,21 +62,14 @@ class TravelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_travel
       @travel = Travel.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def travel_params
       params.require(:travel).permit(:name)
     end
-
-    def route_params
-       params.require(:route).permit(:route_name)
-
-    end
-
+    
     def stage_params
        params.require(:stage).permit(:stage, :duration, :departure_date)
     end

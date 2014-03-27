@@ -32,13 +32,14 @@ def destroy
 end
 
 def sort
-		sort_params[:stages_id].each_with_index do |stage, position|
+	sort_params[:stages_id].each_with_index do |stage, position|
 		id = stage.split('_')[1]
         stage = Stage.find(id)
   	    stage.stage_position = position
   	    stage.save
   	end
-	render nothing: true
+	travel = Travel.find(params[:travel_id])
+	render json: travel.stages.map{|s| [s.latitude, s.longitude]}
 end
 
 

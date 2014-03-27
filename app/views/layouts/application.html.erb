@@ -36,40 +36,33 @@
 <!-- Message pour Devise
 -->    
 
-<% if flash[:notice] %>
+  <% if flash[:notice] %>
 
-<div data-alert class="alert-box success">
-  <%= flash[:notice] %>
-</div>
+  <div data-alert class="alert-box success">
+    <%= flash[:notice] %>
+  </div>
 
-<% end %>
+  <% end %>
 
-<% if flash[:alert] %>
+  <% if flash[:alert] %>
 
-<div data-alert class="alert-box alert">
-  <%= flash[:alert] %>
-</div>
+  <div data-alert class="alert-box alert">
+    <%= flash[:alert] %>
+  </div>
 
-<% end %>
+  <% end %>
 
 <!--       Fin message pour Devise
 -->    
 
-<!--  Add sign_in, sign_out, and sign_up 
--->
 
 <%= yield %>
-    <%= javascript_include_tag "application" %>
-
-
-
-</div>
-</div>
-  <%= render 'common/footer' %>
+<%= javascript_include_tag "application" %>  
+<%= render 'common/footer' %>
+</body>
 <footer>
   <%= render 'layouts/footer' %>
 </footer>
-</body>
 </html>
 
 

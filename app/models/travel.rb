@@ -1,7 +1,7 @@
 class Travel < ActiveRecord::Base
 
 	belongs_to :user
-	has_many :stages
+	has_many :stages, -> { order(:stage_position) }
 	
 
     def add_stage(stage_params)

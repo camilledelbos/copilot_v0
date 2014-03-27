@@ -1,15 +1,17 @@
-<h2>Sign in</h2>
+<div class="small-6 large-8 columns">
+	<h1>Ready for a new travel ? </h1>
+	<%= image_tag('oceanie.jpg') %>
+</div>
+<div class="small-6 large-3 columns" style="text-align: center;">
+	<h1>Sign in</h1>
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<%= f.input :email %><br />
+	<%= f.input :password %><br />
+	<% if devise_mapping.rememberable? -%>
+	<div>Remember me <%= f.check_box :remember_me %></div>
+	<% end %>
+	<%= f.button :submit, value: "Sign in" %>
+	<% end %>
 
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.input :email %><br />
-
-  <div><%= f.input :password %><br />
-
-  <% if devise_mapping.rememberable? -%>
-    <div>Remember me <%= f.check_box :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+	<%= render "devise/shared/links" %>
+</div>

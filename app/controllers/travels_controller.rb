@@ -28,7 +28,17 @@ class TravelsController < ApplicationController
 
   
   def create
-    # @travel.user = current_user
+    #si connecté @travel.user = current_user (pour info : sinon nil. càd si info tant mieux on la prend sinon c'est pas grave)
+
+
+  #créer un TravelUserControler
+    # unless current_user && session[:sign_up]
+    #   session[:travel_id] ||= @travel.id
+    # end
+
+    # Travel.find(session[:travel_id]).update_attribute user_id: current_user.id
+    # session[:sign_up] = true
+
     respond_to do |format|
       if @stage.save
         format.html { redirect_to travel_path, notice: 'Travel was successfully created.' }

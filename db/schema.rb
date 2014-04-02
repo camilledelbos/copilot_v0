@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325104004) do
+ActiveRecord::Schema.define(version: 20140330213036) do
 
   create_table "continents", force: true do |t|
     t.string   "continent_code"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140325104004) do
     t.integer  "pop_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "daily_budget"
   end
 
   create_table "main_cities", force: true do |t|

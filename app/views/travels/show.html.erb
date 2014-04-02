@@ -42,29 +42,22 @@
 
   <%= button_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
   <div class="row">
-    <div class="small-1 columns">
-      <i class="fi-marker" style="font-size: 24px;"></i></h4>
+    <div class="small-3 columns">
+      <%= @travel.stages.count %>
+      <i class="fi-marker" style="font-size: 24px;"></i>
     </div>
-    <div class="small-2 columns">
-      <%= @travel.stages.count %>stops
+    
+    <div class="small-3 columns">
+      <i class="fi-calendar" style="font-size: 24px;"></i>
+      <%= @travel.duration %>d
     </div>
-    <div class="small-1 columns">
-      <i class="fi-calendar" style="font-size: 24px;"></i></h4>
+    <div class="small-3 columns">
+      <i class="fi-dollar-bill" style="font-size: 24px;"></i>
+      <%= @travel.daily_budget %>€
     </div>
-    <div class="small-1 columns">
-      <%= @travel.stages.count %>d
-    </div>
-    <div class="small-1 columns">
-      <i class="fi-dollar-bill" style="font-size: 24px;"></i></h4>
-    </div>
-    <div class="small-1 columns">
-      <%= @travel.stages.count %>€
-    </div>
-    <div class="small-1 columns">
-      <i class="fi-share" style="font-size: 24px;"></i></h4>
-    </div>
-    <div class="small-1 columns end">
-      <%= @travel.stages.count %>km
+    <div class="small-3 columns end">
+      <i class="fi-share" style="font-size: 24px;"></i>
+      <%= @travel.distance %>km
     </div>
   </div>
 

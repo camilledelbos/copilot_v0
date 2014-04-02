@@ -1,0 +1,7 @@
+notes
+
+session[:travels]
+
+Travel.where(session[:travel]).each do |travel|
+	travel.update_attribute user_id: current_user.id
+end

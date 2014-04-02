@@ -44,6 +44,8 @@ end
 
 
 
+
+
  private
     def sort_params
       params.permit(:stages_id => [])
@@ -55,4 +57,3 @@ end
     end
 
 end
-

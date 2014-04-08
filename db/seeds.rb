@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Country.create([{country_code: 'AU', daily_budget: 60}])
+Country.create([{country_code: 'AU', daily_budget: 60}, {country_code: 'FR', daily_budget: 40}])

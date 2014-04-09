@@ -20,9 +20,9 @@
 	<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>
 	<%= s.error_notification %>
 	<div class="row">
-				<div class="small-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
-				<div class="small-3 columns"><%= s.input :duration, placeholder: 'Duration' %></div>
-				<div class="small-2 columns"><%= s.button :submit, value: '+', class: "button small radius"%></div>
+				<%= s.input :address, placeholder: 'Where do you want to go next ?', :autofocus => true %>
+				<%= s.input :duration, placeholder: 'Duration' %>
+				<%= s.button :submit, value: '+', class: "button small radius"%>
 	</div>
 	<% end %>
 <% end %>

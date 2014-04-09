@@ -29,12 +29,14 @@ class Travel < ActiveRecord::Base
         distance.round
     end
 
-    def daily_budget
+    def travel_budget
         budget = 0
+        country_budget = 0
         self.stages.each do |stage|
             country_code = Geocoder.search(stage.address).first.country_code
-            budget += Country.find_by(country_code: country_code).daily_budget
-        end
+            country_budget = Country.find_by(country_code: country_code).daily_budget * stage.duration   
+        budget += country_budget
+    end
         budget
     end
 

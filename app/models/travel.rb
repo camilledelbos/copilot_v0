@@ -26,7 +26,7 @@ class Travel < ActiveRecord::Base
                 distance += Geocoder::Calculations.distance_between(bounds[i], bounds[i+1])
             end
         end
-        distance
+        distance.round
     end
 
     def daily_budget

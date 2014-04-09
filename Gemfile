@@ -17,10 +17,11 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
 gem 'modernizr-rails'
-gem 'foundation-datetimepicker-rails'
+gem "font-awesome-rails"
 
 # Breadcrumbs
 gem 'breadcrumbs_on_rails'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

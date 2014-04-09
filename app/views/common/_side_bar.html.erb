@@ -15,7 +15,7 @@
 		<li>
 			<dd>
 				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Budget">
-					<%= link_to '<i class="fi-euro"></i>'.html_safe, (home_help_path) %>
+					<%= link_to '<i class="fa fa-money"></i>'.html_safe, (home_help_path) %>
 			</dd>
 		</li>
 		<li>
@@ -28,31 +28,32 @@
 		</li>
 		<li>
 			<dd>
-				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Roadmap">
+				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Climate">
 					<%= link_to(home_help_path) do %>
-					<i class="fi-compass"></i>
+					<i class="fa fa-umbrella"></i>
 					<% end %>
 				</span>
 			</dd>
 		</li>
 		<li>
 			<dd>
-				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Safe">
-					<%= link_to '<i class="fi-key"></i>'.html_safe, (home_help_path) %>
+				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Roadmap">
+					<%= link_to(home_help_path) do %>
+					<i class="fa fa-road"></i>
+					<% end %>
 				</span>
-
 			</dd>
 		</li>
 		<li>
 			<dd><span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Explore other maps">
-					<%= link_to image_tag('icon_21109.png').html_safe, (home_help_path) %>
+					<%= link_to '<i class="fa fa-lightbulb-o"></i>'.html_safe, (home_help_path) %>
 				</span>
 
 			</dd>
 		</li>
 		<li>
 			<dd><span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Travel Shaker">
-					<%= link_to image_tag('icon_15764.png').html_safe, (home_help_path) %>
+					<%= link_to '<i class="fa fa-magic"></i>'.html_safe, (home_help_path) %>
 				</span>
 
 			</dd>
@@ -60,7 +61,7 @@
 		</li>
 			<li>
 			<dd><span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Destinations">
-					<%= link_to image_tag('icon_18696.png').html_safe, (home_help_path) %>
+					<%= link_to '<i class="fa fa-flag-checkered"></i>'.html_safe, (home_help_path) %>
 				</span>
 
 			</dd>
@@ -68,6 +69,14 @@
 		<li>
 			<dd><span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Statistics about travel">
 					<%= link_to '<i class="fi-graph-trend"></i>'.html_safe, (home_help_path) %>
+				</span>
+
+			</dd>
+		</li>
+		<li>
+			<dd>
+				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Lock">
+					<%= link_to '<i class="fa fa-lock"></i>'.html_safe, (home_help_path) %>
 				</span>
 
 			</dd>

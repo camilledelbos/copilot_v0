@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require foundation
 //= require underscore
-//= require foundation-datetimepicker
 //= require_tree .
 
 

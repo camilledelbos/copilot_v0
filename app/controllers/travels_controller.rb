@@ -28,7 +28,8 @@ class TravelsController < ApplicationController
 
   
   def create
-    #si connecté @travel.user = current_user (pour info : sinon nil. càd si info tant mieux on la prend sinon c'est pas grave)
+    
+    if @travel.user = current_user #sinon nil. càd si info tant mieux on la prend sinon c'est pas grave)
 
 
   #créer un TravelUserControler

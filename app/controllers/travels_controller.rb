@@ -6,7 +6,6 @@ class TravelsController < ApplicationController
     @travels = current_user.travels
 
   end
-
  
   def show
     @travel = Travel.find(params[:id])
@@ -16,8 +15,6 @@ class TravelsController < ApplicationController
     @bounds = @stages.map{ |l| [l.latitude, l.longitude] }
   end
 
-
-
   def new
     @travel = Travel.create(name: "TravelName")
     @stage =  @travel.stages.build
@@ -25,13 +22,11 @@ class TravelsController < ApplicationController
 
   def edit
   end
-
   
   def create
     
     if @travel.user = current_user #sinon nil. càd si info tant mieux on la prend sinon c'est pas grave)
-
-
+end
   #créer un TravelUserControler
     # unless current_user && session[:sign_up]
     #   session[:travel_id] ||= @travel.id

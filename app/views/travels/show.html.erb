@@ -6,7 +6,7 @@
   <%= render 'map_script' %>
  
 
-<div class="small-3 large-3 large-offset-9 columns panel" style="margin-top = -70px;">
+<div class="small-3 large-3 small-offset-9 large-offset-9 columns panel" style="margin-top = -70px;">
   <div class="small-block-grid-12">
   <h1><%= @travel.name %><span class="handle"><%= link_to '[Edit]', edit_travel_path(@travel) %></span></h1>
   </div>
@@ -53,7 +53,7 @@
     </div>
     <div class="small-4 columns">
       <i class="fi-dollar-bill" style="font-size: 24px;"></i>
-      <%= @travel.travel_budget %>€
+      <%# @travel.travel_budget %>€
     </div>
     <!-- <div class="small-3 columns end">
       <i class="fi-share" style="font-size: 24px;"></i>

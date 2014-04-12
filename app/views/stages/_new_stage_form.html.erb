@@ -1,20 +1,21 @@
 <% if @stage == @travel.stages.first %>
-	<div class="small-8 large-centered columns panel-bg" style="margin-top: 15%; padding: 5px; height: 50px; border-radius: 5px;">
+	<div class="small-12 large-centered columns panel-bg" style="margin-top: 15%; padding: 5px; height: 50px; border-radius: 5px;">
 	    <ul style="inline-block inline">
 			<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>
 			<%= s.error_notification %>
 				<div class="row">
 					<ul class="inline-list">
-						 <div class="large-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
+						 <div class="small-7 large-7 columns"><%= s.input :address, placeholder: 'Where does your trip start ?', :autofocus => true %></div>
 						
-							<div class="large-3 columns"><%= s.text_field :departure_date, :id => "datepicker", placeholder: 'Departure date', label: 'Departure date' %></div>
+							<div class="small-3 large-3 columns"><%= s.text_field :departure_date, :id => "datepicker", placeholder: 'Departure date', label: 'Departure date' %></div>
 						
-						<div class="large-2 columns"><%= s.button :submit, value: 'Make a trip', class: "button small radius"%></div>
-						<%= s.hidden_field :route_id %>
+						<div class="small-2 large-2 columns"><%= s.button :submit, value: 'Make a trip', class: "button small radius"%></div>
+						<%= s.hidden_field :route_id %>	
 					</ul>
 				</div>
 			<% end %>
 		</ul>
+		<div class="small-centered large-centered small-3 large-3 small-offset-5 large-offset-5 columns panel" style="margin-top: 15%; padding: 5px; border-radius: 5px; text-align: center;">Already signed up ? <%= render "devise/shared/login_items" %></div>
 	</div>
 <% else %>
 	<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>

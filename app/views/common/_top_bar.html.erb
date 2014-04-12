@@ -14,7 +14,7 @@
       <li>
         <a href="#" data-dropdown="hover1" data-options="is_hover:true"><i class="fi-torso"></i></a>
         <ul id="hover1" class="f-dropdown" data-dropdown-content>
-          <li class="down"><%= link_to 'Manage account '+current_user.first_name+' '+current_user.last_name, home_profile_path %></li>
+          <li class="down"><%= link_to 'Manage account ', home_profile_path %></li>
           <li class="down"><%= render "devise/shared/registration_items" %></li>
           <li class="down"><a href="#">Contact Support</a></li>
           <li class="down"><a href="#">Shop</a></li>

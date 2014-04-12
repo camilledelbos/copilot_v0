@@ -15,7 +15,7 @@
 				</div>
 			<% end %>
 		</ul>
-		<div class="small-centered large-centered small-3 large-3 small-offset-5 large-offset-5 columns panel" style="margin-top: 15%; padding: 5px; border-radius: 5px; text-align: center;">Already signed up ? <%= render "devise/shared/login_items" %></div>
+		<div class="small-centered large-centered small-3 large-3 small-offset-5 large-offset-5 columns panel" style="margin-top: 15%; padding: 5px; border-radius: 5px; text-align: center;">Already signed up ? <%= link_to("Log in", new_user_session_path) %> </div>
 	</div>
 <% else %>
 	<%= minimal_form_for @stage , url: travel_stages_path(@travel) do |s| %>

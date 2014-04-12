@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330213036) do
+ActiveRecord::Schema.define(version: 20140412131522) do
 
   create_table "continents", force: true do |t|
     t.string   "continent_code"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140330213036) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "guest"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -4,6 +4,12 @@ class Travel < ActiveRecord::Base
 	has_many :stages, -> { order(:stage_position) }
     
 
+  def create_guest_user
+    u = User.create(:first_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@example.com")
+    u.save!(:validate => false)
+    session[:guest_user_id] = u.id
+    u
+  end
 
     # def add_stage(stage_params)
     #     puts "-" * 30

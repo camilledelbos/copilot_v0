@@ -2,7 +2,7 @@
     <% @stages.each do |stage| %>
       <tr>
         <%= content_tag_for :td, stage do %>
-            <span ><i class="fa fa-sort"></i></span>
+            <span><i class="handle fa fa-sort"></i></span>
             <%= link_to h(stage.address), (@stage) %>
         <% end %>
           <td>

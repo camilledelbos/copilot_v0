@@ -13,7 +13,7 @@ class TravelsController < ApplicationController
   end
 
   def new
-    @travel = Travel.create(name: "TravelName")
+    @travel = current_user.travels.create(name: "TravelName")
     # @travel = current_or_guest_user.travels.create(name: "TravelName")
     #@guest = @travel.create_guest_user
     #session[:guest_user_id] = @guest.id

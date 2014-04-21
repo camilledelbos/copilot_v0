@@ -8,6 +8,11 @@ group :development do
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem 'quiet_assets'
+gem 'guard'
+gem 'guard-livereload', require: false
+gem 'guard-bundler', require: false
+gem 'rack-livereload'
+gem 'guard-rails'
 end
 
 # Use SCSS for stylesheets
@@ -66,10 +71,6 @@ group :test do
 end
 
 gem 'pry-rails', :group => :development
-
-# group :development do
-#   gem 'guard'
-# end
 
 # Devise
 gem 'devise'

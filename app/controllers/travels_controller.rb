@@ -1,7 +1,6 @@
 class TravelsController < ApplicationController
   before_action :set_travel, only: [:show, :edit, :update, :destroy]
 
- 
   def index
     @travels = current_user.travels
   end
@@ -15,8 +14,9 @@ class TravelsController < ApplicationController
 
   def new
     @travel = Travel.create(name: "TravelName")
-    @guest = @travel.create_guest_user
-    session[:guest_user_id] = @guest.id
+    # @travel = current_or_guest_user.travels.create(name: "TravelName")
+    #@guest = @travel.create_guest_user
+    #session[:guest_user_id] = @guest.id
     @stage =  @travel.stages.build
   end
 
@@ -57,6 +57,7 @@ class TravelsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     def set_travel

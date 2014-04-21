@@ -2,13 +2,6 @@ class Travel < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :stages, -> { order(:stage_position) }
-    
-
-  def create_guest_user
-    u = User.create(:first_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(99)}@example.com")
-    u.save!(:validate => false)
-    u
-  end
 
     # def add_stage(stage_params)
     #     puts "-" * 30

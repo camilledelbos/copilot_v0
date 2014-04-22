@@ -3,6 +3,7 @@ class TravelsController < ApplicationController
 
   def index
     @travels = current_user.travels
+    @gon = gon
   end
  
   def show

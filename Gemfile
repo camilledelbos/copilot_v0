@@ -26,6 +26,7 @@ gem "font-awesome-rails"
 
 # Breadcrumbs
 gem 'breadcrumbs_on_rails'
+gem 'gon'
 
 
 # Use Uglifier as compressor for JavaScript assets

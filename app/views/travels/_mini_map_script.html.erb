@@ -1,0 +1,35 @@
+<script>
+
+
+	var mini_map = L.map('<%= @gon.element %>',{zoom: 200, minZoom: 2, maxZoom: 16});
+
+	var bounds = <%= @bounds %> //=> [[lat0, lng0], [lat1, lng1]]
+	padded = L.latLngBounds( bounds ).pad(0.6)
+
+	mini_map.fitBounds(padded)
+
+	var markers = []
+	for (index = 0; index < bounds.length; ++index) {
+	    marker = L.marker(bounds[index])
+	    marker.addTo(mini_map);
+	    markers.push(marker)
+	};
+
+	L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+		subdomains: 'abcd',
+		minZoom: 0,
+		maxZoom: 16
+	}).addTo(mini_map);
+
+	L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-labels/{z}/{x}/{y}.png', {
+		attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
+		subdomains: '0123',
+		minZoom: 0,
+		maxZoom: 18
+	}).addTo(mini_map);
+
+	var polyline = L.polyline(bounds, {color: 'black'}).addTo(mini_map);
+
+
+</script>

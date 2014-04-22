@@ -68,6 +68,9 @@ GEM
       activesupport
       rubyzip
       tzinfo
+    gon (5.0.4)
+      actionpack (>= 2.3.0)
+      json
     guard (1.8.2)
       formatador (>= 0.2.4)
       listen (>= 1.0.0)
@@ -215,6 +218,7 @@ DEPENDENCIES
   foundation-rails
   geocoder
   geonames_api (~> 0.1.2)
+  gon
   guard
   guard-bundler
   guard-livereload

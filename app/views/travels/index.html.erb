@@ -2,7 +2,7 @@
 <h1>My travels</h1>
 
     <% @travels.each_with_index do |travel, i| %>
-      <%= @bounds = travel.azaz %>
+      <% @bounds = travel.azaz %>
       <% @gon.element = "mini_maps#{i}" %>
 
       <div class="mini_maps" id="<%= @gon.element %>" ></div>

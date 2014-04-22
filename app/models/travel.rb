@@ -38,6 +38,11 @@ class Travel < ActiveRecord::Base
         budget
     end
 
+    def azaz
+        stages.order("stage_position").map{ |l| [l.latitude, l.longitude] }
+    end
+
+
     # def country
     #     travel = Travel.find(params[:id])
     #     # city = travel.stages(stage_params).address

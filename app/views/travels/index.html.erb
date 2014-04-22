@@ -1,27 +1,18 @@
+<div class="row"></div>
 <h1>My travels</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @travels.each do |travel| %>
-      <tr>
-        <td><%= travel.name %></td>
-        <td><%= link_to 'Show', travel %></td>
-        <td><%= link_to 'Edit', edit_travel_path(travel) %></td>
-        <td><%= link_to 'Destroy', travel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= @bounds = travel.azaz %>
+      <div id='map' style='width: 400px; height: 200px;'></div>
+      <%= render 'map_script' %>
+      <%= travel.name %>
+      <%= link_to 'Show', travel %>
+      <%= link_to 'Edit', edit_travel_path(travel) %>
+      <%= link_to 'Destroy', travel, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
+
 
 <%= link_to 'New Travel', new_travel_path %>

@@ -25,24 +25,19 @@ margin-top: 45px;
 }
 
 /* FOOTER */
-            .footer {
-                height: 40px; /* .push must be the same height as .footer */
-                width: 100%;
-                position: absolute;
-                bottom:0; left:0;
-                margin: 0;
-                color: #b2bac2;
-            }
+.footer {
+    height: 40px; /* .push must be the same height as .footer */
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0px;
+    color: #b2bac2;
+}
 
-            .panel-landing-footer {
-            border: #1F3245;
-            background: #1F3245;
-            color: #b2bac2;
-            }
-
-
-
-
+.panel-landing-footer {
+border: #1F3245;
+background: #1F3245;
+color: #b2bac2;
+}
 
 .button {
     background-color:#D95C00;
@@ -137,7 +132,6 @@ display: inline;
     height: auto;
     width: auto;
     border-radius: 0%;
-
 }
 
         /* tooltip */
@@ -348,11 +342,6 @@ display: inline;
 
 
 
-
-
-
-
-
 /*Landing */
 
 #featured_orbit {
@@ -473,7 +462,8 @@ h5.landing{
 .mini_maps {
     width: 400px;
     height: 200px;
-    z-index: 1;
+/*    z-index: -1;
+*/    margin: 1em;
 }
 
 

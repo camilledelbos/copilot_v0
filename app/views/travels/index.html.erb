@@ -1,20 +1,27 @@
-<div class="row"></div>
-<h1>My travels</h1>
+<div class="row">
+  <h1>My travels</h1>
+        <div class="button"><%= link_to 'New Travel', new_travel_path %></div>
 
-    <% @travels.each_with_index do |travel, i| %>
-      <% @bounds = travel.azaz %>
-      <% @gon.element = "mini_maps#{i}" %>
+  <div>
+      <% @travels.each_with_index do |travel, i| %>
+        <% @bounds = travel.azaz %>
+        <% @gon.element = "mini_maps#{i}" %>
+        <div>
+          <%= travel.name %>
+          <div class="mini_maps large-2 columns" id="<%= @gon.element %>" >
+            <div><%= render 'mini_map_script' %></div>
+          </div>
 
-      <div class="mini_maps" id="<%= @gon.element %>" ></div>
-      <%= render 'mini_map_script' %>
-      <%= travel.name %>
-      <%= link_to 'Show', travel %>
-      <%= link_to 'Edit', edit_travel_path(travel) %>
-      <%= link_to 'Destroy', travel, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-
-
-<br>
-
-
-<%= link_to 'New Travel', new_travel_path %>
+            <%= link_to 'Show', travel %>
+            <%= link_to 'Delete', travel, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <ul class="inline-list">
+              <li><%= travel.stages.count %><i class="fi-torsos picto" style="font-size: 24px;"></i></li> 
+              <li><%= travel.stages.count %><i class="fi-marker" style="font-size: 24px;"></i></li>            
+              <li><i class="fi-calendar" style="font-size: 24px;"></i><%= travel.duration %>d</li>
+              <li><i class="fi-dollar-bill" style="font-size: 24px;"></i><%# @travel.travel_budget %>€</li>
+              <li><i class="fi-share" style="font-size: 24px;"></i><%#  number_with_delimiter(@travel.distance, locale: :fr) %>km</li>
+            </ul>
+        </div>
+      <% end %>
+  </div>
+</div>

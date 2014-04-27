@@ -9,6 +9,7 @@ class TravelsController < ApplicationController
   def show
     @travel = Travel.find(params[:id])
     @stages = @travel.stages.order("stage_position")
+    @stage =  @travel.stages.build
     # fill bounds: http://leafletjs.com/reference.html#latlngbounds
     @bounds = @stages.map{ |l| [l.latitude, l.longitude] }
   end

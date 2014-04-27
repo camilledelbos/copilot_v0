@@ -70,6 +70,6 @@ class TravelsController < ApplicationController
     end
     
     def stage_params
-       params.require(:stage).permit(:stage, :duration, :departure_date)
+       params.require(:stage).permit(:stage, :duration, :departure_date, :address)
     end
 end

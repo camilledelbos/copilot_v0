@@ -22,7 +22,7 @@
 	<%= s.error_notification %>
 	<div class="row">
 				<%= s.input :address, placeholder: 'Where do you want to go next ?', :autofocus => true %>
-				<%= s.input :duration, placeholder: 'Duration' %>
+				<%= s.telephone_field :duration, placeholder: 'Duration' %>
 				<%= s.button :submit, value: '+', class: "button small radius"%>
 	</div>
 	<% end %>

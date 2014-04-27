@@ -26,11 +26,12 @@ margin-top: 45px;
 
 /* FOOTER */
 .footer {
-    height: 40px; /* .push must be the same height as .footer */
+    height: 40px;
     width: 100%;
     bottom: 0;
     margin-bottom: 0px;
     color: #b2bac2;
+    position: fixed;
 }
 
 .panel-landing-footer {

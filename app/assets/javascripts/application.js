@@ -25,8 +25,14 @@ $(function(){ $(document).foundation(); });
 $(document).foundation();
 
 $(function() {
-  $('#datepicker').datepicker();
-});
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+    });
+    $( "#anim" ).change(function() {
+      $( "#datepicker" ).datepicker( "option", "showAnim", $( this ).val("drop") );
+    });
+  });
 
 $(function() {
     $( "#stage" ).sortable();

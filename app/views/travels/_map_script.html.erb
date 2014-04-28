@@ -1,6 +1,27 @@
 <script>
 
-var map = L.map('map',{zoom: 200, minZoom: 2, maxZoom: 16});
+var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
+            thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>',
+            watLink = '<a href="http://stamen.com">Stamen Design</a>',
+            ccLink = '<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>';
+        
+var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    osmAttrib = '&copy; ' + osmLink + ' Contributors',
+    landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', 
+    thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink,
+    watUrl = 'http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',
+    watAttrib = 'Map tiles by ' + watLink + ', ' + ccLink + '  &mdash; Map data &copy;' + osmLink + 'Contributors', 
+    acetUrl = 'http://a{s}.acetate.geoiq.com/tiles/acetate-labels/{z}/{x}/{y}.png',
+    acetAttrib = '&copy; 2012 Esri & Stamen, Data from OSM and Natural Earth';
+
+var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
+    landMap = L.tileLayer(landUrl, {attribution: thunAttrib}),
+    watMap = L.tileLayer(watUrl, {attribution: watAttrib, minZoom: 0, maxZoom: 16}),
+    acetMap = L.tileLayer(acetUrl, {attribution: acetAttrib, minZoom: 0, maxZoom: 18});
+
+var watercolorMap = L.layerGroup([watMap, acetMap]);
+
+var map = L.map('map',{layers: [watercolorMap]});
 
 var bounds = <%= @bounds %> //=> [[lat0, lng0], [lat1, lng1]]
 padded = L.latLngBounds( bounds ).pad(0.6)
@@ -10,25 +31,28 @@ map.fitBounds(padded)
 var markers = []
 for (index = 0; index < bounds.length; ++index) {
     marker = L.marker(bounds[index])
-    marker.addTo(map);
+    marker.addTo(map)
     markers.push(marker)
 };
 
-L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
-	subdomains: 'abcd',
-	minZoom: 0,
-	maxZoom: 16
-}).addTo(map);
 
-L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-labels/{z}/{x}/{y}.png', {
-	attribution: '&copy;2012 Esri & Stamen, Data from OSM and Natural Earth',
-	subdomains: '0123',
-	minZoom: 0,
-	maxZoom: 18
-}).addTo(map);
+var baseLayers = {
+	"OSM Mapnik": osmMap,
+	"Landscape": landMap,
+	"watercolor": watercolorMap
+};
+
 
 var polyline = L.polyline(bounds, {color: 'black'}).addTo(map);
+
+
+var control_layers = L.control.layers(baseLayers).addTo(map);
+
+
+
+var input = document.getElementById('searchTextField');
+
+var autocomplete = new google.maps.places.Autocomplete(input, options);
 
 
 </script>

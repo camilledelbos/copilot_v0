@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
- add_breadcrumb "home", :root_path, :options => { :title => "Home" }
+ # add_breadcrumb "home", :root_path, :options => { :title => "Home" }
 
   def index
      @titre = "Home"

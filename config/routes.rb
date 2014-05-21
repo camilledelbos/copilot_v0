@@ -5,7 +5,7 @@ CopilotV0::Application.routes.draw do
        end
   end
 
-
+  
 
   devise_for :users, controllers: { registrations: 'registrations'}
   get "home/index"

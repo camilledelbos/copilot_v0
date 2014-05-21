@@ -28,11 +28,6 @@ margin-top: 45px;
   background-color: white;
 }
 
-.panel-black {
-  background-color: black;
-}
-
-
 /* FOOTER */
 .footer {
     width: 100%;
@@ -52,20 +47,15 @@ margin-top: 45px;
 
 .button {
   background-color:#D95C00;
-  // height: 38px;
+  height: 38px;
   font-family: 'Homenaje', sans-serif;
-  &:hover{
-  	background:white;
-    color: #D95C00;
-    // height:38px;
-  }
 }
 
-// .button:hover {
-//     background-color:white;
-//     color: #D95C00;
-//     height:38px;
-// }
+.button:hover {
+    background-color:white;
+    color: #D95C00;
+    height:38px;
+}
 
 .inline {
     padding: 0.75rem 0;
@@ -366,20 +356,10 @@ ul.hmenu li {
 #featured_orbit {
 	background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
-    position: fixed;
-    width: 100%;
-    background-position: center center;
-}
-
-.small-phone {
-  background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+    z-index: -5;
     position: absolute;
-    max-height: 100%;
+    width: 100%;  // change to desired width.
     background-position: center center;
-    background-image: url(/oceanie_1small1.jpg)
 }
 
 
@@ -411,7 +391,6 @@ h1 {
 
 h1 {
     font-family: 'Homenaje', sans-serif;
-    text-align: center;
 }
 
 h3.landing{

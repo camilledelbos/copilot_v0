@@ -24,13 +24,16 @@ margin-left: 70px;
 margin-top: 45px;
 }
 
+.panel {
+  background-color: white;
+}
+
 /* FOOTER */
 .footer {
     width: 100%;
     bottom: 0;
     margin-bottom: 0px;
     position: fixed;
-    height:3em;
 }
 
 .panel-landing-footer {
@@ -305,10 +308,10 @@ ul.hmenu li {
     font-family: 'Homenaje', sans-serif;
     color: white;
     font-size: 3em;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     margin-top: 2em;
-    margin-left: 40px;
+    margin-left: 0px;
     margin-bottom: 40px;
     line-height: 1em;
 }
@@ -318,7 +321,7 @@ ul.hmenu li {
     font-family: 'Homenaje', sans-serif;
     color: white;
     font-size: 40pt;
-    text-align: right;
+    text-align: center;
     margin-top: 1em;
     margin-right: 20px;
 }
@@ -359,9 +362,6 @@ ul.hmenu li {
     background-position: center center;
 }
 
-.picto-landing-panel{
-    margin-top: 2em;
-}
 
 .panel-landing-middle {
 border-color: #8F8A29;
@@ -431,7 +431,7 @@ h5.landing{
 }
 
 .panel-bg {
-    height: 80px;
+    height: auto;
     border-style: none;
     border-size: 0px;
     background: -moz-linear-gradient(left,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.43) 99%, rgba(0,0,0,0.43) 100%); /* FF3.6+ */

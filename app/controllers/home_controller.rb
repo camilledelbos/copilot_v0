@@ -17,4 +17,8 @@ class HomeController < ApplicationController
   def contact
      @titre = "Contact"
   end
+
+  def about
+     @titre = "Contact"
+  end
 end

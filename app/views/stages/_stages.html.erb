@@ -3,7 +3,7 @@
       <tr>
         <%= content_tag_for :td, stage do %>
             <span><i class="handle fa fa-sort"></i></span>
-            <%= link_to h(stage.address), (@stage) %>
+            <%= link_to h(stage.address), (@stage.travel) %>
         <% end %>
           <td>
             <%= stage.departure_date %>

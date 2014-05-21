@@ -39,9 +39,15 @@
       <%= render '/stages/stages' %>
   </table>
 
+<a href="#" data-reveal-id="myModal" class="button small radius">Add a stop</a>
+<div id="myModal" class="reveal-modal" data-reveal>
+  <%= render 'stages/new_stage_form' %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
-  <%= button_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
-  <div class="row">
+
+<!--   <%= button_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
+ -->  <div class="row">
     <div class="small-4 columns">
       <%= @travel.stages.count %>
       <i class="fi-marker" style="font-size: 24px;"></i>

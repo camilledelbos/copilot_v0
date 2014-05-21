@@ -5,7 +5,7 @@ CopilotV0::Application.routes.draw do
        end
   end
 
-  
+
 
   devise_for :users, controllers: { registrations: 'registrations'}
   get "home/index"
@@ -26,7 +26,8 @@ CopilotV0::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'travels#new'
+
+  root 'landing#landing'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

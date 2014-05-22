@@ -58,7 +58,6 @@ margin-top: 45px;
 
 .inline {
     padding: 0.75rem 0;
-
 }
 
 .row {
@@ -80,6 +79,7 @@ ul.hmenu li {
 
 #lateral-bar {
     background-color: #1F3245;
+    margin-top:4em;
     width: 70px;
     position: fixed;
     padding: 10px;
@@ -161,6 +161,11 @@ ul.hmenu li {
 
 /* Top bar */
 
+.top-bar {
+  .title-area {
+    margin-left: -0.5em;
+  }
+}
         /*Boutton inscription*/
 
 
@@ -178,13 +183,13 @@ ul.hmenu li {
 
 .top-bar {
     background: #D95C00;
-    margin-left: 70px;
-    height: 45px;
+    margin-left: 0px;
+    height: 4em;
 }
 .top-bar-section {
     background: #D95C00;
     margin-left: 500px;
-    height: 45px;
+    height: 4em;
 }
 
 .picto {
@@ -391,7 +396,6 @@ h1.main{
     color: white;
     font-size: 30px;
     font-weight: bold;
-    padding-left: 20px;
 }
 
 h1 {

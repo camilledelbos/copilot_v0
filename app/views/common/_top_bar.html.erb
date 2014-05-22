@@ -1,6 +1,11 @@
 <div class="fixed">
   <nav class="top-bar" data-topbar data-options="is_hover: false">
-    <ul class="title-area">
+    <ul class="title-area inline-list">
+      <% if user_signed_in? %>
+        <li><%= link_to(home_index_path) do %><%= image_tag('26945-NB.png', style:"height:3em; margin-top: 0.3em; ") %><% end %></li>
+      <% else %>
+        <li><%= link_to(root_path) do %><%= image_tag('26945-NB.png', style:"height:150px;") %><% end %></li>
+      <% end %>
       <li><h1 class="main">COPILOT</h1></li>
     </ul>
 

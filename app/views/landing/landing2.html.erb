@@ -1,18 +1,15 @@
-<%= render "landing_carousel" %>
 
-
-<div class="show-for-small-only small-phone">
- 			<%= image_tag('oceanie_1small1.jpg') %>
- 	</div>
 
 <!-- Accès Tablette et Desktop -->
- 
+
  	<div class="show-for-medium-up">
+     <%= render "landing_carousel" %>
+
  		<div class="small-12 large-12 columns baseline_1 panel-bg">
- 			<h1 id="logo">COPILOT<span class="baseline_2"> Spend more time travelling.</span></h1>
+ 			<h1 id="logo">COPILOT<span class="baseline_2"> Spend more time travelling</span></h1>
  			<h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
  		</div>
- 
+
  		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 no-bullet" style="text-align: center;">
  		  <li>
  				<ul>
@@ -49,32 +46,35 @@
 
 <!-- Accès Mobile -->
 
- <div class="row panel-bg show-for-small-only">
- 	<div class="small-12 large-12 columns baseline_1 panel-bg">
- 		<h1 id="logo">COPILOT<br><span class="baseline_2"> Spend more time travelling.</span></h1>
- 		<h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
- 	</div>
+ <div class="row show-for-small-only small-phone">
+      	<div class="small-12 large-12 columns baseline_1">
+     		<h1 id="logo">COPILOT<br><span class="baseline_2"> Spend more time travelling.</span></h1>
+     		<h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
+     	 </div>
 
- 	<%= render "form_landing"%>
- 		<ul class="small-block-grid-1 no-bullet" style="text-align: center;">
- 			<li>
- 				<ul>
- 					<li><%= image_tag('itineraire-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "itineraire" )%></li>
- 					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Plan your route according to objective criteria</h5></li>
- 				</ul>
- 			<li>
- 				<ul>
- 					<li><%= image_tag('budget-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "budget") %></li>
- 					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Budget and track expenses in real time</h5></li>
- 				</ul>
- 			<li>
- 				<ul>
- 					<li><%= image_tag('logo3-NB.png', style:"height:10em; margin-top:1em;", alt: "prepare") %></li>
- 					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Pack your bag, forget anything, avoid overloading</h5></li>
- 				</ul>
- 		</ul>
- 	<h1 class="landing">Stay tuned, we are launching very soon...</h1>
- 	<%= render "form_landing"%>
+     	<%= render "form_landing"%>
+  </div>
+
+  <div class="row show-for-small-only panel-bg">
+     		<ul class="small-block-grid-1 no-bullet" style="text-align: center;">
+     			<li>
+     				<ul>
+     					<li><%= image_tag('itineraire-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "itineraire" )%></li>
+     					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Plan your route according to objective criteria</h5></li>
+     				</ul>
+     			<li>
+     				<ul>
+     					<li><%= image_tag('budget-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "budget") %></li>
+     					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Budget and track expenses in real time</h5></li>
+     				</ul>
+     			<li>
+     				<ul>
+     					<li><%= image_tag('logo3-NB.png', style:"height:10em; margin-top:1em;", alt: "prepare") %></li>
+     					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Pack your bag, forget anything, avoid overloading</h5></li>
+     				</ul>
+     		</ul>
+     	<h1 class="landing">Stay tuned, we are launching very soon...</h1>
+     	<%= render "form_landing"%>
  </div>
 
  <!-- Fin Accès Mobile -->
@@ -95,7 +95,7 @@
 
 
 
-<div class="small-12 small-centered large-12 large-centered columns panel" style="text-align: center; margin-bottom:0px"><h1>For more detail leading up to our launch follow us ! <i class="fi-social-facebook", alt: "facebook"> </i> <i class="fi-social-twitter", alt: "twitter"> </i></h1></div>
+<div class="small-12 small-centered large-12 large-centered columns panel" style="text-align: center; margin-bottom:0px;"><h1>For more detail leading up to our launch follow us ! <i class="fi-social-facebook", alt: "facebook"> </i> <i class="fi-social-twitter", alt: "twitter"> </i></h1></div>
  		<div class="panel panel-landing-footer">
  			<ul class="inline-list">
  				<ul class=" inline-list no-bullet left">

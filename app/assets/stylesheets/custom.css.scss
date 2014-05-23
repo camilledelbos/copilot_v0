@@ -357,23 +357,36 @@ ul.hmenu li {
 
 /*Landing */
 
-#featured_orbit {
-  	background-repeat: no-repeat;
-      background-size: cover;
-     z-index: -1;
-     position: fixed;
-     width: 100%;
-     background-position: center center;
+.featured_orbit {
+  	// background-repeat: no-repeat;
+    //   background-size: cover;
+    // //  z-index: -1;
+    //  position: fixed;
+    //  width: 100%;
+    //  background-position: center center;
+    //
+     background: url(/assets/images/perou_1.jpg.jpg), url(/assets/images/oceanie_1.jpg.jpg), url(/assets/images/gansu_1.jpg.jpg) no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
  }
 
  .small-phone {
-   background-repeat: no-repeat;
-     background-size: cover;
-     z-index: -1;
-      position: absolute;
-     max-height: 100%;
-      background-position: center center;
-     background-image: url(/oceanie_1small1.jpg)
+  //  background-repeat: no-repeat;
+  //    background-size: cover;
+  //    z-index: -1;
+  //     position: absolute;
+  //    max-height: 100%;
+  //     background-position: center center;
+  //    background-image: url(/oceanie_1small1.jpg)
+  //
+      background: url(/assets/images/oceanie_1small1.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100%;
   }
 
 

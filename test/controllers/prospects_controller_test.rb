@@ -21,7 +21,7 @@ class ProspectsControllerTest < ActionController::TestCase
       post :create, prospect: { email: @prospect.email }
     end
 
-    assert_redirected_to prospect_path(assigns(:prospect))
+    assert_redirected_to root_path
   end
 
   test "should show prospect" do

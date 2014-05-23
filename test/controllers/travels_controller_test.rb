@@ -6,12 +6,16 @@ class TravelsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    @user = users(:one)
+    sign_in :user, @user
     get :index
     assert_response :success
     assert_not_nil assigns(:travels)
   end
 
   test "should get new" do
+    @user = users(:one)
+    sign_in :user, @user
     get :new
     assert_response :success
   end
@@ -25,16 +29,22 @@ class TravelsControllerTest < ActionController::TestCase
   end
 
   test "should show travel" do
+    @user = users(:one)
+    sign_in :user, @user
     get :show, id: @travel
     assert_response :success
   end
 
   test "should get edit" do
+    @user = users(:one)
+    sign_in :user, @user
     get :edit, id: @travel
     assert_response :success
   end
 
   test "should update travel" do
+    @user = users(:one)
+    sign_in :user, @user
     patch :update, id: @travel, travel: { name: @travel.name }
     assert_redirected_to travel_path(assigns(:travel))
   end

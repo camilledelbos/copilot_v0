@@ -24,37 +24,40 @@ margin-left: 70px;
 margin-top: 45px;
 }
 
+.panel {
+  background-color: white;
+}
+
 /* FOOTER */
 .footer {
-    height: 40px;
     width: 100%;
     bottom: 0;
     margin-bottom: 0px;
-    color: #b2bac2;
     position: fixed;
 }
 
 .panel-landing-footer {
-border: #1F3245;
-background: #1F3245;
-color: #b2bac2;
+  border: #1F3245;
+  background: #1F3245;
+  color: #b2bac2;
+  height: auto;
+  margin-bottom: 0px;
+  text-align: center;
 }
 
 .button {
     background-color:#D95C00;
-    height: 38px;
     font-family: 'Homenaje', sans-serif;
-}
 
-.button:hover {
-    background-color:white;
-    color: #D95C00;
-    height:38px;
-}
+
+   &:hover{
+   	background:white;
+      color: #D95C00;
+   }
+  }
 
 .inline {
     padding: 0.75rem 0;
-
 }
 
 .row {
@@ -64,18 +67,19 @@ color: #b2bac2;
 /* Mise en forme message alert */
 
 ul.hmenu {
-list-style: none;   
-text-align: right;
+  list-style: none;
+  text-align: right;
 }
 
 ul.hmenu li {
-display: inline; 
+  display: inline;
 }
 
 /*Side Menu*/
 
 #lateral-bar {
     background-color: #1F3245;
+    margin-top:4em;
     width: 70px;
     position: fixed;
     padding: 10px;
@@ -151,12 +155,17 @@ display: inline;
 .tooltip {
     background: #40668D;
     color: white;
-    margin-top: -25px;
+    margin-top: -20px;
     border-radius: 5px;
 }
 
 /* Top bar */
 
+.top-bar {
+  .title-area {
+    margin-left: -0.5em;
+  }
+}
         /*Boutton inscription*/
 
 
@@ -174,13 +183,13 @@ display: inline;
 
 .top-bar {
     background: #D95C00;
-    margin-left: 70px;
-    height: 45px;
+    margin-left: 0px;
+    height: 4em;
 }
 .top-bar-section {
     background: #D95C00;
     margin-left: 500px;
-    height: 45px;
+    height: 4em;
 }
 
 .picto {
@@ -193,17 +202,17 @@ display: inline;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {
-    color: white; 
+    color: white;
     background: #D95C00;
 }
 
 .top-bar-section li.down:not(.has-form) a:not(.button) {
-    color: #D95C00; 
+    color: #D95C00;
     background: white;
 }
 
 .top-bar-section li.down:not(.has-form) a:not(.button):hover {
-    color: white; 
+    color: white;
     background: #D95C00;
 }
 
@@ -285,29 +294,30 @@ display: inline;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#57000000',GradientType=0 ); /* IE6-8 */
 }
 
-#panel_baseline {
-    height: 730px; //attention PAS responsive
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
-    background: radial-gradient(ellipse at center,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-}
+// #panel_baseline {
+//     height: 730px; //attention PAS responsive
+//     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+//     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC40Ii8+CiAgPC9yYWRpYWxHcmFkaWVudD4KICA8cmVjdCB4PSItNTAiIHk9Ii01MCIgd2lkdGg9IjEwMSIgaGVpZ2h0PSIxMDEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+//     background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+//     background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+//     background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+//     background: -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* Opera 12+ */
+//     background: -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+//     background: radial-gradient(ellipse at center,  rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%); /* W3C */
+//     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#66000000',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+// }
 
 
 .baseline_1 {
     font-family: 'Homenaje', sans-serif;
     color: white;
-    font-size: 50pt;
-    text-align: left;
+    font-size: 3em;
+    text-align: center;
     font-weight: bold;
-    margin-top: 30px;
-    margin-left: 40px;
+    margin-top: 2em;
+    margin-left: 0px;
     margin-bottom: 40px;
+    line-height: 1em;
 }
 
 
@@ -315,7 +325,8 @@ display: inline;
     font-family: 'Homenaje', sans-serif;
     color: white;
     font-size: 40pt;
-    text-align: right;
+    text-align: center;
+    margin-top: 1em;
     margin-right: 20px;
 }
 
@@ -346,18 +357,38 @@ display: inline;
 
 /*Landing */
 
-#featured_orbit {
-	background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -5;
-    position: absolute;
-    width: 100%;  // change to desired width.
-    background-position: center center;
-}
+.featured_orbit {
+  	// background-repeat: no-repeat;
+    //   background-size: cover;
+    // //  z-index: -1;
+    //  position: fixed;
+    //  width: 100%;
+    //  background-position: center center;
+    //
+     background: url(/assets/images/perou_1.jpg.jpg), url(/assets/images/oceanie_1.jpg.jpg), url(/assets/images/gansu_1.jpg.jpg) no-repeat center center fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+ }
 
-.picto-landing-panel{
-    margin-top: 30px;
-}
+ .small-phone {
+  //  background-repeat: no-repeat;
+  //    background-size: cover;
+  //    z-index: -1;
+  //     position: absolute;
+  //    max-height: 100%;
+  //     background-position: center center;
+  //    background-image: url(/oceanie_1small1.jpg)
+  //
+      background: url(/assets/images/oceanie_1small1.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100%;
+  }
+
 
 .panel-landing-middle {
 border-color: #8F8A29;
@@ -369,6 +400,7 @@ background: #BEB837;
 
 h1.landing{
     color: white;
+    text-align: center;
 }
 
 
@@ -377,7 +409,6 @@ h1.main{
     color: white;
     font-size: 30px;
     font-weight: bold;
-    padding-left: 20px;
 }
 
 h1 {
@@ -421,19 +452,13 @@ h5.landing{
 
  /*Landing Prospect form */
 
-#landing_form_position {
-    margin-top: 0px;
-    margin-right: 20px;
-
-}
-
-#form_prospect div *:last-child {  
+#form_prospect div *:last-child {
     margin-bottom: 0;
 
 }
 
 .panel-bg {
-    height: 80px;
+    height: auto;
     border-style: none;
     border-size: 0px;
     background: -moz-linear-gradient(left,  rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.43) 99%, rgba(0,0,0,0.43) 100%); /* FF3.6+ */
@@ -444,18 +469,18 @@ h5.landing{
     background: linear-gradient(to right,  rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.43) 99%,rgba(0,0,0,0.43) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59000000', endColorstr='#6e000000',GradientType=1 ); /* IE6-9 */
     }
-    
+
 .picto-landing {
     font-size: 60px;
 }
 
 /*Map*/
 
-#map img { 
+#map img {
   max-width: none;
 
 }
-#map label { 
+#map label {
   display:inline;
   position: absolute;
   left: 0px;
@@ -464,7 +489,7 @@ h5.landing{
   width: 100%;
   height: 100%;
   z-index: 0;
-} 
+}
 
 .mini_maps {
     width: 300px;
@@ -488,4 +513,3 @@ table tr th, table tr td {
 .handle {
 font-size: 7px;
 }
-

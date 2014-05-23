@@ -1,14 +1,5 @@
 <ul class="side-nav" id="lateral-bar">
 	<dl>
-		<% if user_signed_in? %>
-		<li class="active">
-			<dd><%= link_to(home_index_path) do %><%= image_tag('26945-NB.png') %><% end %></dd>
-		</li>
-		<% else %>
-		<li class="active">
-			<dd><%= link_to(root_path) do %><%= image_tag('26945-NB.png') %><% end %></dd>
-		</li>
-		<% end %>
 		<li>
 			<dd>
 				<span data-tooltip data-options="disable_for_touch:true" class="tip-right" title="Travels">
@@ -95,4 +86,3 @@
 		</li>
 	</dl>
 </ul>
-

@@ -5,7 +5,7 @@ class TravelsController < ApplicationController
     @travels = current_user.travels
     @gon = gon
   end
- 
+
   def show
     @travel = Travel.find(params[:id])
     @stages = @travel.stages.order("stage_position")
@@ -24,7 +24,7 @@ class TravelsController < ApplicationController
 
   def edit
   end
-  
+
   def create
       respond_to do |format|
         if @stage.save
@@ -35,10 +35,10 @@ class TravelsController < ApplicationController
         end
     end
 
-    
+
   end
 
-  
+
   def update
     respond_to do |format|
       if @travel.update(travel_params)
@@ -51,7 +51,7 @@ class TravelsController < ApplicationController
     end
   end
 
-  
+
   def destroy
     @travel.destroy
     respond_to do |format|
@@ -69,8 +69,8 @@ class TravelsController < ApplicationController
     def travel_params
       params.require(:travel).permit(:name, :nb_traveller)
     end
-    
+
     def stage_params
-       params.require(:stage).permit(:stage, :duration, :departure_date)
+       params.require(:stage).permit(:stage, :duration, :departure_date, :address)
     end
 end

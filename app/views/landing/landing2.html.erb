@@ -1,192 +1,115 @@
-<div id="panel_baseline"> 
-	<%= render "landing_carousel" %>
 
 
-		
-			<div class="large-12 columns baseline_1">
-				Où, Quand, Comment, Combien ?
-			</div>
+<!-- Accès Tablette et Desktop -->
 
+ 	<div class="show-for-medium-up">
+     <%= render "landing_carousel" %>
 
-			<div class="large-12 columns baseline_2 panel-bg">
-				<h1 id="logo">COPILOT<span class="baseline_2"> Consacrez plus de temps à voyager.</span></h1>
-			</div>
-			
-		
-		<div class="row picto-landing-panel">
-			<ul class="small-block-grid-3" style="text-align: center;">
-			  <li><%= image_tag('itineraire-landing-NB.png', style:"height:200px;"), alt: "itineraire" %></li>
-			  <li><%= image_tag('budget-landing-NB.png', style:"height:200px;"), alt: "budget" %></li>
-			  <li><%= image_tag('logo3-NB.png', style:"height:200px;"), alt: "prepare" %></li>
-			</ul>
-	</div>
+ 		<div class="small-12 large-12 columns baseline_1 panel-bg">
+ 			<h1 id="logo">COPILOT<span class="baseline_2"> Spend more time travelling</span></h1>
+ 			<h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
+ 		</div>
 
-		<div class="row">
-				<div class="small-4 large-4 columns " >
-					<div class="panel radius" style="text-align: center;">
-						  <h5 class="landing">Planifier votre itinéraire selon des critères objectifs</h5>
-					</div>
-				</div>
-				<div class="small-4 large-4 columns " >
-					<div class="panel radius" style="text-align: center;">
-						  <h5 class="landing">Budgéter et suivre ses dépenses en temps réel</h5>
-					</div>
-				</div>
-
-				<div class="small-4 large-4 columns " >
-					<div class="panel radius" style="text-align: center;">
-						  <h5 class="landing">Faire son sac, ne rien oublier et éviter la surcharge</h5>
-					</div>
-				</div>
-		</div>
-
-	<div class="row" id="landing_form_position">
-
-		<div class="small-9 large-9 columns" style="margin-top:20px;">	
-
-			<div class="row">
-				<h4 class="landing">Un voyage de prévu ? Laissez votre e-mail et soyez informé du lancement</h4>
-			</div>
-
-			<%= render "form_landing"%> 
-
-		</div>
-
-			<div class="small-3 large-3 columns">
-				<%= image_tag('arrow-orange.png', style:"height: 100px;") %>
-			</div>
-	</div>
-	
+ 		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 no-bullet" style="text-align: center;">
+ 		  <li>
+ 				<ul>
+ 			  	<li><%= image_tag('itineraire-landing-NB.png', style:"height:150px;", alt: "itineraire" )%></li>
+ 					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-left: 2em; margin-right: 2em; min-width: 15em; " ><h5 class="landing">Plan your route according to objective criteria</h5></li>
+ 		  	</ul>
+ 		  <li>
+ 				<ul>
+ 					<li><%= image_tag('budget-landing-NB.png', style:"height:150px;", alt: "budget") %></li>
+ 					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-left: 2em; margin-right: 2em; min-width: 15em; " ><h5 class="landing">Budget and track expenses in real time</h5></li>
+ 				</ul>
+ 		  <li>
+ 				<ul>
+ 					<li><%= image_tag('logo3-NB.png', style:"height:150px;", alt: "prepare") %></li>
+ 					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-left: 2em; margin-right: 2em; min-width: 15em;" ><h5 class="landing">Pack your bag, forget anything, avoid overloading</h5></li>
+ 				</ul>
+ 		</ul>
+  		<div class="columns large-8 large-offset-4" style="text-align: center">
+  			<h1 class="landing">Stay tuned, we are launching very soon...</h1>
+  		</div>
+ 		<div class="row">
+ 			<div class="large-8 large-push-4 medium-8 medium-push-2 small-12 columns">
+ 				<%= render "form_landing"%>
+ 			</div>
+ 			<div class="large-2 large-push-2 medium-2 columns hide-for-small-only">
+ 				<%= image_tag('arrow-orange.png', style:"height: 100px;") %>
+ 			</div>
+ 		</div>
+  	</div>
+ <!-- Fin Accès Tablette et Desktop -->
 
 
 
-</div>
 
+<!-- Accès Mobile -->
 
-	<div class="row">
-		<div class="large-2 columns"><%= image_tag('icon_23095.png') %></div>
-		<div class="large-10 columns" ></br></br></br><h4 style="vertical-align:text-bottom;">Copilot vous accompagne partout, avant, pendant et après votre voyage.</h4></div>
-	</div>
+ <div class="row show-for-small-only small-phone">
+      	<div class="small-12 large-12 columns baseline_1">
+     		<h1 id="logo">COPILOT<br><span class="baseline_2"> Spend more time travelling.</span></h1>
+     		<h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
+     	 </div>
 
+     	<%= render "form_landing"%>
+  </div>
 
+  <div class="row show-for-small-only panel-bg">
+     		<ul class="small-block-grid-1 no-bullet" style="text-align: center;">
+     			<li>
+     				<ul>
+     					<li><%= image_tag('itineraire-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "itineraire" )%></li>
+     					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Plan your route according to objective criteria</h5></li>
+     				</ul>
+     			<li>
+     				<ul>
+     					<li><%= image_tag('budget-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "budget") %></li>
+     					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Budget and track expenses in real time</h5></li>
+     				</ul>
+     			<li>
+     				<ul>
+     					<li><%= image_tag('logo3-NB.png', style:"height:10em; margin-top:1em;", alt: "prepare") %></li>
+     					<li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Pack your bag, forget anything, avoid overloading</h5></li>
+     				</ul>
+     		</ul>
+     	<h1 class="landing">Stay tuned, we are launching very soon...</h1>
+     	<%= render "form_landing"%>
+ </div>
 
-<hr>
-
-		<div class="row">
-			<div class="small-12 large-12 columns"><H1>How does it work ?</H1></div>
-		</div>
-		<div class="row">
-			<div class="small-4 large-4 columns"><%= image_tag('demo-ecran-1.png', style:"text-align: center") %></div>
-			<div class="small-4 large-4 columns"><%= image_tag('demo-ecran-2.png') %></div>
-			<div class="small-4 large-4 columns"><%= image_tag('demo-ecran-3.png') %></div>
-		</div>
-	</br>
-		<div class="row" style="text-align: justify">
-			<div class="small-4 large-4 columns"><p>Copilot vous suggère un itinéraire optimal selon vos choix de pays, periode, durée, budget, activités.	
-			</br>
-			Créez, modifiez, comparez et partagez vos parcours.</p></div>
-			<div class="small-4 large-4 columns"><p>D'après vos itinéraires, Copilot vous permet de définir votre budget avant de partir.
-			Votre tableau de bord vous indique l'état de vos finances durant votre séjour, la devise du pays, vos dépenses moyennes, ...</p></div>
-			<div class="small-4 large-4 columns"><p>Le poids est l'ennemi n°1 du voyageur. Copilot vous aide à faire votre sac pour n'emporter que ce que vous utiliserez.
-			</br>
-			Les démarches administratives et sanitaires sont définies selon vos itinéraires.</p></div>
-		</div>
-
-			
+ <!-- Fin Accès Mobile -->
 
 
 
 
 
-		</div>
-		<div class="row">
-			<div class="small-12 large-12"><%= render "form_landing"%> </div>
-		</div>
-</br>
-	
 
 
 
-			<div class="small-5 large-5 columns">
-				<div class="panel radius panel-landing-middle">
-					<H1>What's Copilot ?</H1>
-					<p>Copilot est un <span style="font-weight: bold;">assistant de voyage collaboratif</span> et <span style="font-weight: bold;">gratuit</span>.</p>
-	  
-					<p><span style="font-weight: bold;">Avant votre départ</span> il vous aide  à : 
-					<ul>
-					<li>définir vos itinéraires en évitant les mauvaises saisons (affluence touristique, climats rigoureux, ...)</li>
-					<li>définir précisément votre budget</li>
-					<li>lister les démarches à effectuer (vaccins, visas, check-list bagage)</li>
-					<li>sauvegarder vos documents administratifs et de voyages</li>
-					</ul>
-					</p>
-
-					<p>
-					<span style="font-weight: bold;">Durant votre séjour</span> Copilot vous permet de :
-					<ul>
-					<li>tenir votre budget pour prolonger votre séjour</li>
-					<li>replanifier votre itinéraire et votre budget si vous vous plaisez à un endroit</li>
-					</ul>
-					</p> 
-
-					<p>
-					<span style="font-weight: bold;">Après votre retour</span> :
-					<ul>
-					<li>partagez votre expérience avec d'autres (futurs) voyageurs</li>
-					</ul>
-					</p>
-				</div>
-			</div>
-</div>
-<hr>
-
-<div class="row">
-			<div class="small-12 large-12 columns" style="text-align: center"><H1>Quelques-unes des nombreuses caractéristiques de Copilot</H1></div>
-</div>
-
-<div class="row">
-	<div class="small-7 large-7 columns">
-	<ul>
-		<li>Application web et mobile</li>
-		<li>Définition d'itinéraires selon les climats</li>
-		<li>Plannification et suivi budgétaire</li>
-		<li>Check-list bagage, santé, administratif</li>
-		<li>Trip tips - Conseils de voyageurs</li>
-		<li>Guide par où commencer ?</li>
-		<li>Coffre-fort pour sécuriser vos documents de voyage</li>
-		<li>Système d'alerte situation dangeureuse (climatique, attentat, ...)</li>
-		<li>Calcul d'empreinte environnementale</li>
-		<li>Vues carte, pays, ville</li>
-		<li>Intégration des cartes sur votre blog</li>
-		<li>Contacter d'autres voyageurs aux parcours similaires</li>
-	</ul>
-	</div>
-		<div class="small-5 large-5 columns">
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
-		</br>
 
 
-			<%= render "form_landing"%> 
-		</div>
 
-</div>
 
-<div class="row panel ">
-	<div class="small-5 large-5 columns" style="text-align: right"><H1>Copilot vous suit ?</H1></div>
-	<div class="small-7 large-7 columns"style="text-align: left	"><H1>Suivez Copilot ! <span style="margin-left: 50px"></span><i class="fi-social-facebook", alt: "facebook"> </i><i class="fi-social-twitter", alt: "twitter"> </i><i class="fi-social-google-plus", alt: "google"></i></H1></div>
-</div>
 
-	<div class="panel radius panel-landing-footer">
-	<div class="small-8 large-8 columns " style="text-align: left;">© 2014 Copilot. All Right Reserved.| Privacy Policy | Terms of Use | About| Contact</div>
-	<div class="small-4 large-4 columns" style="text-align: right;">Brought to you by <span id="alkimya">Alkimya</span><span id="alkimyaco">.co</span></div>
-	
+
+
+
+
+<div class="small-12 small-centered large-12 large-centered columns panel" style="text-align: center; margin-bottom:0px;"><h1>For more detail leading up to our launch follow us ! <i class="fi-social-facebook", alt: "facebook"> </i> <i class="fi-social-twitter", alt: "twitter"> </i></h1></div>
+ 		<div class="panel panel-landing-footer">
+ 			<ul class="inline-list">
+ 				<ul class=" inline-list no-bullet left">
+ 					<li> Privacy Policy</li>
+ 					<li> Terms of Use</li>
+ 					<li> About</li>
+ 					<li> Contact</li>
+ 					<li>© 2014 Copilot. All Right Reserved<br></li>
+ 					<li>
+ 						<ul>
+ 							<li>Brought to you by <a href="http://www.alkimya.co" target="_blank"><span id="alkimya">Alkimya</span><span id="alkimyaco">.co</span></a></li>
+ 						</ul>
+ 					</li>
+  				</ul>
+ 			</ul>
+ 		</div>
+ 	</div>

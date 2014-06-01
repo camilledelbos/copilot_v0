@@ -1,7 +1,10 @@
+require 'travel_calculator'
+
 class Travel < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :stages, -> { order(:stage_position) }
+	has_one :initial_stage, -> {where(stage_position: 0)}
 
     # def add_stage(stage_params)
     #     puts "-" * 30
@@ -11,8 +14,15 @@ class Travel < ActiveRecord::Base
     #     puts "-" * 30
     #     stages.create(stage_params)
     # end
+		def add_stage(stage)
+			self.stages << stage
+		end
 
-    def duration    
+		def chemin_optimal
+			[self.initial_stage].concat(better_path(self.initial_stage, self.stages))
+		end
+
+    def duration
         stages.sum(:duration)
     end
 
@@ -32,7 +42,7 @@ class Travel < ActiveRecord::Base
         country_budget = 0
         self.stages.each do |stage|
             country_code = Geocoder.search(stage.address).first.country_code
-            country_budget = Country.find_by(country_code: country_code).daily_budget * stage.duration   
+            country_budget = Country.find_by(country_code: country_code).daily_budget * stage.duration
         budget += country_budget
     end
         budget
@@ -66,4 +76,3 @@ class Travel < ActiveRecord::Base
 
 
 end
-	

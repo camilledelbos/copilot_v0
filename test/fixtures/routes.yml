@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  route_name: MyString
-  departure_date: 2014-02-21 19:37:07
-
-two:
-  route_name: MyString
-  departure_date: 2014-02-21 19:37:07

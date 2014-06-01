@@ -9,7 +9,7 @@ after_validation :geocode
 # reverse_geocoded_by :latitude, :longitude
 # after_validation :reverse_geocode  # auto-fetch address
 
-	# def address	
+	# def address
  #  		[city, country].compact.join(', ')
 	# end
 
@@ -42,6 +42,17 @@ after_validation :geocode
 # info = Country.new(:country_code => "AU", :daily_budget => 60)
 # money = Country.find_by(country_code: code).daily_budget
 
+    def distance_from(other_stage)
+      puts "yaf" * 10
+      puts "distance #{self.inspect} #{other_stage.inspect}"
+      puts "yaf" * 10
 
+      return 0 if other_stage == self || other_stage.nil?
+      Geocoder::Calculations.distance_between(self.position, other_stage.position)
+    end
+
+    def position
+      [self.latitude, self.longitude]
+    end
 
 end

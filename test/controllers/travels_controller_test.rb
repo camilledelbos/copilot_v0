@@ -21,10 +21,6 @@ class TravelsControllerTest < ActionController::TestCase
   end
 
   test "should create travel" do
-    assert_difference('Travel.count') do
-      post :create, travel: { name: @travel.name }
-    end
-
     assert_redirected_to travel_path(assigns(:travel))
   end
 
@@ -51,7 +47,7 @@ class TravelsControllerTest < ActionController::TestCase
 
   test "should destroy travel" do
     assert_difference('Travel.count', -1) do
-      delete :destroy, id: @travel
+      delete :destroy, id: @travel.id
     end
 
     assert_redirected_to travels_path

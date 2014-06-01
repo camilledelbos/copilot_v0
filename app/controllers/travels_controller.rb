@@ -26,16 +26,7 @@ class TravelsController < ApplicationController
   end
 
   def create
-      respond_to do |format|
-        if @stage.save
-          format.html { redirect_to travel_path, notice: 'Travel was successfully created.' }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @stage.errors, status: :unprocessable_entity }
-        end
-    end
-
-
+          redirect_to travel_path, notice: 'Travel was successfully created.'
   end
 
 

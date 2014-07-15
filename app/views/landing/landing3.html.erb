@@ -1,0 +1,91 @@
+
+
+<!-- Accès Tablette et Desktop -->
+
+   <div class="show-for-medium-up featured_orbit">
+
+     <div class="small-12 large-12 columns baseline_1 panel-bg">
+       <%= image_tag('logo_copilot_gd.png', style:"height:150px;margin-top:1em;", alt: "copilot" )%>
+         <h1><span class="baseline_2"> Spend more time travelling</span></h1>
+       <h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
+     </div>
+
+
+      <div class="columns large-8" style="text-align: center">
+        <h1 class="landing">Stay tuned, we are launching very soon...</h1>
+      </div>
+     <div class="row">
+       <div class="large-8 large-push-2 medium-8 medium-push-2 small-12 columns">
+         <%= render "form_landing"%>
+       </div>
+       <div class="large-2 medium-2 columns hide-for-small-only">
+         <%= image_tag('arrow-orange.png', style:"height: 100px; margin-bottom: 2em;") %>
+       </div>
+     </div>
+    </div>
+ <!-- Fin Accès Tablette et Desktop -->
+
+
+
+
+<!-- Accès Mobile -->
+
+ <div class="row show-for-small-only small-phone">
+        <div class="small-12 large-12 columns baseline_1">
+           <h1 id="logo">COPILOT<br><span class="baseline_2"> Spend more time travelling.</span></h1>
+           <h4 class="landing">Plan your perfect trip with travel tips, destination information and inspiration from Copilot traveller.</h4>
+        </div>
+
+       <%= render "form_landing"%>
+  </div>
+
+  <div class="row show-for-small-only small-phone">
+         <ul class="small-block-grid-1 no-bullet" style="text-align: center;">
+           <li>
+             <ul>
+               <li><%= image_tag('itineraire-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "itineraire" )%></li>
+               <li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Plan your route according to objective criteria</h5></li>
+             </ul>
+           </li>
+           <li>
+             <ul>
+               <li><%= image_tag('budget-landing-NB.png', style:"height:10em; margin-top:1em;", alt: "budget") %></li>
+               <li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Budget and track expenses in real time</h5></li>
+             </ul>
+           </li>
+           <li>
+             <ul>
+               <li><%= image_tag('logo3-NB.png', style:"height:10em; margin-top:1em;", alt: "prepare") %></li>
+               <li class="panel radius" style="text-align: center; margin-top: 1em; margin-right:30px;" ><h5 class="landing">Pack your bag, forget anything, avoid overloading</h5></li>
+             </ul>
+           </li>
+         </ul>
+ </div>
+
+<div class="row show-for-small-only small-phone">
+   <h1 class="landing">Stay tuned, we are launching very soon...</h1>
+   <%= render "form_landing"%>
+</div>
+
+ <!-- Fin Accès Mobile -->
+
+
+
+ <div class="small-12 small-centered large-12 large-centered columns panel" style="text-align: center; margin-bottom:0px;"><h5>For more detail leading up to our launch follow us ! <i class="fi-social-facebook", alt: "facebook"> </i> <i class="fi-social-twitter", alt: "twitter"> </i></h5></div>
+      <div class="panel panel-landing-footer">
+        <ul class="inline-list">
+          <ul class=" inline-list no-bullet left">
+            <li> Privacy Policy</li>
+            <li> Terms of Use</li>
+            <li> About</li>
+            <li> Contact</li>
+            <li>© 2014 Copilot. All Right Reserved<br></li>
+            <li>
+              <ul>
+                <li>Brought to you by <a href="http://www.alkimya.co" target="_blank"><span id="alkimya">Alkimya</span><span id="alkimyaco">.co</span></a></li>
+              </ul>
+            </li>
+           </ul>
+        </ul>
+      </div>
+    </div>

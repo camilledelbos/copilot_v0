@@ -2,6 +2,12 @@
 @import 'foundation-icons';
 
 
+@font-face {
+	font-family: "Univers";
+	src: font-url('fonts/UniversLTStd-UltraCn.otf') format("opentype");
+}
+
+
 /*Colorscheme
 bleu :#40668D; sombre : #1F3245
 orange :#D95C00; sombre : #8C3B00
@@ -9,6 +15,8 @@ vert:#BEB837; sombre : #8F8A29
 creme:#FFF6D2;sombre : #D6CFB0
 marron:#C19D56; sombre : #876E3C;
 */
+$orange : #D95C00;
+$blue :#40668D;
 
 
 /* Add imports of custom sass/scss files here */
@@ -26,6 +34,7 @@ margin-top: 45px;
 
 .panel {
   background-color: white;
+  border-color: transparent;
 }
 
 /* FOOTER */
@@ -62,6 +71,7 @@ margin-top: 45px;
 
 .row {
     margin-left: 0px;
+    max-width: 100%;
 }
 
 /* Mise en forme message alert */
@@ -331,8 +341,8 @@ ul.hmenu li {
 }
 
 #logo {
-    font-family: 'Weston Free';
-    color: #D95C00;
+    font-family: 'Univers';
+    color: $orange;
     font-size: 40pt;
     font-weight: bold;
 }
@@ -356,6 +366,44 @@ ul.hmenu li {
 
 
 /*Landing */
+.space-top {
+  margin-top: 1em;
+}
+.space-bottom {
+  margin-bottom: 1em;
+}
+
+.benefits {
+  background: $blue;
+  h3 {
+    color: white;
+  }
+  li {
+    color: white;
+  }
+  h4 {
+    color: white;
+    li{
+        font-size: 1.2em !important;
+        margin-top: 0.5em;
+      }
+  }
+  h5 {
+      color: white;
+  }
+}
+
+.landing-top-bar {
+  background: $blue;
+}
+
+.name {
+  padding: 0.2em 1em;
+  a {
+  font-size: 2em !important;
+  font-family: 'Univers';
+}
+}
 
 .featured_orbit {
   	// background-repeat: no-repeat;
@@ -395,7 +443,9 @@ border-color: #8F8A29;
 background: #BEB837;
 }
 
-
+.question {
+  font-weight: bold;
+}
 
 
 h1.landing{
@@ -412,28 +462,20 @@ h1.main{
 }
 
 h1 {
-    font-family: 'Homenaje', sans-serif;
     color: #40668D;
 }
 
-h1 {
-    font-family: 'Homenaje', sans-serif;
-}
 
 h3.landing{
     font-family: 'Homenaje', sans-serif;
-    font-weight: bold;
-}
-
-h4.landing{
+    font-weight: normal;
     color: white;
-    font-size: 22px;
 }
 
-
-h5.landing{
-    font-family: 'Homenaje', sans-serif;
-    font-weight: bold;
+h4.landing {
+  color:white;
+  margin-bottom: 2em;
+  font-family: 'Univers';
 }
 
 

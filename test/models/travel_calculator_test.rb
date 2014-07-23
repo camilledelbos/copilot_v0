@@ -14,12 +14,12 @@ class TravelCalculatorTest < ActiveSupport::TestCase
   end
 
   def _test_recette_chemin_optimal
-    travel = Travel.new(montreuil)
+    travel = Travel.new(stages:[montreuil])
     assert_equal [montreuil, berlin, turin, bali, sydney], travel.chemin_optimal
   end
 
   def test_juste_1_depart
-  	travel = Travel.new(montreuil)
+  	travel = Travel.new(stages:[montreuil])
   	assert_equal [montreuil], travel.chemin_optimal
   end
 
@@ -30,13 +30,13 @@ class TravelCalculatorTest < ActiveSupport::TestCase
   end
 
   def test_1_depart_2_destinations
-  	travel = Travel.new(montreuil)
+  	travel = Travel.new(stages:[montreuil])
     travel.add_stage(berlin)
     travel.add_stage(turin)
   	assert_equal [montreuil, turin, berlin], travel.chemin_optimal
   end
 
   def _test_1_depart_2_destinations_ordonne_par_distance
-  	travel = Travel.new(montreuil)
+  	travel = Travel.new(stages:[montreuil])
   end
 end

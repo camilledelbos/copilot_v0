@@ -13,6 +13,7 @@ gem 'guard-livereload', require: false
 gem 'guard-bundler', require: false
 gem 'rack-livereload'
 gem 'guard-rails'
+gem "factory_girl_rails", "~> 4.0"
 end
 
 # Use SCSS for stylesheets

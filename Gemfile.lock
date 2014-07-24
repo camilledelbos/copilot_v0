@@ -178,6 +178,7 @@ GEM
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
     slop (3.4.7)
+    smarter_csv (1.0.17)
     spoon (0.0.4)
       ffi
     sprockets (2.10.1)
@@ -243,6 +244,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   simple_form
+  smarter_csv
   sqlite3
   thin
   turbolinks

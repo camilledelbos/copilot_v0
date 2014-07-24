@@ -43,10 +43,6 @@ after_validation :geocode
 # money = Country.find_by(country_code: code).daily_budget
 
     def distance_from(other_stage)
-      puts "yaf" * 10
-      puts "distance #{self.inspect} #{other_stage.inspect}"
-      puts "yaf" * 10
-
       return 0 if other_stage == self || other_stage.nil?
       Geocoder::Calculations.distance_between(self.position, other_stage.position)
     end

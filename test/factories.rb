@@ -15,4 +15,8 @@ FactoryGirl.define do
     # name 'John Doe'
     # date_of_birth { 21.years.ago }
   end
+  factory :stage do
+    # name 'John Doe'
+    # date_of_birth { 21.years.ago }
+  end
 end

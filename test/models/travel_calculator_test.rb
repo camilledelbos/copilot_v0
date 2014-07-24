@@ -6,21 +6,29 @@ class TravelCalculatorTest < ActiveSupport::TestCase
   attr_reader :montreuil, :berlin, :turin, :bali, :sydney, :geocoder
 
   def setup
-		@montreuil = Stage.new({latitude: 48.863746, longitude: 2.447334})
-    @berlin = Stage.new({latitude: 52.520078, longitude: 13.394556})
-    @turin = Stage.new({latitude: 45.071109, longitude: 7.687599})
-    @bali = Stage.new({latitude: -8.307382, longitude: 115.151228})
-    @sydney = Stage.new({latitude: -33.869931, longitude: 151.216317})
+		@montreuil = FactoryGirl.create(:stage, {latitude: 48.863746, longitude: 2.447334, stage_position: 0})
+    @berlin = FactoryGirl.create(:stage, {latitude: 52.520078, longitude: 13.394556})
+    @turin = FactoryGirl.create(:stage, {latitude: 45.071109, longitude: 7.687599})
+    @bali = FactoryGirl.create(:stage, {latitude: -8.307382, longitude: 115.151228})
+    @sydney = FactoryGirl.create(:stage, {latitude: -33.869931, longitude: 151.216317})
   end
 
-  def _test_recette_chemin_optimal
+#je souhaite connaitre la saison de chaque station
+#je souhaite connaitre le chemin optimal (distance) de manière à ce que je bénéficie du meilleur climat à chaque station
+# => je reste plus ou moins longtemps dans chaque station donc selon l'ordre de visite, le climat dans chacun de ces stations ne sera pas le même
+
+  def test_recette_chemin_optimal
     travel = Travel.new(stages:[montreuil])
-    assert_equal [montreuil, berlin, turin, bali, sydney], travel.chemin_optimal
+    travel.add_stage(sydney)
+    travel.add_stage(turin)
+    travel.add_stage(bali)
+    travel.add_stage(berlin)
+    assert_equal [montreuil, turin, berlin, bali, sydney], travel.chemin_optimal
   end
 
   def test_juste_1_depart
   	travel = Travel.new(stages:[montreuil])
-  	assert_equal [montreuil], travel.chemin_optimal
+    assert_equal [montreuil], travel.chemin_optimal
   end
 
   def test_1_depart_1_destination

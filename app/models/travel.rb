@@ -4,7 +4,6 @@ class Travel < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :stages, -> { order(:stage_position) }
-	has_one :initial_stage, -> {where(stage_position: 0)}
 
     # def add_stage(stage_params)
     #     puts "-" * 30
@@ -17,9 +16,12 @@ class Travel < ActiveRecord::Base
 		def add_stage(stage)
 			self.stages << stage
 		end
+  def initial_stage
+		self.stages.first
+	end
 
 		def chemin_optimal
-			[self.initial_stage].concat(better_path(self.initial_stage, self.stages))
+			better_path(initial_stage, self.stages)
 		end
 
     def duration

@@ -18,12 +18,7 @@ class TravelCalculatorTest < ActiveSupport::TestCase
 # => je reste plus ou moins longtemps dans chaque station donc selon l'ordre de visite, le climat dans chacun de ces stations ne sera pas le même
 
   def test_recette_chemin_optimal
-    travel = Travel.new(stages:[montreuil])
-    travel.add_stage(sydney)
-    travel.add_stage(turin)
-    travel.add_stage(bali)
-    travel.add_stage(berlin)
-    assert_equal [montreuil, turin, berlin, bali, sydney], travel.chemin_optimal
+    assert_equal [montreuil, turin, berlin, bali, sydney], better_path(montreuil, [montreuil, sydney, turin, bali, berlin])
   end
 
   def test_juste_1_depart
@@ -47,4 +42,17 @@ class TravelCalculatorTest < ActiveSupport::TestCase
   def _test_1_depart_2_destinations_ordonne_par_distance
   	travel = Travel.new(stages:[montreuil])
   end
+
+  def _test_1_depart_2_destinations_dont_une_soleil_autre_pluie
+    travel = Travel.new(stages:[montreuil])
+    travel.add_stage(berlin)
+    travel.add_stage(turin)
+    assert_equal [montreuil, berlin, turin], travel.sunway
+  end
+
+  def test_chemin_au_soleil
+    assert_equal [[montreuil, turin, bali, sydney, berlin],
+                [montreuil, turin, sydney, bali, berlin]], sunway(montreuil, [montreuil, sydney, turin, bali, berlin])
+  end
+
 end

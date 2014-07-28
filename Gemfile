@@ -87,7 +87,7 @@ gem 'currencies'
 gem 'geocoder'
 
 # GeoName API
-gem "geonames_api", "~> 0.1.2"
+gem "geonames_api"
 
 group :production do
   gem 'pg', '0.15.1'

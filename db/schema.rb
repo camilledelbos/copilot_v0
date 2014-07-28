@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507134247) do
+ActiveRecord::Schema.define(version: 20140727202134) do
+
+  create_table "climates", force: true do |t|
+    t.string  "couple"
+    t.string  "country"
+    t.string  "main_city"
+    t.string  "month"
+    t.integer "sunshine_duration"
+    t.float   "t_average_min"
+    t.float   "t_average_max"
+    t.float   "t_average"
+    t.float   "t_best_min"
+    t.float   "t_best_max"
+    t.float   "precipitation"
+    t.integer "rainy_days"
+    t.integer "notation"
+  end
 
   create_table "continents", force: true do |t|
     t.string   "continent_code"
@@ -31,6 +47,18 @@ ActiveRecord::Schema.define(version: 20140507134247) do
     t.datetime "updated_at"
     t.integer  "daily_budget"
     t.integer  "copilot_rate"
+  end
+
+  create_table "januaries", force: true do |t|
+    t.string  "main_city"
+    t.integer "sunshine_duration"
+    t.integer "t_average_min"
+    t.integer "t_average_max"
+    t.integer "t_best_min"
+    t.integer "t_best_max"
+    t.integer "precipitation"
+    t.integer "rainy_days"
+    t.integer "humidity"
   end
 
   create_table "main_cities", force: true do |t|

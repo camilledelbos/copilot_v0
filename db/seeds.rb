@@ -11,7 +11,7 @@
  #<Stage id: 2, duration: 20, created_at: "2014-07-28 13:20:54", updated_at: "2014-07-28 13:20:54", latitude: 44.2311717, longitude: -76.4859544, address: "Kingston", route_id: nil, departure_date: nil, stage_position: 2, travel_id: 1>,
  #<Stage id: 3, duration: 15, created_at: "2014-07-28 13:21:31", updated_at: "2014-07-28 13:21:31", latitude: 37.1694632, longitude: -104.5005407, address: "Trinidad", route_id: nil, departure_date: nil, stage_position: 3, travel_id: 1>,
  #<Stage id: 4, duration: 15, created_at: "2014-07-28 13:22:10", updated_at: "2014-07-28 13:22:10", latitude: 40.812778, longitude: 44.488333, address: "Vanadzor", route_id: nil, departure_date: nil, stage_position: 4, travel_id: 1>]
-
+User.create ([{ first_name: 'camille',last_name: 'delbos', profile_name: 'CamDel', email: 'camille.delbos@exemple.com', encrypted_password: 'aaaaaaaa'}])
 
 Country.create([
 {country_code: 'AD', daily_budget: 55, copilot_rate: 1},

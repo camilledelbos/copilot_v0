@@ -6,6 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+[#<Stage id: 1, duration: 0, created_at: "2014-07-28 13:19:55", updated_at: "2014-07-28 13:19:55", latitude: -14.4649669, longitude: 132.2642561, address: "Katherine", route_id: nil, departure_date: "2014-07-28", stage_position: 1, travel_id: 1>,
+ #<Stage id: 2, duration: 20, created_at: "2014-07-28 13:20:54", updated_at: "2014-07-28 13:20:54", latitude: 44.2311717, longitude: -76.4859544, address: "Kingston", route_id: nil, departure_date: nil, stage_position: 2, travel_id: 1>,
+ #<Stage id: 3, duration: 15, created_at: "2014-07-28 13:21:31", updated_at: "2014-07-28 13:21:31", latitude: 37.1694632, longitude: -104.5005407, address: "Trinidad", route_id: nil, departure_date: nil, stage_position: 3, travel_id: 1>,
+ #<Stage id: 4, duration: 15, created_at: "2014-07-28 13:22:10", updated_at: "2014-07-28 13:22:10", latitude: 40.812778, longitude: 44.488333, address: "Vanadzor", route_id: nil, departure_date: nil, stage_position: 4, travel_id: 1>]
+
+
 Country.create([
 {country_code: 'AD', daily_budget: 55, copilot_rate: 1},
 {country_code: 'AE', daily_budget: 45, copilot_rate: 2},

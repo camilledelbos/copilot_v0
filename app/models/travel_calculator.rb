@@ -7,30 +7,15 @@ def better_path(from_stage, available_stages)
 end
 
 def sunway(from_stage, available_stages)
+  stages_by_notation = {}
+  (available_stages - [from_stage]).each do |s|
+  	climate_notation = Climate.for_city_and_month(s.address, Date::MONTHNAMES[s.end_date.month]).first.notation
+  	stages_by_notation[climate_notation] = s
+  end
 
-	#Ancienne proposition de Yaf
-	# CSV.foreach(File.join(Rails.root, 'db/climate_db/climate_01.csv')) do |row|
-	# 	puts row.inspect
-	# end
-
-	#attention ne recherche que dans 1 fichier, manque les 11 autres
-	csv = CSV.parse(File.read('db/climate/climate_01.csv'), { headers:true })
-	csv.each {|row| puts row.inspect }
-	
-	#obtenir les notations des available_stages 
-	# => renvoi NoMethodError: undefined method `[]' for nil:NilClass
-	# => du au format de donnée ?
-	notations = []
-	available_stages.each do |stage|
-	  notations << csv.find {|row| row['city'] == stage }['notation']
-	end
-
-	puts notations
-
-	#ordonner les notations par ordre décroissant
-	#=> limite : ne propose qu'un ordre alors que plusieurs sont possibles
-	notation.sort.reverse
-		
-
-	[[montreuil, turin, bali, sydney, berlin], [montreuil, turin, sydney, bali, berlin]]
+  sorted_stages = [from_stage]
+  stages_by_notation.keys.sort.reverse.each do |note|
+    sorted_stages << stages_by_notation[note]
+  end
+  sorted_stages
 end

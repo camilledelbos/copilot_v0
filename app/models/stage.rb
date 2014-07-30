@@ -3,8 +3,11 @@ class Stage < ActiveRecord::Base
     belongs_to :travel
     has_one :country, foreign_key: :country_code
 
+    validates_presence_of :travel
+    validates_presence_of :duration
+
     geocoded_by :address
-after_validation :geocode
+    after_validation :geocode
 
 # reverse_geocoded_by :latitude, :longitude
 # after_validation :reverse_geocode  # auto-fetch address
@@ -13,6 +16,9 @@ after_validation :geocode
  #  		[city, country].compact.join(', ')
 	# end
 
+    def end_date
+        travel.departure_date + self.duration.day
+    end
 
     def reverse_geocode_both
         start_coordinates = [self.from_lat, self.from_long]

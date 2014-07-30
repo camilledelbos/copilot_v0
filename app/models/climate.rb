@@ -1,5 +1,9 @@
+require 'csv'
+
 class Climate < ActiveRecord::Base
-  require 'csv'
+
+  scope :for_city, -> (city) { where(main_city: city)}
+  scope :for_city_and_month, -> (city, month) { for_city(city).where(month: month) }
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
@@ -14,10 +18,6 @@ class Climate < ActiveRecord::Base
       end
     end
   end
-
-  def notation
   
-
-  end
 
 end

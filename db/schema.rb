@@ -49,18 +49,6 @@ ActiveRecord::Schema.define(version: 20140727202134) do
     t.integer  "copilot_rate"
   end
 
-  create_table "januaries", force: true do |t|
-    t.string  "main_city"
-    t.integer "sunshine_duration"
-    t.integer "t_average_min"
-    t.integer "t_average_max"
-    t.integer "t_best_min"
-    t.integer "t_best_max"
-    t.integer "precipitation"
-    t.integer "rainy_days"
-    t.integer "humidity"
-  end
-
   create_table "main_cities", force: true do |t|
     t.string   "city"
     t.datetime "created_at"

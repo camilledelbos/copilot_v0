@@ -5,7 +5,10 @@ class Travel < ActiveRecord::Base
 	belongs_to :user
 	has_many :stages, -> { order(:stage_position) }
 
-    
+    def departure_date
+        initial_stage.departure_date
+    end
+
 	def add_stage(stage)
 		self.stages << stage
 	end
@@ -16,6 +19,7 @@ class Travel < ActiveRecord::Base
 
 	def chemin_optimal
 		better_path(initial_stage, self.stages)
+        #sunway(initial_stage,self.stages)
 	end
 
     def duration

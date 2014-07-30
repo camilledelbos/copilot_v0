@@ -1,9 +1,9 @@
 CopilotV0::Application.routes.draw do
-  # resources :travels do
-  #     resources :stages do
-  #       collection { post :sort }
-  #      end
-  # end
+  resources :travels do
+      resources :stages do
+        collection { post :sort }
+       end
+  end
 
    resources :januaries do
     collection { post :import }
@@ -15,22 +15,22 @@ CopilotV0::Application.routes.draw do
 
   root "climates#index"
 
-  # get "landing/landing3"
-  # get "landing/landing4"
+  get "landing/landing3"
+  get "landing/landing4"
 
 
-  # devise_for :users, controllers: { registrations: 'registrations'}
-  # get "home/index"
-  # get "home/profile"
-  # get "home/help"
-  # get "home/landing2"
-  # get "home/contact"
-  # get "home/about"
-  # get "landing/landing"
-  # get "landing/landing2"
-  # get "maps/index"
-  # get "travels/index"
-  # resources :prospects
+  devise_for :users, controllers: { registrations: 'registrations'}
+  get "home/index"
+  get "home/profile"
+  get "home/help"
+  get "home/landing2"
+  get "home/contact"
+  get "home/about"
+  get "landing/landing"
+  get "landing/landing2"
+  get "maps/index"
+  get "travels/index"
+  resources :prospects
 
   # resources :maps
 

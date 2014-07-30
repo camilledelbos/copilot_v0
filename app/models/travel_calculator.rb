@@ -9,7 +9,7 @@ end
 def sunway(from_stage, available_stages)
   stages_by_notation = {}
   (available_stages - [from_stage]).each do |s|
-  	climate_notation = Climate.for_city_and_month(s.address, Date::MONTHNAMES[s.end_date.month]).first.notation
+  	climate_notation = Climate.for_city_and_month(s.address, s.end_date.month).first.notation
   	stages_by_notation[climate_notation] = s
   end
 

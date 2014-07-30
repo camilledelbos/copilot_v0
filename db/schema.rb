@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140727202134) do
     t.string  "couple"
     t.string  "country"
     t.string  "main_city"
-    t.string  "month"
+    t.integer "month"
     t.integer "sunshine_duration"
     t.float   "t_average_min"
     t.float   "t_average_max"

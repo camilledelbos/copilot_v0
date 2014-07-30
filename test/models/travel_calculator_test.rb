@@ -33,10 +33,10 @@ class TravelCalculatorTest < ActiveSupport::TestCase
   	assert_equal [katherine, trinidad, kingston], better_path(katherine, [katherine, kingston, trinidad])
   end
 
-  def test_1_depart_2_destinations_dont_une_soleil_autre_pluie
-    FactoryGirl.create(:climate, main_city: 'kingston', month: 'January', notation: 6)
-    FactoryGirl.create(:climate, main_city: 'katherine', month: 'January', notation: 4)
-    FactoryGirl.create(:climate, main_city: 'trinidad', month: 'January', notation: 3)
+  def test_1_depart_2_destinations_sunway
+    FactoryGirl.create(:climate, main_city: 'kingston', month: '1', notation: 5)
+    FactoryGirl.create(:climate, main_city: 'katherine', month: '1', notation: 4)
+    FactoryGirl.create(:climate, main_city: 'trinidad', month: '1', notation: 3)
 
     assert_equal [katherine, kingston, trinidad], sunway(katherine, [katherine, trinidad, kingston])
   end

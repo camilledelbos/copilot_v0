@@ -34,29 +34,6 @@ class Travel < ActiveRecord::Base
 		
 	end
 
-    # def betterway
-    #     if self.stages.empty?
-    #     return better = []
-    #     else
-    #         available = self.stages - initial_stage
-    #         available.sort_by do |s|
-    #             s.distance_from(initial_stage)
-    #             better.push s.address
-    #         end
-    #     puts better
-    #     end
-    # end
-            
-    
-    def stage_duration
-        if self.stages.where(stage_position: 0).first
-            duration = 0
-        else
-            self.stages.each {|s| s.departure_date - self.stages.find(stage_position: s.stage_position-1).departure_date}
-        end
-    end
-
-####
     def meteo
         stages_with_notation = []
         self.stages.each do |s|
@@ -73,11 +50,13 @@ class Travel < ActiveRecord::Base
        p stages_with_notation
     end
 
-    
-
-
-
-
+    def stage_duration
+        if self.stages.where(stage_position: 0).first
+            duration = 0
+        else
+            self.stages.each {|s| s.departure_date - self.stages.find(stage_position: s.stage_position-1).departure_date}
+        end
+    end
 
     def duration
         stages.sum(:duration)

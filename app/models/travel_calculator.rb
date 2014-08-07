@@ -1,9 +1,15 @@
+
+
+#!!! Tout ce qui a là ne sert plus pour le moment.
+
+
 def better_path(from_stage,available_stages)
   return [] if available_stages.empty?
   better = available_stages.sort_by{|s| s.distance_from(from_stage)}.first
   reste = available_stages - [better]
   path = [better] << reste.each.sort_by{|s| s.distance_from(better)}
 end
+
 
 def better_way(from_stage,available_stages)
       better = {}

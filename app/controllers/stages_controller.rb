@@ -1,10 +1,10 @@
 class StagesController < ApplicationController
 	def new
 		@travel = Travel.find(params[:travel_id])
-	    @stage = @travel.stages.build
+	  @stage = @travel.stages.build
 		respond_to do |format|       
-	        format.js
-	    end
+	    format.js
+	  end
 	end
 
 	def create

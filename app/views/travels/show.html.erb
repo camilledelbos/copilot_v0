@@ -1,7 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<div class="large-12 columns panel-landing-middle" style="z-index: 10">
+  <div class="small-12 large-12 columns"><h1>Dresser la liste des étapes selon chemin optimal</h1></div>
+    
+  <div class="small-12 large-12 columns"><%= @chemin_optimal %></div>
 
+  <div class="small-12 large-12 columns"><%= @meteo %></div>
   
+</div>
+<!-- 
+- dresser la liste des étapes selon chemin optimal et reverse sur chmein optimal 
+- afficher données météo de chaque étape pour chacun des chemins
+- produire un graph mettant en forme ces données meteos. 1 graph/chemin puis tout sur un graph.
+- indiquer le meilleur trajet climatique selon Copilot (sum notation)
+- ajouter info bulle
+- intégrer changement dynamique du graph dès que changement de position d'une étape.
+-->
+
+
     <div id="map" style='position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;'></div>
   <%= render 'map_script' %>
  
@@ -32,11 +48,14 @@
     <thead>
       <tr>
         <th>Stop</th>
-        <th>Duration</th>
-        <th></th>
-      </tr>
+        <th>Date de départ</th>
+<!--         <th>Duration</th>
+ -->      </tr>
     </thead>
+    <tr>
       <%= render '/stages/stages' %>
+
+    </tr>
   </table>
 
 <a href="#" data-reveal-id="myModal" class="button small radius">Add a stop</a>
@@ -70,7 +89,3 @@
 
   <div><%= button_to 'Save my trip', new_user_registration_path, method: :get %></div>
 </div>
-
-
-
-

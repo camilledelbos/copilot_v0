@@ -12,6 +12,8 @@ class TravelsController < ApplicationController
     @stage =  @travel.stages.build
     # fill bounds: http://leafletjs.com/reference.html#latlngbounds
     @bounds = @stages.map{ |l| [l.latitude, l.longitude] }
+    @chemin_optimal = @travel.chemin_optimal
+    @meteo = @travel.meteo
   end
 
   def new
@@ -29,7 +31,6 @@ class TravelsController < ApplicationController
           redirect_to travel_path, notice: 'Travel was successfully created.'
   end
 
-
   def update
     respond_to do |format|
       if @travel.update(travel_params)
@@ -42,7 +43,6 @@ class TravelsController < ApplicationController
     end
   end
 
-
   def destroy
     @travel.destroy
     respond_to do |format|
@@ -51,7 +51,7 @@ class TravelsController < ApplicationController
     end
   end
 
-
+ 
   private
     def set_travel
       @travel = Travel.find(params[:id])

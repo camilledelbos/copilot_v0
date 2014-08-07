@@ -24,15 +24,27 @@ FactoryGirl.define do
     # date_of_birth { 21.years.ago }
 
     trait :kingston do
-      latitude 44.2311717 
-      longitude -76.4859544
-      address 'kingston'
+    latitude 44.2311717 
+    longitude -76.4859544
+    address 'kingston'
     end
 
     trait :katherine do
-      latitude -14.4649669
-      longitude 132.2642561
-      address 'katherine'
+    latitude -14.4649669
+    longitude 132.2642561
+    address 'katherine'
+    end
+
+    trait :trinidad do
+    latitude 37.1694632
+    longitude -104.5005407
+    address 'trinidad'      
+    end
+
+    trait :vanadzor do
+    latitude 40.812778
+    longitude 44.488333
+    address 'vanadzor'      
     end
   end
 

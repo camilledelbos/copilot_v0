@@ -27,13 +27,14 @@
 		<div class="row">
 			<body onload="initialize()">
     		<div id="locationField">
-      			<input id="autocomplete" placeholder="Where do you want to go next ?" onFocus="geolocate()" type="text" value="<%# s.input %>"></input>
-
+      			<input id="autocomplete" placeholder="Where do you want to go next ????" onFocus="geolocate()" type="text" value="<%# s.input %>"></input>
+				</div>
 				<div class="small-6 large-6 column" id="autocomplete"><%= s.input :address, placeholder: 'Where do you want to go next ?', :autofocus => true %></div>
-				<div class="small-2 large-2 column"><%= s.telephone_field :duration, placeholder: 'Duration' %></div>
+				<div class="small-2 large-2 column"><%= s.text_field :departure_date, :id => "datepicker", placeholder: 'Departure date', label: 'Departure date' %>
+<!-- 					 <%# s.telephone_field :duration, placeholder: 'Duration' %>
+ -->				</div>
 				<div class="small-2 large-2 column"><%= s.button :submit, value: 'Next stop', class: "button small radius" %></div>
 				<div class="small-2 large-2 column"><%= s.button :submit, value: 'Finish', class: "button small radius"%></div>
-			</div>
 	  		</body>
 		</div>
 	<% end %>

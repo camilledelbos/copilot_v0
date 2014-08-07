@@ -18,9 +18,66 @@ class Travel < ActiveRecord::Base
 	end
 
 	def chemin_optimal
-		better_path(initial_stage, self.stages)
-        #sunway(initial_stage,self.stages)
+        better = {}
+        if self.stages.empty?
+            return {}
+        else
+            available_stages = self.stages - [initial_stage]
+            available_stages.each_with_index do |s, i|
+                if s.geocoded?
+                better[s.address] = s.distance_from(initial_stage).round 
+                end
+            end
+        end
+        better.sort_by{|s, i| i }
+        # better_path(initial_stage, self.stages)
+		
 	end
+
+    # def betterway
+    #     if self.stages.empty?
+    #     return better = []
+    #     else
+    #         available = self.stages - initial_stage
+    #         available.sort_by do |s|
+    #             s.distance_from(initial_stage)
+    #             better.push s.address
+    #         end
+    #     puts better
+    #     end
+    # end
+            
+    
+    def stage_duration
+        if self.stages.where(stage_position: 0).first
+            duration = 0
+        else
+            self.stages.each {|s| s.departure_date - self.stages.find(stage_position: s.stage_position-1).departure_date}
+        end
+    end
+
+####
+    def meteo
+        stages_with_notation = []
+        self.stages.each do |s|
+            if stages_with_notation.empty?
+                s.notation = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.notation
+                stages_with_notation.push s.notation
+            elsif s.id.nil?
+                next
+            else
+                s.notation = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.notation 
+                stages_with_notation.push s.notation 
+            end
+       end
+       p stages_with_notation
+    end
+
+    
+
+
+
+
 
     def duration
         stages.sum(:duration)

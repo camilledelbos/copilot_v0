@@ -1,0 +1,131 @@
+# Parent 1  
+#   Cou : long
+#   Pattes : courtes
+#   => adaptation : moyenne
+
+# Parent 2
+#   Cou : court
+#   Pattes : longues
+#   => adaptation : moyenne
+
+# Fils 1  
+#   Cou : court
+#   Pattes : courtes
+#   => adaptation : mauvaise
+
+# Fils 2  
+#  Cou : court
+#  Pattes : longues
+#  => adaptation : moyenne
+
+# Fils 3
+#   Cou : long
+#   Pattes : longues
+#  => adaptation : bonne
+
+
+# Il s'agit de résoudre un problème d'optimisation d'une combinaison de paramètres dépendants les uns des autres. Ces paramètres peuvent prendre plusieurs valeurs prédéfinies, de la même manière que des gènes peuvent prendre plusieurs expressions (pattes longues ou pattes courtes, par exemple). Une solution particulière au problème (une solution approchée) est représentée par l'ensemble des valeurs prises pour chaque paramètre, qui constitue en quelque sorte l'ADN de cette solution.
+
+# Quant à l'adaptation à l'environnement, elle est représentée par une évaluation chiffrée indiquant la pertinence de la solution.
+# Par exemple pour le PVC : un individu est un trajet, son évaluation est la longueur totale de ce trajet, un gène est la ville où l'on passe à une certaine position dans le parcours, et l'ADN est la liste des villes dans l'ordre du parcours.
+
+# Parmi un ensemble de solutions approchées (la population), on sélectionne alors deux bonnes solutions et on les recombine pour en produire une nouvelle.
+# D'autre part, on élimine les solutions les moins adaptées.
+# En répétant ce processus, l'adaptation de la population augmente, et donc on converge vers la solution du problème.
+# Il s'agit bien sûr d'une adaptation informatique, il ne faut pas chercher une similitude plus poussée avec les "lois de la nature". Entre autres parce dans la nature, le cerveau joue un grand rôle, et que l'environnement est changeant. Donc une solution moyenne mais adaptable à plusieurs environnements est plus intéressante qu'une solution très adaptée à un environnement particulier.
+
+# De manière plus formelle, voici un algorithme génétique de base :
+
+# Pour chaque Individu dans Groupe
+#         Initialiser Individu
+# FinPour
+# Pour nombre_d'itérations
+#         Parent A = Sélection_d'un_Individu (Groupe)
+#         Parent B = Sélection_d'un_Individu (Groupe)
+#         Fils =  Recombinaison (Parent A, Parent B)
+#         Si hasard > pourcentage Alors
+#                 Appliquer_une_mutation_à Fils
+#         FinSi
+#         Optimiser Fils  // Optionnel
+#         Evaluer Fils
+#         Si Fils est_accepté_dans Groupe Alors
+#                 Réinsérer Fils dans Groupe
+#         FinSi
+# FinPour
+# Il existe énomément de variantes et de paramétrages qui affectent grandement les résultats.
+
+
+# # Pour chaque Individu dans Groupe
+# #         Initialiser Individu
+# stages = stages.all
+# from_stage = initial_stage
+# other_stage = stages-initial_stage
+# # FinPour
+
+# # Pour nombre_d'itérations
+# Sélection
+        # au hasard
+        # préférer les individus avec une meilleur évaluation (stratégie élitiste)
+        # toujours choisir le meilleur individu comme premier parent et un autre individu au hasard comme deuxième parent (variante de la stratégie élitiste)
+        # sélectionner les deux parents selon un critère de proximité dans la liste des individus
+#     Parent A = Sélection_d'un_Individu (Groupe)
+#     Parent B = Sélection_d'un_Individu (Groupe)
+#     Fils =  Recombinaison (Parent A, Parent B)
+
+
+def selection
+  # Parent1 = better_path
+  # Parent2 = sunway amélioré
+end
+
+
+def recombinaison(other_stage)
+  parent_a = other_stage.shuffle
+  parent_b = parent_a.shuffle
+  random = rand(0..other_stage.count)
+  fils = parent_a[0..random]
+  fils1 = parent_b[random+1..other_stage.count]+parent_b[0..random]
+  fils.push(fils1).flatten.uniq
+end
+
+def mutation
+end
+
+def optimisation
+#   Le principe est le suivant :
+
+# On génére un trajet initial aléatoirement (ou par une autre méthode).
+# On applique à ce trajet une transformation simple (la plus simple possible).
+# Si la transformation améliore le trajet, on garde cette transformation, sinon on l'annule.
+# Puis on répète l'opération jusqu'à ce que l'on ne puisse plus améliorer le trajet.
+# Le mieux est d'effectuer une recherche systématique (par exemple tester toutes les permutations possibles sur un trajet).
+
+# Pour Ville_1 allant de 1 à N
+#   Pour Ville_2 allant de Ville_1 + 1 à N
+#     Renverser parcours entre Ville_1 et Ville_2
+#     Si le renversement raccourcit le trajet Alors on garde le renversement
+#     Sinon on ne garde pas le renversement
+#   FinPour
+# FinPour
+end
+
+def reinsertion
+# Comment réinsérer le fils dans le groupe ? Les solutions sont :
+
+# Eliminer le moins bon du groupe
+# Eliminer l'individu qui ressemble le plus au nouvel individu
+# Remplacer un des deux parents
+# La nouvelle génération remplace l'ancienne génération (sauf le meilleur individu de l'ancienne génération)
+
+
+end
+
+#         Si hasard > pourcentage Alors
+#                 Appliquer_une_mutation_à Fils
+#         FinSi
+#         Optimiser Fils  // Optionnel
+#         Evaluer Fils
+#         Si Fils est_accepté_dans Groupe Alors
+#                 Réinsérer Fils dans Groupe
+#         FinSi
+# FinPour

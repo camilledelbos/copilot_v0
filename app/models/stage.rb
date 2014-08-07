@@ -1,10 +1,10 @@
 class Stage < ActiveRecord::Base
+    attr_accessor :notation
 
     belongs_to :travel
     has_one :country, foreign_key: :country_code
 
     validates_presence_of :travel
-    validates_presence_of :duration
 
     geocoded_by :address
     after_validation :geocode
@@ -49,7 +49,7 @@ class Stage < ActiveRecord::Base
 # money = Country.find_by(country_code: code).daily_budget
 
     def distance_from(other_stage)
-      return 0 if other_stage == self || other_stage.nil?
+      return 1 if other_stage == self || other_stage.nil?
       Geocoder::Calculations.distance_between(self.position, other_stage.position)
     end
 

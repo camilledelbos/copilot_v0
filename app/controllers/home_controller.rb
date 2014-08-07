@@ -6,6 +6,9 @@ class HomeController < ApplicationController
      @travel = Travel.all
   end
 
+  def calculator
+  end
+
  def profile
      @titre = "Profile"
   end

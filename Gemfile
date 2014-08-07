@@ -74,7 +74,8 @@ group :test do
   gem 'guard-webrick'
 end
 
-gem 'pry-rails', :group => :development
+# gem 'pry-rails', :group => :development
+# gem 'pry-plus', :group => :development
 
 # Devise
 gem 'devise'

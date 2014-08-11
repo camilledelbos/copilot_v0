@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require foundation
 //= require underscore
+//= require highcharts/highcharts
+//= require highcharts/themes/dark-unica
 //= require_tree .
 
 

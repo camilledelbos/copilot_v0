@@ -31,7 +31,6 @@ class Travel < ActiveRecord::Base
         end
         better.sort_by{|s, i| i }
         # better_path(initial_stage, self.stages)
-		
 	end
 
     def meteo
@@ -48,6 +47,23 @@ class Travel < ActiveRecord::Base
             end
        end
        p stages_with_notation
+    end
+
+    def climat
+        stages_concerned = []
+        self.stages.each do |s|
+            if stages_concerned.empty?
+                s = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month)
+                stages_concerned.push s
+            elsif s.id.nil?
+                next
+            else
+                s = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month)
+                stages_concerned.push s
+                stages_concerned.flatten!
+            end
+       end
+       p stages_concerned
     end
 
     def stage_duration

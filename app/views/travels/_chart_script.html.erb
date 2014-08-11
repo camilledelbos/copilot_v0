@@ -1,0 +1,70 @@
+<script>
+$(function () { 
+    $('#meteo').highcharts({
+    	credits: {
+            enabled: false
+        },
+        chart: {
+            // type: 'line'
+            renderTo: "travel"
+        },
+        tooltip: {
+				    formatter: function() {
+				        return this.series.name + ':' + this.y + 'in' + this.x;
+				    },
+				    backgroundColor: '#SCFFC5',
+				    font_color: 'red',
+				    borderColor: 'black',
+				    borderRadius: 10,
+				    borderWidth: 3
+				},
+				navigator: {
+                adaptToUpdatedData: false,
+                series : {
+                    data : <%= @climat.map {|s| s.month} %>
+                }
+            },
+        title: {
+            text: 'Profil climatique prévisionnel'
+        },
+        legend: {
+            borderRadius: 5,
+            borderWidth: 1
+        },
+        xAxis: {
+            type: 'Month',
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+
+        yAxis: 
+          [{ //--- Primary yAxis
+				    title: {
+			        text: 'Temperature',
+				    }
+					}, 
+					{ //--- Secondary yAxis
+				    title: {
+				        text: 'Rainfall mm',           	 		
+				    },
+				    tickInterval: 1,
+				  	opposite: true
+					}],
+        	series: [{
+				    type: 'column',
+				    name: 'precipitation',
+				    data: <%= @climat.map {|s| s.precipitation} %>
+					}, {
+				    type: 'spline',
+				    name: 'Temperature',
+				    data: <%= @climat.map {|s| s.t_average} %>,
+				    lineWidth: 3
+					}, {
+				    type: 'spline',
+				    name: 'zone de confort',
+				    data: [23, 23, 23, 23, 23], 
+				    dashStyle: 'ShortDashDot'
+					}],
+    });
+});
+
+</script>

@@ -11,20 +11,20 @@ def better_path(from_stage,available_stages)
 end
 
 
-def better_way(from_stage,available_stages)
-      better = {}
-     return {} if available_stages.empty?
+# def better_way(from_stage,available_stages)
+#       better = {}
+#      return {} if available_stages.empty?
         
-      else
-        reste = available_stages - [from_stage]
-        reste.each_with_index do |s, i|
-          if s.geocoded?
-            better[s.address] = s.distance_from(from_stage).round 
-          end
-        end
-      end
-      better.sort_by{|s, i| i }
-    end
+#       else
+#         reste = available_stages - [from_stage]
+#         reste.each_with_index do |s, i|
+#           if s.geocoded?
+#             better[s.address] = s.distance_from(from_stage).round 
+#           end
+#         end
+#       end
+#       better.sort_by{|s, i| i }
+#     end
 
 
 

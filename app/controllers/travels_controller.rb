@@ -14,6 +14,7 @@ class TravelsController < ApplicationController
     @bounds = @stages.map{ |l| [l.latitude, l.longitude] }
     @chemin_optimal = @travel.chemin_optimal
     @meteo = @travel.meteo
+    @climat = @travel.climat
   end
 
   def new

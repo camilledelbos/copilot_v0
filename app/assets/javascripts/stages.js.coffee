@@ -11,7 +11,7 @@ refresh_map = (stages) ->
 
 $('#stage').sortable
 	axis: 'y'
-	handle: '.handle'
+	handle: '.index'
 	update: ->
 		stages_id = []
 		$('.stage').each ->

@@ -74,19 +74,47 @@
 
 
 def selection
-  # Parent1 = better_path
-  # Parent2 = sunway amélioré
+  parent1 = chemin_optimal
+  parent2 = chemin_optimal.shuffle
 end
 
-
-def recombinaison(other_stage)
-  parent_a = other_stage.shuffle
-  parent_b = parent_a.shuffle
-  random = rand(0..other_stage.count)
-  fils = parent_a[0..random]
-  fils1 = parent_b[random+1..other_stage.count]+parent_b[0..random]
-  fils.push(fils1).flatten.uniq
+def initialize(population = chemin_optimal)
+    @population = population
 end
+
+def recombinaison
+
+
+
+
+
+def population
+  population = []
+  population << chemin_optimal
+
+  if chemin_optimal.count <= 4
+    chemin_optimal.count.each {|n| n * recombination}
+  else
+    recombination * 30
+  end
+end
+
+  fils = []
+  def recombinaison
+    random = rand(0..other_stage.count)
+    fils1 = parent1[0..random]
+    fils2 = parent2[random+1..other_stage.count]+parent2[0..random]
+    fils.push(fils1.concat(fils2).uniq)
+  end 
+  if population.include?(fils) 
+    recombinaison
+  else
+    population.push(inceste)
+  end
+
+
+
+
 
 def mutation
 end

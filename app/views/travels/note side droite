@@ -1,0 +1,75 @@
+note side droite
+
+
+<% @travel.stages.each_with_index do |s, i| %>
+        <tr>
+
+          <td>
+            <% if s.first_stage %>
+            <div class="index">
+              <span class="fi-flag"></span>
+            </div>
+            <% elsif s.stage_position == @travel.stages_quantity-1 %>
+            <div class="index">
+              <span><i class="fa fa-flag-checkered"></i></span>
+            </div>
+            <% else %>
+            <div class="index">
+              <span><%= s.stage_position %></span>
+            </div>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to h(s.address)%>
+          </td>
+          <!-- DUREE -->
+          <td> 
+            <%# @travel.stage_duration %>
+            <% if s.first_stage %>
+            <%= s.duration = 0 %>
+            <% else s.duration  %>
+            <%# elsif s.departure_date.nil? %>
+            <%# next %>
+            <%# s.departure_date - s.departure_date(i-1) %>
+            <% end %>
+          </td>
+          <!-- DATE -->
+          <td>
+            <%= s.departure_date %>
+          </td>
+          <!-- <td><%# @stages.find(stage.id+1).address %></td> -->
+          <td><%= button_to '-', travel_stage_path(s.travel_id, s.id), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+        <% end %>
+
+
+
+counter =  travel.stages.count
+dispo = []
+0.upto(counter-1) {|n| dispo << n }
+dep = travel.stages.where(stage_position: 1).first
+while dispo.lenght > 0 do
+	if dep.stage_position = 0
+		newdep = dep.departure_date
+	else 
+		newdep = dep.duration(i-1) + dep.departure_date(i-1)
+	end
+	dep = newdep
+	dispo.delete(dep)
+end
+
+
+
+
+
+initial = travel.stages.where(stage_position: 1).first
+
+travel.stages.each_with_index do |stage, index|
+if stage.stage_position = 0
+	arrival = stage.departure_date
+	else
+	p "rien"
+	end
+	end
+	

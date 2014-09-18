@@ -7,7 +7,7 @@
     
   <div class="small-12 large-12 columns"><%= @travel.stages.first.address %><%= @chemin_optimal.flatten %></div>
 
-  <div class="small-12 large-12 columns"><%= @meteo %></div>
+  <div class="small-12 large-12 columns"><%# @meteo_path %></div>
 
   
 </div>
@@ -24,7 +24,7 @@
 
 
     <div id="map" style='position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;'></div>
-  <%# render 'map_script' %>
+  <%= render 'map_script' %>
  
 
 <div class="small-3 large-3 small-offset-9 large-offset-9 columns panel" style="margin-top = -70px;">
@@ -34,9 +34,9 @@
 
   <div class="row">
     <div class="small-2 columns">
-        <label><i class="fi-torsos picto" style="font-size: 24px;"></i></label>
+        <label><i class="fi-torsos" style="font-size: 24px;"></i></label>
     </div>
-    <div class="small-3 small-pull-7 columns">
+    <div class="small-3 columns">
       <select id="right-label">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -48,20 +48,20 @@
           <option value="8">8</option>
       </select>
     </div>
+    <div class="small-2 columns">
+        <label><i class="fi-loop" style="font-size: 24px;"></i><input type="checkbox" value="1"></label>
+        <label><i class="fi-shuffle" style="font-size: 24px;"></i><input type="checkbox" value="1"></label>
+    </div>
   </div>
   <table>
-    <thead>
-      <tr>
-        <th>Stop</th>
-        <th>Date de départ</th>
-<!--         <th>Duration</th>
- -->      </tr>
-    </thead>
     <tr>
-      <%= render '/stages/stages' %>
-
+       
+            <%= render 'stages/stages' %>
+        
+      
     </tr>
   </table>
+
 
 <a href="#" data-reveal-id="myModal" class="button small radius">Add a stop</a>
 <div id="myModal" class="reveal-modal" data-reveal>
@@ -70,10 +70,10 @@
 </div>
 
 
-<!--   <%= button_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
+<!--   <%# button_to "new stage", new_travel_stage_path(@travel, @stage), id: "add", method: :get, remote: true %>
  -->  <div class="row">
     <div class="small-4 columns">
-      <%= @travel.stages.count %>
+      <%= @travel.stages.count-1 %>
       <i class="fi-marker" style="font-size: 24px;"></i>
     </div>
     
@@ -94,6 +94,6 @@
 
   <div><%= button_to 'Save my trip', new_user_registration_path, method: :get %></div>
   <div id="meteo" style="width:100%; height:400px;z-index: 20"></div>
-  <%= render 'chart_script' %>
+  <%# render 'chart_script' %>
   <div class="small-12 large-12 columns"><h1>Dresser la liste des étapes selon chemin optimal</h1></div>
 </div>

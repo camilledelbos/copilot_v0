@@ -13,8 +13,8 @@ class TravelsController < ApplicationController
     # fill bounds: http://leafletjs.com/reference.html#latlngbounds
     @bounds = @stages.map{ |l| [l.latitude, l.longitude] }
     @chemin_optimal = @travel.chemin_optimal
-    @meteo = @travel.meteo
-    @climat = @travel.climat
+    #@meteo_path = @travel.meteo_path
+    #@climat = @travel.climat
   end
 
   def new

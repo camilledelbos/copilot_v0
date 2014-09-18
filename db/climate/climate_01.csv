@@ -1,4 +1,4 @@
-city,sunshine,t_average_min,t_average_min,t_best_min,t_best_max,precipitation,day_of_rain,humidity,altitude,notation
+couple, country,	main_city,	month,	sunshine_duration,	t_average_min,	t_average_max,	t_average,	t_best_min,	t_best_max,	precipitation,	rainy_days,	notation
 berlin,2,-2,3,-21,12,45,17,,,5
 bali,5,24,30,21,33,299,18,,,4
 turin,2,1,6,-10,14,43,6,,,1

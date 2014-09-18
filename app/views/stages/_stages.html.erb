@@ -1,16 +1,41 @@
 <tbody id="stage" data-update-url="<%= sort_travel_stages_url(@travel)%>">
-    <% @stages.each do |stage| %>
-      <tr>
-        <%= content_tag_for :td, stage do %>
-            <span><i class="handle fa fa-sort"></i></span>
-            <%= link_to h(stage.address), (@stage.travel) %>
-        <% end %>
-          <td>
-            <%= stage.departure_date %>
-          </td>
-          <!-- <td><%# @stages.find(stage.id+1).address %></td> -->
-          <td><%= button_to '-', travel_stage_path(@travel, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-      </tr>
-     <% end %>
+<% stages_count = @stages.count %>
+<% @stages.each do |stage| %>
+<tr>
+  <%= content_tag_for :td, stage do %>
+    <% if stage.first_stage %>
+    <div class="index">
+      <span class="fi-flag"></span>
+    </div>
+    <% elsif stage.stage_position == stages_count-1 %>
+    <div class="index">
+      <span><i class="fa fa-flag-checkered"></i></span>
+    </div>
+    <% else %>
+    <div class="index">
+      <span><%= stage.stage_position %></span>
+    </div>
+    <% end %>
+  <% end %>
+  <td>
+    <%= link_to h(stage.address), (@stage.travel) %>
+  </td>
+   <td> 
+    <% if stage.first_stage %>
+      <%= stage.duration = 0 %>
+    <% else %>
+      <%= stage.duration %>
+    <% end %>
+  </td>
+  <td>
+    <%= stage.departure_date %>
+  </td>
+  <!-- <td><%# @stages.find(stage.id+1).address %></td> -->
+  <td><%= button_to '-', travel_stage_path(@travel, stage), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+  <% end %>
+</tr>
 </tbody>
+
+
+

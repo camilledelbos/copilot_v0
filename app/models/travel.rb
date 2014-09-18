@@ -2,22 +2,42 @@ require 'travel_calculator'
 
 class Travel < ActiveRecord::Base
 
-	belongs_to :user
-	has_many :stages, -> { order(:stage_position) }
+    belongs_to :user
+    has_many :stages, -> { order(:stage_position) }
 
     def departure_date
         initial_stage.departure_date
     end
 
-	def add_stage(stage)
-		self.stages << stage
-	end
+    def add_stage(stage)
+        self.stages << stage
+    end
 
     def initial_stage
-		self.stages.first
-	end
+        self.stages.where(stage_position: 0).first
+    end
+    
+    def stage_duration
+        if self.initial_stage
+        #     duration = 0
+        # else
+            duration = self.stages.each {|s| s.departure_date - self.stages.find(stage_position: s.stage_position-1).departure_date}
+        end
+    end
 
-	def chemin_optimal
+    def stages_quantity
+        self.stages.count
+    end
+    
+    def duration
+        stages.sum(:duration)
+    end
+
+    def stage_date
+        self.stages.each {|s| s.departure_date}
+    end
+
+    def chemin_optimal
         better = {}
         if self.stages.empty?
             return {}
@@ -29,11 +49,27 @@ class Travel < ActiveRecord::Base
                 end
             end
         end
-        better.sort_by{|s, i| i }
+        better.sort_by{|s,i| i }
         # better_path(initial_stage, self.stages)
-	end
+    end
 
-    def meteo
+    def meteo_path
+        stages_with_notation = []
+        self.stages.each do |s|
+            if stages_with_notation.empty?
+                s.notation = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.notation
+                # (self.departure_date ++ s.duration).month)
+                stages_with_notation.push s.notation
+            elsif s.id.nil?
+                next
+            else
+                s.notation = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.notation 
+                stages_with_notation.push s.notation 
+            end
+       end
+       p stages_with_notation
+    end
+    def climat
         stages_with_notation = []
         self.stages.each do |s|
             if stages_with_notation.empty?
@@ -49,34 +85,84 @@ class Travel < ActiveRecord::Base
        p stages_with_notation
     end
 
-    def climat
-        stages_concerned = []
-        self.stages.each do |s|
-            if stages_concerned.empty?
-                s = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month)
-                stages_concerned.push s
-            elsif s.id.nil?
-                next
-            else
-                s = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month)
-                stages_concerned.push s
-                stages_concerned.flatten!
-            end
-       end
-       p stages_concerned
-    end
+#       def climat
+# +        stages_concerned = []
+# +        self.stages.each do |s|
+# +            if stages_concerned.empty?
+# +                s = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month)
+# +                stages_concerned.push s
+# +            elsif s.id.nil?
+# +                next
+# +            else
+# +                s = Climate.for_city_and_month(s.address.capitalize, s.departure_date.month)
+# +                stages_concerned.push s
+# +                stages_concerned.flatten!
+# +            end
+# +       end
+# +       p stages_concerned
+# +    end
 
-    def stage_duration
-        if self.stages.where(stage_position: 0).first
-            duration = 0
-        else
-            self.stages.each {|s| s.departure_date - self.stages.find(stage_position: s.stage_position-1).departure_date}
-        end
-    end
+    # def self.global_notation
+    #     if stages_with_notation.empty?
+    #     return []
 
-    def duration
-        stages.sum(:duration)
-    end
+    # #A VERIFIER #à une date donnée, valeur attribuée à une t°
+    #     def temperature_notation
+    #         temperature_notations = []
+    #         temperature_notation = 0
+    #         self.stages.each do |s|
+    #             if Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average > 40
+    #                 temperature_notation = 1
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 35
+    #                 temperature_notation = 2
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 28
+    #                 temperature_notation = 3
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 23
+    #                 temperature_notation = 4
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 21
+    #                 temperature_notation = 5
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 17
+    #                 temperature_notation = 4
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 13
+    #                 temperature_notation = 3
+    #             elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average >= 8
+    #                 temperature_notation = 2
+    #             else Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.t_average < 8
+    #                 temperature_notation = 1
+    #             end
+    #         temperature_notations.sum << temperature_notation
+    #         end
+    #         temperature_notations
+    #     end      
+
+    # #A VERIFIER #à une date donnée, valeur attribuée à une hauteur de précipitation
+    #     def precipitation_note
+    #         precipitation_notations = []
+    #         precipitation_notation = 0
+    #         self.stages.each do |s|
+    #             if Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.precipitation.empty?
+    #                 next
+    #             else
+    #                 if Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.precipitation < 50
+    #                     precipitation_notation = 5
+    #                 elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.precipitation < 100
+    #                     precipitation_notation = 4
+    #                 elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.precipitation < 150
+    #                     precipitation_notation = 3
+    #                 elsif Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.precipitation < 200
+    #                     precipitation_notation = 2
+    #                 else Climate.for_city_and_month(s.address.capitalize, s.departure_date.month).first.precipitation < 250
+    #                     precipitation_notation = 1
+    #                 end
+    #             end
+    #         precipitation_notations.sum << precipitation_notation
+    #         end
+    #         precipitation_notations
+    #     end
+    #     stages_with_notation = temperature_notation + precipitation
+    # end
+
+
 
     def distance
         distance = 0

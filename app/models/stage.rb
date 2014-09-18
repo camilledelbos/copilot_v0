@@ -16,8 +16,16 @@ class Stage < ActiveRecord::Base
  #  		[city, country].compact.join(', ')
 	# end
 
+    def first_stage
+        self.stage_position == 0
+    end
+
     def end_date
-        travel.departure_date + self.duration.day
+        (travel.departure_date + self.duration ).to_s
+    end
+
+    def month_date
+        (travel.departure_date + self.duration).month
     end
 
     def reverse_geocode_both

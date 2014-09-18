@@ -18,6 +18,5 @@ class Climate < ActiveRecord::Base
       end
     end
   end
-  
 
 end

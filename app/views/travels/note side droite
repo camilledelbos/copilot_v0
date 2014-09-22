@@ -48,9 +48,11 @@ note side droite
 counter =  travel.stages.count
 dispo = []
 0.upto(counter-1) {|n| dispo << n }
-dep = travel.stages.where(stage_position: 1).first
+token = travel.stages.where(stage_position: 1).first
+dispo.delete(token)
 while dispo.lenght > 0 do
-	if dep.stage_position = 0
+	if token != available.include?
+	dep.stage_position = 0
 		newdep = dep.departure_date
 	else 
 		newdep = dep.duration(i-1) + dep.departure_date(i-1)
@@ -72,4 +74,113 @@ if stage.stage_position = 0
 	p "rien"
 	end
 	end
-	
+
+
+
+travel.stages.each_with_index do |stage, index|
+if stage.duration.nil?
+p stage.duration = 0
+else
+	p "#{index-1} - #{stage.address}!"
+end
+end
+
+
+
+Tentative 3 :
+
+def initial_stage
+	self.stages.where(stage_position: 0).first
+end
+
+def counter
+		counter =  travel.stages.count
+end
+
+def all_dates
+	index = travel.initial_stage.stage_position
+	date = travel.stages.where(stage_position: index).first.departure_date
+	all_dates = []
+	while index < counter do
+		if travel.stages.where(stage_position: index).first.departure_date.nil?
+			date = all_dates.last + travel.stages.where(stage_position: index).first.duration.day
+		elsif travel.stages.where(stage_position: index).nil?
+		next
+		else
+			date = travel.stages.where(stage_position: index).first.departure_date
+		end
+		all_dates << date
+		index += 1
+	end
+end
+
+def all_durations
+	index = travel.initial_stage.stage_position
+	duration = travel.stages.where(stage_position: index).first.duration
+	all_durations = []
+	while index < counter do
+		if travel.stages.where(stage_position: index).first.duration.nil?
+		duration = all_dates[index+1] - travel.stages.where(stage_position: index).first.departure_date
+	elsif travel.stages.where(stage_position: index).nil?
+	next
+	else duration = travel.stages.where(stage_position: index).first.duration
+	end
+		all_durations << duration
+		index += 1
+	end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+Tentative 2 : 
+
+
+def initial_stage
+	self.stages.where(stage_position: 0).first
+end
+
+counter =  travel.stages.count                                          #nombre de Stages
+available_stages = []                                                   #initialisation du compteur 
+0.upto(counter-1) { |n| available_stages << n }                         #chargement du compteur déterminant le nombre de Stages
+index = travel.initial_stage.stage_position
+date = travel.stages.where(stage_position: index).first.departure_date  # détermination de la date de départ
+duration = travel.stages.where(stage_position: index).first.duration    # détermination de la durée
+all_dates = [date]                                                 	#initialisation réceptacle, chargement departure_dateTravel
+all_durations = [duration]                                              #idem pour les durée
+available_stages.delete(index)                                          #suppression du compteur du Stage ayant la stage_position 0
+
+##Calcul date
+while available_stages.length > 0 do
+	if travel.stages.where(stage_position: index).first.departure_date.nil?
+		date = all_dates.last + all_durations.last.day          #date = date Stage précédent + duration Stage précédent
+	else
+		date = travel.stages.where(stage_position: index).first.departure_date			        #date = date renseignée
+	end	
+	all_dates << date
+	available_stages.delete(index)                                  #suppression de l'index du compteur pour passer au suivant
+	index = available_stages.first				                                #réinitialisation de index
+end
+
+##Calcul duration (a besoin de la date du Stage suivant donc ne peut être calculé que si toutes les dates le sont)
+0.upto(counter-1) { |n| available_stages << n }                         #rechargement du compteur déterminant le nombre de Stages
+while available_stages.length > 0 do
+	if travel.stages.where(stage_position: index).first.duration.nil?
+		duration = travel.stages.where(stage_position: index+1).first.departure_date - travel.stages.where(stage_position: index).first.departure_date
+	else
+		duration = travel.stages.where(stage_position: index).first.duration	        #duration = duration renseignée
+	end
+	all_durations << duration
+	available_stages.delete(index)
+	index = available_stages.first
+end
+all_dates
+all_durations

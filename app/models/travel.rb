@@ -5,8 +5,8 @@ class Travel < ActiveRecord::Base
     belongs_to :user
     has_many :stages, -> { order(:stage_position) }
 
-    def departure_date
-        initial_stage.departure_date
+    def departure_travel
+        self.initial_stage.departure_date
     end
 
     def add_stage(stage)
@@ -18,10 +18,13 @@ class Travel < ActiveRecord::Base
     end
     
     def stage_duration
-        if self.initial_stage
-        #     duration = 0
-        # else
+        if self.initial_stage         #si Stage à stage_position 0 alors durée 0 et date de départ du Travel
+             duration = 0
+             departure_travel
+        elsif self.stages.each {|s| s.duration.nil?}
             duration = self.stages.each {|s| s.departure_date - self.stages.find(stage_position: s.stage_position-1).departure_date}
+        elsif self.stages.each {|s| s.departure_date.nil?}
+            departure_date = self.stages.each {|s| self.stages.find(stage_position: s.stage_position-1).duration + self.stages.find(stage_position: s.stage_position-1).departure_date}
         end
     end
 
